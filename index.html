@@ -1,12 +1,40 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
 </head>
 <body>
-    <h1>Mon Portfolio</h1>
-</body>
+    <nav id="desktop-nav">
+        <div class="logo">Adil Zarqane</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#à propos">À propos</a></li>
+                <li><a href="#éxperience">Éxperiences</a></li>
+                <li><a href="#Projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Adil Zarqane</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                    <li><a href="#à propos" onclick="toggleMenu()">À propos</a></li>
+                    <li><a href="#éxperience" onclick="toggleMenu()">Éxperiences</a></li>
+                    <li><a href="#Projets" onclick="toggleMenu()">Projets</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+    <script src="script.js"></script>
+    </body>
 </html>
