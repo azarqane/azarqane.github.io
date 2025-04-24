@@ -430,3 +430,12 @@ footer {
 footer p {
   text-align: center;
 }
+
+
+/* Centre le texte à l’intérieur */
+.text-container p {
+  text-align:center;
+  line-height: 1.6;  /* optionnel : aère un peu le texte */
+}
+
+
