@@ -1,16 +1,14 @@
-![Bannière de mon profil GitHub](header.png)
+![Bannière de mon profil GitHub](Banner-contact-vue-aerienne-toulouse.jpg)
 
-🔭 Je travaille actuellement sur le **déploiement de projets d’infrastructure**, la **documentation des processus IT**, et la **création d’environnements de formation sur Proxmox**  
-🌱 J’approfondis mes compétences sur **Azure** et l’**automatisation avec Ansible**  
-👯 Je suis ouvert aux collaborations autour de la **modernisation d’infrastructures**, du **déploiement de postes de travail** et des environnements IT **cloud-based**  
-💬 Discutons de **Windows Server**, **Debian 12**, **PowerShell**, **Bash**, **réseaux LAN**, **VPN**, **SSH**  
-ou de ma manière d’apporter de la **structure**, de la **clarté** et de la **coordination** aux projets IT.  
-📫 Pour me contacter : a.zarqane@icloud.com — ou retrouvez-moi sur [LinkedIn](https://www.linkedin.com/in/zarqane/) et sur [mon portfolio](https://azarqane.github.io/Portfolio/)
+📍 Toulouse, France | 🌍 Remote
 
----
+🔭 I'm currently working on the **design of Zero Trust architectures** and the **deployment of hybrid Azure/On-Prem environments**
 
-🎉 Dernier projet publié : [Déploiement automatisé de postes Windows via PXE + WDS](https://github.com/)  
-🛠️ À venir : intégration complète de MDT pour des séquences de déploiement Windows 11  
-🔗 Voir aussi : [Déploiement d’une infrastructure AD sur cloud privé](https://github.com/)
+🌱 I'm expanding my expertise in **Kubernetes (K8s)**, **Terraform**, and **identity management with Azure AD / Entra ID**
 
----
+👯 I'm open to collaborations on **defensive cybersecurity projects (SOC/Blue Team)**, **IT operations and lifecycle management (MCO)**, and **advanced virtualization with Proxmox and VMware**
+
+💬 Let's talk about **SIEM (Splunk, Wazuh)**, **EDR/XDR**, **Hardened Active Directory**, **Cloud Security Posture Management (CSPM)**, **reverse proxies with NGINX**, or how to build a **robust, scalable, and secure Information System**  
+as well as how I bring **structure**, **clarity**, and **coordination** to IT projects.
+
+📫 Contact me: a.zarqane@icloud.com — or connect with me on [LinkedIn](https://www.linkedin.com/in/zarqane/) and check out [my portfolio](https://azarqane.github.io/Portfolio/)
