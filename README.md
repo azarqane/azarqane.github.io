@@ -1,4 +1,4 @@
-![Bannière de mon profil GitHub]([Banner-contact-vue-aerienne-toulouse.jpg](https://github.com/azarqane/azarqane/blob/main/Banner-contact-vue-aerienne-toulouse.jpg?raw=true))
+![Banner-contact-vue-aerienne-toulouse.jpg](https://github.com/azarqane/azarqane/blob/main/Banner-contact-vue-aerienne-toulouse.jpg?raw=true)
 
 📍 Toulouse, France | 🌍 Remote
 
