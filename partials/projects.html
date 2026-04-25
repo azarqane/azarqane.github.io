@@ -836,19 +836,17 @@ configure → ansible:db  ansible:minio  ansible:k3s:master
                   <div style="margin-top:var(--space-8)">
                     <h5 style="color:var(--color-text);font-size:13px;font-weight:600;margin-bottom:var(--space-4)">Captures de pipeline</h5>
                     <div class="technical-grid">
-                      <div class="screenshot-placeholder zoomable">
-                        📸 Pipeline Deploy — Vue dag complète (7 stages, jobs parallèles)
+                      <div class="pipeline-images" style="display:flex;flex-direction:column;gap:var(--space-2)">
+                        <img src="assets/pipedeploy1.jpg" alt="Pipeline Deploy Part 1" class="zoomable" style="width:100%;height:auto;border-radius:8px">
+                        <img src="assets/pipedeploy2.jpg" alt="Pipeline Deploy Part 2" class="zoomable" style="width:100%;height:auto;border-radius:8px">
                       </div>
-                      <div class="screenshot-placeholder zoomable">
-                        📸 Pipeline Backup — Stage backup_now avec tf:refresh + ansible:backup
+                      <div class="pipeline-images">
+                        <img src="assets/backup.jpg" alt="Pipeline Backup" class="zoomable" style="width:100%;height:auto;border-radius:8px">
                       </div>
                     </div>
                     <div class="technical-grid" style="margin-top:var(--space-4)">
-                      <div class="screenshot-placeholder zoomable">
-                        📸 Pipeline Restore — Paramètre backup_date + stage restore
-                      </div>
-                      <div class="screenshot-placeholder zoomable">
-                        📸 Pipeline Validate — Connectivity + services (SQL, nodes, ArgoCD)
+                      <div class="pipeline-images">
+                        <img src="assets/restore.jpg" alt="Pipeline Restore" class="zoomable" style="width:100%;height:auto;border-radius:8px">
                       </div>
                     </div>
                   </div>
