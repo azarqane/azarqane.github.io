@@ -1,0 +1,25 @@
+/* ============================================================
+   style.css — Point d'entrée CSS
+   Importe les modules dans l'ordre de la cascade.
+   ============================================================ */
+
+/* 1. Tokens, reset, layout, section headers */
+@import url('modules/base.css');
+
+/* 2. Barre de navigation + boutons + menu mobile */
+@import url('modules/navbar.css');
+
+/* 3. Section Hero (accueil) */
+@import url('modules/hero.css');
+
+/* 4. Section À propos, keywords, stats */
+@import url('modules/sections.css');
+
+/* 5. Skill cards, Project SPA, badges, code blocks */
+@import url('modules/cards.css');
+
+/* 6. Contact & Footer */
+@import url('modules/contact.css');
+
+/* 7. Keyframes, lightbox modal, scrollbar */
+@import url('modules/animations.css');
