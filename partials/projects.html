@@ -1,114 +1,157 @@
-    <!-- =========================================================
+<!-- =========================================================
      PROJETS
      ========================================================= -->
-    <section id="projets" class="section" aria-labelledby="projects-heading">
-      <div class="container">
+<section id="projets" class="section" aria-labelledby="projects-heading">
+  <div class="container">
 
-        <!-- VUE 1 : GRILLE -->
-        <div id="project-grid-view" class="project-view active">
-          <div class="reveal" style="text-align:center;margin-bottom:var(--space-12)">
-            <p class="section__eyebrow" style="justify-content:center">Réalisations</p>
-            <h2 class="section__title" id="projects-heading" style="font-size:var(--text-xl)">Projet Phare</h2>
-            <p style="color:var(--color-text-muted); max-width: 700px; margin: var(--space-4) auto 0;">
-              L'architecture complète d'une plateforme d'hébergement moderne, de l'infrastructure physique à l'application.
-            </p>
+    <!-- VUE 1 : GRILLE -->
+    <div id="project-grid-view" class="project-view active">
+      <div class="reveal" style="text-align:center;margin-bottom:var(--space-12)">
+        <p class="section__eyebrow" style="justify-content:center">Réalisations</p>
+        <h2 class="section__title" id="projects-heading" style="font-size:var(--text-xl)">Projet Phare</h2>
+        <p style="color:var(--color-text-muted); max-width: 700px; margin: var(--space-4) auto 0;">
+          L'architecture complète d'une plateforme d'hébergement moderne, de l'infrastructure physique à l'application.
+        </p>
+      </div>
+
+      <div class="projects__grid reveal">
+        <div class="project-card" data-project-link="devops-infra">
+          <div class="project-card__title">Infrastructure DevSecOps Autogérée</div>
+          <p class="project-card__desc">
+            Plateforme Kubernetes (K3s) résiliente sur Proxmox, hautement sécurisée (Vault, Cloudflare) et entièrement
+            automatisée via GitOps.
+          </p>
+          <div class="panel__badges" style="margin-top: auto;">
+            <span class="badge badge-accent">DevSecOps</span>
+            <span class="badge badge-accent">K3s</span>
+            <span class="badge">IaC / GitOps</span>
           </div>
+          <button class="btn btn-outline" style="margin-top: var(--space-4); width: fit-content;">
+            Exploration par phases
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"
+              style="margin-left: 8px;">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
 
-          <div class="projects__grid reveal">
-            <div class="project-card" data-project-link="devops-infra">
-              <div class="project-card__title">Infrastructure DevSecOps Autogérée</div>
-              <p class="project-card__desc">
-                Plateforme Kubernetes (K3s) résiliente sur Proxmox, hautement sécurisée (Vault, Cloudflare) et entièrement automatisée via GitOps.
-              </p>
-              <div class="panel__badges" style="margin-top: auto;">
-                <span class="badge badge-accent">DevSecOps</span>
-                <span class="badge badge-accent">K3s</span>
-                <span class="badge">IaC / GitOps</span>
-              </div>
-              <button class="btn btn-outline" style="margin-top: var(--space-4); width: fit-content;">
-                Exploration par phases
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="margin-left: 8px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </button>
-            </div>
+    <!-- VUE 2 : DÉTAIL DU PROJET -->
+    <div id="devops-infra" class="project-view">
+      <header class="project-detail__header" style="margin-bottom: var(--space-8);">
+        <button class="back-btn" data-back-to-grid>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Retour à la liste
+        </button>
+        <div class="reveal">
+          <h2 class="section__title" style="font-size:var(--text-xl); text-align: left; margin: 0;">Infrastructure
+            DevSecOps Autogérée</h2>
+          <div class="project-detail__meta"
+            style="display: flex; gap: var(--space-4); margin-top: var(--space-2); font-size: var(--text-sm); color: var(--color-text-muted);">
+            <span style="display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg> On-Premise (Proxmox VE)</span>
+            <span style="display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg> Janv. 2024</span>
           </div>
         </div>
+      </header>
 
-        <!-- VUE 2 : DÉTAIL DU PROJET -->
-        <div id="devops-infra" class="project-view">
-          <header class="project-detail__header" style="margin-bottom: var(--space-8);">
-            <button class="back-btn" data-back-to-grid>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-              Retour à la liste
-            </button>
-            <div class="reveal">
-              <h2 class="section__title" style="font-size:var(--text-xl); text-align: left; margin: 0;">Infrastructure DevSecOps Autogérée</h2>
-              <div class="project-detail__meta" style="display: flex; gap: var(--space-4); margin-top: var(--space-2); font-size: var(--text-sm); color: var(--color-text-muted);">
-                <span style="display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> On-Premise (Proxmox VE)</span>
-                <span style="display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Janv. 2024</span>
-              </div>
-            </div>
-          </header>
+      <div class="projects__layout reveal">
+        <nav class="projects__sidebar" aria-label="Phases du projet">
+          <div class="projects__sidebar-header"
+            style="font-weight: 700; color: var(--color-primary); letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; margin-bottom: var(--space-4);">
+            Cycle de vie</div>
+          <button class="project-tab active" data-target="proj-1" aria-selected="true" role="tab">
+            <div class="project-tab__num">Phase 01</div>
+            <div class="project-tab__name" style="font-weight: 600;">Infra-Bootstrap</div>
+            <div class="project-tab__desc" style="font-size: 11px; opacity: 0.7;">Provisioning &amp; Secrets</div>
+          </button>
+          <button class="project-tab" data-target="proj-2" aria-selected="false" role="tab">
+            <div class="project-tab__num">Phase 02</div>
+            <div class="project-tab__name" style="font-weight: 600;">Plateforme IaC</div>
+            <div class="project-tab__desc" style="font-size: 11px; opacity: 0.7;">K3s &amp; GitOps HA</div>
+          </button>
+          <button class="project-tab" data-target="proj-3" aria-selected="false" role="tab">
+            <div class="project-tab__num">Phase 03</div>
+            <div class="project-tab__name" style="font-weight: 600;">App-WordPress</div>
+            <div class="project-tab__desc" style="font-size: 11px; opacity: 0.7;">CI/CD &amp; Livraison</div>
+          </button>
+        </nav>
 
-          <div class="projects__layout reveal">
-            <nav class="projects__sidebar" aria-label="Phases du projet">
-              <div class="projects__sidebar-header" style="font-weight: 700; color: var(--color-primary); letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; margin-bottom: var(--space-4);">Cycle de vie</div>
-              <button class="project-tab active" data-target="proj-1" aria-selected="true" role="tab">
-                <div class="project-tab__num">Phase 01</div>
-                <div class="project-tab__name" style="font-weight: 600;">Infra-Bootstrap</div>
-                <div class="project-tab__desc" style="font-size: 11px; opacity: 0.7;">Provisioning &amp; Secrets</div>
-              </button>
-              <button class="project-tab" data-target="proj-2" aria-selected="false" role="tab">
-                <div class="project-tab__num">Phase 02</div>
-                <div class="project-tab__name" style="font-weight: 600;">Plateforme IaC</div>
-                <div class="project-tab__desc" style="font-size: 11px; opacity: 0.7;">K3s &amp; GitOps HA</div>
-              </button>
-              <button class="project-tab" data-target="proj-3" aria-selected="false" role="tab">
-                <div class="project-tab__num">Phase 03</div>
-                <div class="project-tab__name" style="font-weight: 600;">App-WordPress</div>
-                <div class="project-tab__desc" style="font-size: 11px; opacity: 0.7;">CI/CD &amp; Livraison</div>
-              </button>
-            </nav>
+        <div role="tabpanel">
+          <!-- PHASE 01 : BOOTSTRAP -->
+          <article class="project-panel active" id="proj-1">
 
-            <div role="tabpanel">
-              <!-- PHASE 01 : BOOTSTRAP -->
-              <article class="project-panel active" id="proj-1">
-
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      INTRO + COMPOSANTS
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <div class="panel__tag">Provisioning Immuable &amp; Core</div>
-                  <h3 class="panel__title">Socle Infrastructure : Vault, Bastion &amp; GitLab Runner</h3>
-                  <p class="panel__text">
-                    La phase 01 installe les fondations sur lesquelles toutes les autres phases reposent. Sans elle, aucune pipeline CI/CD ne peut s'exécuter, aucun secret ne peut être injecté, aucun accès réseau ne peut être établi. L'ordre de déploiement est strict : GitLab Runner (LXC) → Vault (VM) → Bastion Tailscale (LXC) → enregistrement Runner. Tout est rejouable via <code>scripts/deploy_all.sh</code>.
-                  </p>
+            <div class="panel__section">
+              <div class="panel__tag">Provisioning Immuable &amp; Core</div>
+              <h3 class="panel__title">Socle Infrastructure : Vault, Bastion &amp; GitLab Runner</h3>
+              <p class="panel__text">
+                La phase 01 installe les fondations sur lesquelles toutes les autres phases reposent. Sans elle, aucune
+                pipeline CI/CD ne peut s'exécuter, aucun secret ne peut être injecté, aucun accès réseau ne peut être
+                établi. L'ordre de déploiement est strict : GitLab Runner (LXC) → Vault (VM) → Bastion Tailscale (LXC) →
+                enregistrement Runner. Tout est rejouable via <code>scripts/deploy_all.sh</code>.
+              </p>
 
-                  <div class="technical-grid" style="margin-top:var(--space-6)">
-                    <div>
-                      <h4 class="block-title">Composants &amp; responsabilités</h4>
-                      <ul class="tech-list">
-                        <li><strong>GitLab Runner LXC (Docker Executor)</strong><span style="display:block;opacity:.8;margin-top:4px">Conteneur LXC non-privilégié avec <code>nesting: true</code> pour Docker-in-LXC. Double interface réseau (eth0 Internet + eth1 vmbr2). Concurrence = 4 jobs parallèles. S'auto-enregistre via le token extrait de Vault.</span></li>
-                        <li><strong>HashiCorp Vault (VM QEMU Cloud-init)</strong><span style="display:block;opacity:.8;margin-top:4px">VM Ubuntu 22.04 full-clone. TLS auto-signé via OpenSSL (SAN IP). Stockage fichier sur <code>/opt/vault/data</code>. Moteur JWT/OIDC lié à GitLab.com. KV v2 : <code>secret/projet_devops</code> contient 17+ secrets.</span></li>
-                        <li><strong>Bastion Tailscale LXC (Subnet Router)</strong><span style="display:block;opacity:.8;margin-top:4px">LXC ultra-léger (1 vCPU / 512 Mo). Module TUN configuré au niveau Proxmox via <code>/etc/pve/lxc/VMID.conf</code>. Annonce le sous-réseau <code>10.0.1.0/24</code> dans le réseau Tailscale. IP Forwarding activé.</span></li>
-                        <li><strong>Scripts d'orchestration (Bash)</strong><span style="display:block;opacity:.8;margin-top:4px"><code>deploy_all.sh</code> : 6 étapes séquentielles. <code>load_env.sh</code> : sourcage compatible bash/zsh du fichier <code>.env</code>. <code>destroy_all.sh</code> : destruction avec mode auto-approve paramétrable.</span></li>
-                      </ul>
-                    </div>
-                    <div class="diagram-container">
-                      <img src="assets/phase1.svg" alt="Architecture Bootstrap : Vault, Runner, Bastion" class="zoomable" style="width:100%;height:auto;border-radius:8px">
-                    </div>
-                  </div>
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Composants &amp; responsabilités</h4>
+                  <ul class="tech-list">
+                    <li><strong>GitLab Runner LXC (Docker Executor)</strong><span
+                        style="display:block;opacity:.8;margin-top:4px">Conteneur LXC non-privilégié avec
+                        <code>nesting: true</code> pour Docker-in-LXC. Double interface réseau (eth0 Internet + eth1
+                        vmbr2). Concurrence = 4 jobs parallèles. S'auto-enregistre via le token extrait de Vault.</span>
+                    </li>
+                    <li><strong>HashiCorp Vault (VM QEMU Cloud-init)</strong><span
+                        style="display:block;opacity:.8;margin-top:4px">VM Ubuntu 22.04 full-clone. TLS auto-signé via
+                        OpenSSL (SAN IP). Stockage fichier sur <code>/opt/vault/data</code>. Moteur JWT/OIDC lié à
+                        GitLab.com. KV v2 : <code>secret/projet_devops</code> contient 17+ secrets.</span></li>
+                    <li><strong>Bastion Tailscale LXC (Subnet Router)</strong><span
+                        style="display:block;opacity:.8;margin-top:4px">LXC ultra-léger (1 vCPU / 512 Mo). Module TUN
+                        configuré au niveau Proxmox via <code>/etc/pve/lxc/VMID.conf</code>. Annonce le sous-réseau
+                        <code>10.0.1.0/24</code> dans le réseau Tailscale. IP Forwarding activé.</span></li>
+                    <li><strong>Scripts d'orchestration (Bash)</strong><span
+                        style="display:block;opacity:.8;margin-top:4px"><code>deploy_all.sh</code> : 6 étapes
+                        séquentielles. <code>load_env.sh</code> : sourcage compatible bash/zsh du fichier
+                        <code>.env</code>. <code>destroy_all.sh</code> : destruction avec mode auto-approve
+                        paramétrable.</span></li>
+                  </ul>
                 </div>
+                <div class="diagram-container">
+                  <img src="assets/phase1.svg" alt="Architecture Bootstrap : Vault, Runner, Bastion" class="zoomable"
+                    style="width:100%;height:auto;border-radius:8px">
+                </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      ARBORESCENCE COMPLÈTE
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title" style="display:flex;align-items:center;gap:8px">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-                    Arborescence complète du dépôt infra-bootstrap
-                  </h4>
-                  <div class="code-block" style="background:rgba(0,0,0,.05);padding:var(--space-6)">
-<pre style="font-size:10px;color:var(--color-text);line-height:1.5"><code><span style="color:var(--color-primary);font-weight:700">infra-bootstrap/</span>
+            <div class="panel__section">
+              <h4 class="block-title" style="display:flex;align-items:center;gap:8px">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                </svg>
+                Arborescence complète du dépôt infra-bootstrap
+              </h4>
+              <div class="code-block" style="background:rgba(0,0,0,.05);padding:var(--space-6)">
+                <pre
+                  style="font-size:10px;color:var(--color-text);line-height:1.5"><code><span style="color:var(--color-primary);font-weight:700">infra-bootstrap/</span>
 ├── .env                     <span style="opacity:.5">(secrets locaux — chargés par load_env.sh, JAMAIS commité)</span>
 ├── .env.example             <span style="opacity:.5">(template de référence avec toutes les clés requises)</span>
 ├── .gitignore               <span style="opacity:.5">(.env, ssh_keys/, tfstate, vault_init_keys.json)</span>
@@ -140,21 +183,24 @@
 └── <span style="color:var(--color-primary)">ssh_keys/</span>
     ├── id_rsa               <span style="opacity:.5">(clé privée — utilisée par Terraform + Ansible)</span>
     └── id_rsa.pub           <span style="opacity:.5">(injectée dans cloud-init et LXC via ssh_public_keys)</span></code></pre>
-                  </div>
-                </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION I — ORCHESTRATION SCRIPTS
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">I. Orchestration — deploy_all.sh (6 étapes séquentielles)</h4>
-                  <p class="panel__text">Le déploiement complet est rejouable en une seule commande. L'ordre est intentionnel : Terraform crée les ressources, puis Ansible configure dans le bon ordre de dépendance.</p>
+            <div class="panel__section">
+              <h4 class="block-title">I. Orchestration — deploy_all.sh (6 étapes séquentielles)</h4>
+              <p class="panel__text">Le déploiement complet est rejouable en une seule commande. L'ordre est
+                intentionnel : Terraform crée les ressources, puis Ansible configure dans le bon ordre de dépendance.
+              </p>
 
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">deploy_all.sh — Séquence</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-bash">#!/bin/bash
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">deploy_all.sh
+                    — Séquence</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-bash">#!/bin/bash
 set -e   <span style="color:var(--color-primary);opacity:.7"># stop immédiat en cas d'erreur</span>
 
 <span style="color:var(--color-primary);opacity:.7"># [1/6] Charge le .env (bash/zsh compatible)</span>
@@ -174,12 +220,13 @@ ansible-playbook -i inventory.yml runner.yml
 
 <span style="color:var(--color-primary);opacity:.7"># [6/6] Copie cert Vault sur le Runner (tag cert)</span>
 ansible-playbook -i inventory.yml runner.yml --tags cert</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">load_env.sh — Sourcage universel</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Compatible bash et zsh (détecte automatiquement le shell)</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">load_env.sh —
+                    Sourcage universel</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Compatible bash et zsh (détecte automatiquement le shell)</span>
 if [ -n "$BASH_SOURCE" ]; then
     SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 elif [ -n "$ZSH_VERSION" ]; then
@@ -188,41 +235,47 @@ fi
 
 <span style="color:var(--color-primary);opacity:.7"># set -a : exporte toutes les variables du .env</span>
 set -a && source "$ENV_FILE" && set +a</code></pre>
-                      </div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700;margin-top:var(--space-4)">destroy_all.sh — Mode sécurisé</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Mode interactif par défaut, auto-approve optionnel</span>
+                  </div>
+                  <h5
+                    style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700;margin-top:var(--space-4)">
+                    destroy_all.sh — Mode sécurisé</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Mode interactif par défaut, auto-approve optionnel</span>
 if [ "${TF_DESTROY_AUTO_APPROVE:-}" = "1" ]; then
   terraform destroy -parallelism=1 -auto-approve
 else
   terraform destroy -parallelism=1  <span style="color:var(--color-primary);opacity:.7"># confirmation manuelle</span>
 fi</code></pre>
-                      </div>
-                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION II — TERRAFORM
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">II. Provisioning Proxmox (Terraform) — 2 LXC + 1 VM</h4>
-                  <p class="panel__text">Terraform provisionne 3 ressources avec des types différents selon les besoins : LXC pour la légèreté des services, VM QEMU complète pour Vault (isolation maximale des secrets). L'inventaire Ansible est généré automatiquement à la fin.</p>
+            <div class="panel__section">
+              <h4 class="block-title">II. Provisioning Proxmox (Terraform) — 2 LXC + 1 VM</h4>
+              <p class="panel__text">Terraform provisionne 3 ressources avec des types différents selon les besoins :
+                LXC pour la légèreté des services, VM QEMU complète pour Vault (isolation maximale des secrets).
+                L'inventaire Ansible est généré automatiquement à la fin.</p>
 
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Tableau des ressources</h5>
-                      <div class="code-block">
-<pre style="font-size:10px;line-height:1.8"><code><span style="color:var(--color-primary)">Ressource</span>           <span style="color:var(--color-primary)">Type</span>    <span style="color:var(--color-primary)">CPU</span>  <span style="color:var(--color-primary)">RAM</span>   <span style="color:var(--color-primary)">Disque</span>  <span style="color:var(--color-primary)">IP</span>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Tableau des
+                    ressources</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px;line-height:1.8"><code><span style="color:var(--color-primary)">Ressource</span>           <span style="color:var(--color-primary)">Type</span>    <span style="color:var(--color-primary)">CPU</span>  <span style="color:var(--color-primary)">RAM</span>   <span style="color:var(--color-primary)">Disque</span>  <span style="color:var(--color-primary)">IP</span>
 gitlab-runner-tf-01  LXC     var  var   8G      10.0.1.7
 server-vault-01      VM QEMU 2c   4 Go  30 Go   10.0.1.150
 bastion-tailscale    LXC     1c   512M  4G      10.0.1.5</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Réseau du Runner — Double NIC</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-hcl"><span style="color:var(--color-primary);opacity:.7"># eth0 — accès Internet (build Docker, download packages)</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Réseau du
+                    Runner — Double NIC</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-hcl"><span style="color:var(--color-primary);opacity:.7"># eth0 — accès Internet (build Docker, download packages)</span>
 network {
   name   = "eth0"
   bridge = var.runner_net0_bridge <span style="color:var(--color-primary);opacity:.7"># vmbr0</span>
@@ -234,16 +287,17 @@ network {
   bridge = var.runner_net1_bridge <span style="color:var(--color-primary);opacity:.7"># vmbr2</span>
   ip     = var.runner_net1_ip
 }</code></pre>
-                      </div>
-                    </div>
                   </div>
+                </div>
+              </div>
 
-                  <div style="margin-top:var(--space-4)">
-                    <div class="technical-grid">
-                      <div>
-                        <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">LXC Runner — nesting Docker-in-LXC</h5>
-                        <div class="code-block">
-<pre style="font-size:10px"><code class="language-hcl">resource "proxmox_lxc" "gitlab_runner" {
+              <div style="margin-top:var(--space-4)">
+                <div class="technical-grid">
+                  <div>
+                    <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">LXC Runner —
+                      nesting Docker-in-LXC</h5>
+                    <div class="code-block">
+                      <pre style="font-size:10px"><code class="language-hcl">resource "proxmox_lxc" "gitlab_runner" {
   vmid         = var.runner_vmid
   hostname     = var.runner_hostname
   unprivileged = true     <span style="color:var(--color-primary);opacity:.7"># sécurité</span>
@@ -256,12 +310,13 @@ network {
 
   ssh_public_keys = file("../ssh_keys/id_rsa.pub")
 }</code></pre>
-                        </div>
-                      </div>
-                      <div>
-                        <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">VM Vault — Cloud-init full clone</h5>
-                        <div class="code-block">
-<pre style="font-size:10px"><code class="language-hcl">resource "proxmox_vm_qemu" "server-vault-01" {
+                    </div>
+                  </div>
+                  <div>
+                    <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">VM Vault —
+                      Cloud-init full clone</h5>
+                    <div class="code-block">
+                      <pre style="font-size:10px"><code class="language-hcl">resource "proxmox_vm_qemu" "server-vault-01" {
   depends_on = [proxmox_lxc.gitlab_runner]
   clone      = "ubuntu-2204-template"
   full_clone = true
@@ -272,15 +327,16 @@ network {
   ipconfig0  = "ip=${var.vault_ip}/${var.vault_mask}"
   sshkeys    = file("../ssh_keys/id_rsa.pub")
 }</code></pre>
-                        </div>
-                      </div>
                     </div>
                   </div>
+                </div>
+              </div>
 
-                  <div style="margin-top:var(--space-4)">
-                    <h5 style="color:var(--color-text);font-size:12px;margin-bottom:8px;font-weight:600">Génération automatique de l'inventaire Ansible</h5>
-                    <div class="code-block">
-<pre style="font-size:10px"><code class="language-hcl"><span style="color:var(--color-primary);opacity:.7"># Après terraform apply → ansible/inventory.yml créé avec IPs dynamiques</span>
+              <div style="margin-top:var(--space-4)">
+                <h5 style="color:var(--color-text);font-size:12px;margin-bottom:8px;font-weight:600">Génération
+                  automatique de l'inventaire Ansible</h5>
+                <div class="code-block">
+                  <pre style="font-size:10px"><code class="language-hcl"><span style="color:var(--color-primary);opacity:.7"># Après terraform apply → ansible/inventory.yml créé avec IPs dynamiques</span>
 resource "local_file" "ansible_inventory" {
   content = templatefile("${path.module}/templates/inventory.yml.tmpl", {
     runner_hostname           = var.runner_hostname
@@ -297,34 +353,38 @@ resource "local_file" "ansible_inventory" {
 
 <span style="color:var(--color-primary);opacity:.7"># ProxyJump automatique via Bastion pour atteindre le réseau interne</span>
 ansible_ssh_common_args = "-o ProxyJump=${var.ansible_ssh_bastion}"</code></pre>
-                    </div>
-                  </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION III — VAULT
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">III. HashiCorp Vault — TLS + Init + JWT + KV Injection</h4>
-                  <p class="panel__text">Le playbook <code>vault.yml</code> (296 lignes) est le plus critique de la phase 01. Il transforme une VM vierge en gestionnaire de secrets sécurisé, auto-signé, initialisé et configuré pour l'authentification GitLab JWT — sans aucune intervention manuelle.</p>
+            <div class="panel__section">
+              <h4 class="block-title">III. HashiCorp Vault — TLS + Init + JWT + KV Injection</h4>
+              <p class="panel__text">Le playbook <code>vault.yml</code> (296 lignes) est le plus critique de la phase
+                01. Il transforme une VM vierge en gestionnaire de secrets sécurisé, auto-signé, initialisé et configuré
+                pour l'authentification GitLab JWT — sans aucune intervention manuelle.</p>
 
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Étape 1/4 — TLS Auto-signé (SAN IP)</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Certificat avec Subject Alternative Name (IP)</span>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Étape 1/4 —
+                    TLS Auto-signé (SAN IP)</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Certificat avec Subject Alternative Name (IP)</span>
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
   -keyout /etc/vault.d/tls/vault.key \
   -out    /etc/vault.d/tls/vault.crt \
   -subj   "/C=FR/ST=Paris/O=DevOps/CN={{ ansible_host }}" \
   -addext "subjectAltName=IP:{{ ansible_host }},IP:127.0.0.1"
 <span style="color:var(--color-primary);opacity:.7"># Propriétaire : user vault, mode 0600</span></code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">vault.hcl — Configuration HTTPS</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-hcl">ui = true
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">vault.hcl —
+                    Configuration HTTPS</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-hcl">ui = true
 disable_mlock = true
 
 storage "file" {
@@ -337,16 +397,17 @@ listener "tcp" {
   tls_cert_file = "/etc/vault.d/tls/vault.crt"
   tls_key_file  = "/etc/vault.d/tls/vault.key"
 }</code></pre>
-                      </div>
-                    </div>
                   </div>
+                </div>
+              </div>
 
-                  <div style="margin-top:var(--space-4)">
-                    <div class="technical-grid">
-                      <div>
-                        <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Étape 2/4 — Init + Unseal (idempotent)</h5>
-                        <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Vérifie si déjà initialisé avant de réinitialiser</span>
+              <div style="margin-top:var(--space-4)">
+                <div class="technical-grid">
+                  <div>
+                    <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Étape 2/4 —
+                      Init + Unseal (idempotent)</h5>
+                    <div class="code-block">
+                      <pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Vérifie si déjà initialisé avant de réinitialiser</span>
 - shell: vault status -format=json || true
   register: vault_status_raw
 - set_fact:
@@ -366,12 +427,13 @@ listener "tcp" {
 <span style="color:var(--color-primary);opacity:.7"># Unseal automatique</span>
 - shell: vault operator unseal {{ unseal_key }}
   when: vault_status.sealed</code></pre>
-                        </div>
-                      </div>
-                      <div>
-                        <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Étape 3/4 — JWT GitLab + Politique</h5>
-                        <div class="code-block">
-<pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Moteur KV v2</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Étape 3/4 —
+                      JWT GitLab + Politique</h5>
+                    <div class="code-block">
+                      <pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Moteur KV v2</span>
 vault secrets enable -path=secret kv-v2
 
 <span style="color:var(--color-primary);opacity:.7"># Auth JWT liée à gitlab.com (OIDC discovery)</span>
@@ -392,15 +454,16 @@ vault write auth/jwt/role/gitlab-iac-role \
   role_type="jwt" \
   token_explicit_max_ttl=600 \
   bound_claims='{"namespace_id": [...]}'</code></pre>
-                        </div>
-                      </div>
                     </div>
                   </div>
+                </div>
+              </div>
 
-                  <div style="margin-top:var(--space-4)">
-                    <h5 style="color:var(--color-text);font-size:12px;margin-bottom:8px;font-weight:600">Étape 4/4 — Injection KV : tous les secrets depuis .env + clés SSH</h5>
-                    <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Lecture du .env local → dictionnaire Python</span>
+              <div style="margin-top:var(--space-4)">
+                <h5 style="color:var(--color-text);font-size:12px;margin-bottom:8px;font-weight:600">Étape 4/4 —
+                  Injection KV : tous les secrets depuis .env + clés SSH</h5>
+                <div class="code-block">
+                  <pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Lecture du .env local → dictionnaire Python</span>
 - set_fact:
     env_dict: "{{ env_dict | combine({ item.0: item.1 }) }}"
   loop: "{{ lookup('file', '../.env') | regex_findall('^([^\\n#=]+)=(.*)', multiline=True) }}"
@@ -421,27 +484,31 @@ vault write auth/jwt/role/gitlab-iac-role \
     src: /etc/vault.d/tls/vault.crt
     dest: "../vault-ca.crt"
     flat: yes</code></pre>
-                    </div>
-                  </div>
-                  <div style="margin-top:var(--space-4)">
-                    <div class="screenshot-placeholder zoomable">
-                      📸 Vault UI — Interface KV v2 sur <code>secret/projet_devops</code> (HTTPS :8200)
-                    </div>
-                  </div>
                 </div>
+              </div>
+              <div style="margin-top:var(--space-4)">
+                <div class="pipeline-images">
+                  <img src="assets/vault.png" alt="Vault UI KV Engine" class="zoomable"
+                    style="width:100%;height:auto;border-radius:8px">
+                </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION IV — BASTION TAILSCALE
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">IV. Bastion Tailscale — Subnet Router &amp; Accès Zero-Trust</h4>
-                  <p class="panel__text">Le bastion est un LXC ultra-léger qui annonce tout le sous-réseau Proxmox (<code>10.0.1.0/24</code>) dans le mesh Tailscale. Depuis un PC admin authentifié sur Tailscale, l'accès SSH direct à toutes les VMs du réseau interne est immédiat — sans VPN, sans port ouvert.</p>
+            <div class="panel__section">
+              <h4 class="block-title">IV. Bastion Tailscale — Subnet Router &amp; Accès Zero-Trust</h4>
+              <p class="panel__text">Le bastion est un LXC ultra-léger qui annonce tout le sous-réseau Proxmox
+                (<code>10.0.1.0/24</code>) dans le mesh Tailscale. Depuis un PC admin authentifié sur Tailscale, l'accès
+                SSH direct à toutes les VMs du réseau interne est immédiat — sans VPN, sans port ouvert.</p>
 
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Configuration TUN au niveau Proxmox</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Tailscale en LXC nécessite le device TUN</span>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Configuration
+                    TUN au niveau Proxmox</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Tailscale en LXC nécessite le device TUN</span>
 <span style="color:var(--color-primary);opacity:.7"># Ansible modifie /etc/pve/lxc/VMID.conf sur l'hôte Proxmox</span>
 - ansible.builtin.blockinfile:
     path: "/etc/pve/lxc/{{ vmid }}.conf"
@@ -454,12 +521,14 @@ vault write auth/jwt/role/gitlab-iac-role \
 - shell: "pct stop {{ vmid }} && pct start {{ vmid }}"
   delegate_to: "{{ proxmox_host }}"
   when: lxc_config_change.changed</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Tailscale Subnet Router</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Activation IP Forwarding (prérequis Subnet Router)</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Tailscale
+                    Subnet Router</h5>
+                  <div class="code-block">
+                    <pre
+                      style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Activation IP Forwarding (prérequis Subnet Router)</span>
 - sysctl:
     name: net.ipv4.ip_forward
     value: '1'
@@ -472,12 +541,12 @@ vault write auth/jwt/role/gitlab-iac-role \
       --authkey {{ tailscale_key }} \
       --advertise-routes={{ tailscale_advertised_routes }}
 <span style="color:var(--color-primary);opacity:.7"># Route annoncée : 10.0.1.0/24 (tout le réseau Proxmox)</span></code></pre>
-                      </div>
-                    </div>
                   </div>
-                  <div style="margin-top:var(--space-4)">
-                    <div class="code-block" style="background:transparent;border:none;padding:0">
-<pre style="font-size:11px;color:var(--color-primary)"><code>Flux d'accès administrateur :
+                </div>
+              </div>
+              <div style="margin-top:var(--space-4)">
+                <div class="code-block" style="background:transparent;border:none;padding:0">
+                  <pre style="font-size:11px;color:var(--color-primary)"><code>Flux d'accès administrateur :
   [Admin PC] ──Tailscale 100.x──▶ [bastion-tailscale LXC]
                                           │
                              ip_forward + advertise-routes
@@ -488,22 +557,25 @@ vault write auth/jwt/role/gitlab-iac-role \
                                           │
                                      10.0.2.x (vmbr2)
                                  K3s, MariaDB, MinIO...</code></pre>
-                    </div>
-                  </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION V — GITLAB RUNNER
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">V. GitLab Runner — Docker Executor + Enregistrement Vault</h4>
-                  <p class="panel__text">Le runner récupère ses propres credentials depuis Vault avant de s'installer, ce qui crée une boucle d'amorçage propre : Vault → Runner → Pipeline → Vault. La concurrence est réglée à 4 pour absorber les pics de parallélisme du DAG.</p>
+            <div class="panel__section">
+              <h4 class="block-title">V. GitLab Runner — Docker Executor + Enregistrement Vault</h4>
+              <p class="panel__text">Le runner récupère ses propres credentials depuis Vault avant de s'installer, ce
+                qui crée une boucle d'amorçage propre : Vault → Runner → Pipeline → Vault. La concurrence est réglée à 4
+                pour absorber les pics de parallélisme du DAG.</p>
 
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Fetch secrets depuis Vault (runner.yml)</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Lit le root_token depuis vault_init_keys.json local</span>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Fetch secrets
+                    depuis Vault (runner.yml)</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Lit le root_token depuis vault_init_keys.json local</span>
 - set_fact:
     vault_keys: "{{ lookup('file', 'vault_init_keys.json') | from_json }}"
   delegate_to: localhost
@@ -524,12 +596,13 @@ vault write auth/jwt/role/gitlab-iac-role \
     gitlab_runner_token: "{{ vault_secrets.json.data.data.GITLAB_RUNNER_TOKEN }}"
     tailscale_key:       "{{ vault_secrets.json.data.data.TAILSCALE_KEY }}"
   no_log: true</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Installation + Enregistrement Docker</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Docker depuis les dépôts Ubuntu</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Installation +
+                    Enregistrement Docker</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Docker depuis les dépôts Ubuntu</span>
 - apt:
     name: [ca-certificates, curl, docker.io]
     state: present
@@ -552,14 +625,16 @@ vault write auth/jwt/role/gitlab-iac-role \
     path: /etc/gitlab-runner/config.toml
     regexp: '^concurrent\s*='
     line: 'concurrent = 4'</code></pre>
-                      </div>
-                    </div>
                   </div>
+                </div>
+              </div>
 
-                  <div style="margin-top:var(--space-4)">
-                    <h5 style="color:var(--color-text);font-size:12px;margin-bottom:8px;font-weight:600">Copie du certificat Vault sur le Runner (tag cert)</h5>
-                    <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Vérifie si vault-ca.crt existe localement</span>
+              <div style="margin-top:var(--space-4)">
+                <h5 style="color:var(--color-text);font-size:12px;margin-bottom:8px;font-weight:600">Copie du certificat
+                  Vault sur le Runner (tag cert)</h5>
+                <div class="code-block">
+                  <pre
+                    style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Vérifie si vault-ca.crt existe localement</span>
 - ansible.builtin.stat:
     path: "{{ inventory_dir }}/../vault-ca.crt"
   delegate_to: localhost
@@ -577,26 +652,30 @@ vault write auth/jwt/role/gitlab-iac-role \
 
 <span style="color:var(--color-primary);opacity:.7"># --docker-volumes "/etc/ssl/certs:/etc/ssl/certs:ro"</span>
 <span style="color:var(--color-primary);opacity:.7"># → Chaque job Docker hérite du cert Vault automatiquement</span></code></pre>
-                    </div>
-                  </div>
-                  <div style="margin-top:var(--space-4)">
-                    <div class="screenshot-placeholder zoomable">
-                      📸 GitLab — Runner enregistré (tag: proxmox, status: online, docker executor)
-                    </div>
-                  </div>
                 </div>
+              </div>
+              <div style="margin-top:var(--space-4)">
+                <div class="pipeline-images">
+                  <img src="assets/runner.jpg" alt="GitLab Runner Status" class="zoomable"
+                    style="width:100%;height:auto;border-radius:8px">
+                </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION VI — FLUX DE SECURITE
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">VI. Flux de Sécurité — Zero-Trust &amp; Secret Management</h4>
-                  <p class="panel__text">Aucun secret n'est stocké dans GitLab ou dans le code. La chaîne de confiance s'établit du déploiement initial (Ansible + .env local) jusqu'aux jobs CI (JWT OIDC) sans jamais exposer de valeur sensible.</p>
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Bootstrap : chaîne de confiance</h5>
-                      <div class="code-block" style="background:transparent;border:none;padding:0">
-<pre style="font-size:11px;color:var(--color-primary)"><code>Phase bootstrap (une seule fois) :
+            <div class="panel__section">
+              <h4 class="block-title">VI. Flux de Sécurité — Zero-Trust &amp; Secret Management</h4>
+              <p class="panel__text">Aucun secret n'est stocké dans GitLab ou dans le code. La chaîne de confiance
+                s'établit du déploiement initial (Ansible + .env local) jusqu'aux jobs CI (JWT OIDC) sans jamais exposer
+                de valeur sensible.</p>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Bootstrap :
+                    chaîne de confiance</h5>
+                  <div class="code-block" style="background:transparent;border:none;padding:0">
+                    <pre style="font-size:11px;color:var(--color-primary)"><code>Phase bootstrap (une seule fois) :
   .env local
       ↓ load_env.sh (set -a / source)
   Terraform (variables TF_VAR_*)
@@ -610,12 +689,13 @@ vault write auth/jwt/role/gitlab-iac-role \
   Runner : /etc/ssl/certs/vault-ca.crt
       ↓ config.toml volumes:ro
   Chaque job Docker hérite du cert</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">CI/CD : authentification JWT OIDC</h5>
-                      <div class="code-block" style="background:transparent;border:none;padding:0">
-<pre style="font-size:11px;color:var(--color-primary)"><code>Chaque job pipeline IaC :
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">CI/CD :
+                    authentification JWT OIDC</h5>
+                  <div class="code-block" style="background:transparent;border:none;padding:0">
+                    <pre style="font-size:11px;color:var(--color-primary)"><code>Chaque job pipeline IaC :
   GitLab génère JWT signé
       ↓ POST /v1/auth/jwt/login
   Vault vérifie bound_claims
@@ -628,65 +708,100 @@ vault write auth/jwt/role/gitlab-iac-role \
   Ansible exécute les playbooks
       ↓ aucune valeur dans les logs
   no_log: true sur les tâches sensibles</code></pre>
-                      </div>
-                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- GITHUB LINK -->
-                <div class="panel__section" style="border-top:1px solid var(--color-border-subtle);padding-top:var(--space-8);display:flex;flex-direction:column;align-items:center;text-align:center">
-                  <h4 class="block-title" style="margin-bottom:var(--space-4)">Explorer le code source</h4>
-                  <p class="panel__text" style="max-width:500px;margin-bottom:var(--space-6)">L'intégralité du code Terraform (3 ressources), des playbooks Ansible (3 fichiers, 561 lignes) et des scripts d'orchestration est disponible en open-source.</p>
-                  <a href="https://github.com/azarqane/infra-bootstrap-wordpress-" target="_blank" class="btn btn-outline" style="display:inline-flex;align-items:center;gap:10px;border-radius:50px">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58V22"></path></svg>
-                    Consulter le dépôt infra-bootstrap
-                  </a>
-                </div>
-              </article>
+            <!-- GITHUB LINK -->
+            <div class="panel__section"
+              style="border-top:1px solid var(--color-border-subtle);padding-top:var(--space-8);display:flex;flex-direction:column;align-items:center;text-align:center">
+              <h4 class="block-title" style="margin-bottom:var(--space-4)">Explorer le code source</h4>
+              <p class="panel__text" style="max-width:500px;margin-bottom:var(--space-6)">L'intégralité du code
+                Terraform (3 ressources), des playbooks Ansible (3 fichiers, 561 lignes) et des scripts d'orchestration
+                est disponible en open-source.</p>
+              <a href="https://github.com/azarqane/infra-bootstrap-wordpress-" target="_blank" class="btn btn-outline"
+                style="display:inline-flex;align-items:center;gap:10px;border-radius:50px">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58V22">
+                  </path>
+                </svg>
+                Consulter le dépôt infra-bootstrap
+              </a>
+            </div>
+          </article>
 
 
-              <!-- PHASE 02 : IaC & K3s -->
-              <article class="project-panel" id="proj-2">
+          <!-- PHASE 02 : IaC & K3s -->
+          <article class="project-panel" id="proj-2">
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      INTRO + COMPOSANTS
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <div class="panel__tag">Orchestration &amp; Haute Disponibilité</div>
-                  <h3 class="panel__title">Plateforme IaC : Cluster K3s &amp; GitOps</h3>
-                  <p class="panel__text">
-                    La phase 02 transforme l'infrastructure brute en une plateforme CaaS (Container as a Service) entièrement auto-réparante. Chaque composant — du provisioning VM au tunnel Cloudflare, en passant par les politiques de backup et la restauration — est versionné dans Git et rejouable en un seul déclenchement de pipeline. Zéro intervention manuelle.
-                  </p>
+            <div class="panel__section">
+              <div class="panel__tag">Orchestration &amp; Haute Disponibilité</div>
+              <h3 class="panel__title">Plateforme IaC : Cluster K3s &amp; GitOps</h3>
+              <p class="panel__text">
+                La phase 02 transforme l'infrastructure brute en une plateforme CaaS (Container as a Service)
+                entièrement auto-réparante. Chaque composant — du provisioning VM au tunnel Cloudflare, en passant par
+                les politiques de backup et la restauration — est versionné dans Git et rejouable en un seul
+                déclenchement de pipeline. Zéro intervention manuelle.
+              </p>
 
-                  <div class="technical-grid" style="margin-top: var(--space-6);">
-                    <div>
-                      <h4 class="block-title">Composants &amp; responsabilités</h4>
-                      <ul class="tech-list">
-                        <li><strong>K3s v1.32.2+k3s1 — Control Plane</strong><span style="display:block;opacity:.8;margin-top:4px">1 Master + N Workers scalables via <code>count</code>. Token de jonction partagé cross-host via Ansible <code>delegate_to</code>. Kubeconfig exporté et patché automatiquement.</span></li>
-                        <li><strong>Longhorn v1.7.2 — Stockage Distribué</strong><span style="display:block;opacity:.8;margin-top:4px">2 réplicas synchrones par PVC. Prépare <code>dm_crypt</code>, <code>open-iscsi</code>, blacklist Multipath. Disques labellisés par nœud.</span></li>
-                        <li><strong>ArgoCD — GitOps Self-Healing</strong><span style="display:block;opacity:.8;margin-top:4px">3 envs isolés (dev/staging/prod). <code>selfHeal: true</code> + <code>prune: true</code>. Endpoints K8s natifs vers MariaDB externe.</span></li>
-                        <li><strong>MariaDB &amp; MinIO — Services Externes</strong><span style="display:block;opacity:.8;margin-top:4px">Intentionnellement hors cluster. MariaDB : 3 bases dédiées par env. MinIO : stockage S3 sur disque dédié 40 Go + sync Rclone → Cloudflare R2 toutes les 5 min.</span></li>
-                        <li><strong>Cloudflared — Tunnel HTTPS Public</strong><span style="display:block;opacity:.8;margin-top:4px">Déployé dans K3s avec <code>replicas: 2</code>. Token Cloudflare injecté via Secret K8s. Aucun port ouvert sur la box. Limites CPU/RAM définies.</span></li>
-                        <li><strong>kube-prometheus-stack v69.4.1 — Observabilité</strong><span style="display:block;opacity:.8;margin-top:4px">Prometheus + Grafana + Alertmanager. Persistance sur Longhorn 10 Gi chacun. Rétention 15j. Dashboard JSON custom provisionné via ConfigMap labellisée.</span></li>
-                        <li><strong>Backup + Restore — PRA Automatisé</strong><span style="display:block;opacity:.8;margin-top:4px">Crons quotidiens (logs 01h, MariaDB 02h). Longhorn RecurringJob → MinIO S3. Restauration rejoué via Pipeline avec <code>backup_date</code> (format YYYYMMDD_HHMM).</span></li>
-                      </ul>
-                    </div>
-                    <div class="diagram-container">
-                      <img src="assets/phase2.svg" alt="Architecture K3s &amp; GitOps" class="zoomable" style="width:100%;height:auto;border-radius:8px">
-                    </div>
-                  </div>
+              <div class="technical-grid" style="margin-top: var(--space-6);">
+                <div>
+                  <h4 class="block-title">Composants &amp; responsabilités</h4>
+                  <ul class="tech-list">
+                    <li><strong>K3s v1.32.2+k3s1 — Control Plane</strong><span
+                        style="display:block;opacity:.8;margin-top:4px">1 Master + N Workers scalables via
+                        <code>count</code>. Token de jonction partagé cross-host via Ansible <code>delegate_to</code>.
+                        Kubeconfig exporté et patché automatiquement.</span></li>
+                    <li><strong>Longhorn v1.7.2 — Stockage Distribué</strong><span
+                        style="display:block;opacity:.8;margin-top:4px">2 réplicas synchrones par PVC. Prépare
+                        <code>dm_crypt</code>, <code>open-iscsi</code>, blacklist Multipath. Disques labellisés par
+                        nœud.</span></li>
+                    <li><strong>ArgoCD — GitOps Self-Healing</strong><span
+                        style="display:block;opacity:.8;margin-top:4px">3 envs isolés (dev/staging/prod).
+                        <code>selfHeal: true</code> + <code>prune: true</code>. Endpoints K8s natifs vers MariaDB
+                        externe.</span></li>
+                    <li><strong>MariaDB &amp; MinIO — Services Externes</strong><span
+                        style="display:block;opacity:.8;margin-top:4px">Intentionnellement hors cluster. MariaDB : 3
+                        bases dédiées par env. MinIO : stockage S3 sur disque dédié 40 Go + sync Rclone → Cloudflare R2
+                        toutes les 5 min.</span></li>
+                    <li><strong>Cloudflared — Tunnel HTTPS Public</strong><span
+                        style="display:block;opacity:.8;margin-top:4px">Déployé dans K3s avec <code>replicas: 2</code>.
+                        Token Cloudflare injecté via Secret K8s. Aucun port ouvert sur la box. Limites CPU/RAM
+                        définies.</span></li>
+                    <li><strong>kube-prometheus-stack v69.4.1 — Observabilité</strong><span
+                        style="display:block;opacity:.8;margin-top:4px">Prometheus + Grafana + Alertmanager. Persistance
+                        sur Longhorn 10 Gi chacun. Rétention 15j. Dashboard JSON custom provisionné via ConfigMap
+                        labellisée.</span></li>
+                    <li><strong>Backup + Restore — PRA Automatisé</strong><span
+                        style="display:block;opacity:.8;margin-top:4px">Crons quotidiens (logs 01h, MariaDB 02h).
+                        Longhorn RecurringJob → MinIO S3. Restauration rejoué via Pipeline avec <code>backup_date</code>
+                        (format YYYYMMDD_HHMM).</span></li>
+                  </ul>
                 </div>
+                <div class="diagram-container">
+                  <img src="assets/phase2.svg" alt="Architecture K3s &amp; GitOps" class="zoomable"
+                    style="width:100%;height:auto;border-radius:8px">
+                </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      ARBORESCENCE COMPLÈTE
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title" style="display:flex;align-items:center;gap:8px">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-                    Arborescence complète du dépôt IaC
-                  </h4>
-                  <div class="code-block" style="background:rgba(0,0,0,.05);padding:var(--space-6)">
-<pre style="font-size:10px;color:var(--color-text);line-height:1.5"><code><span style="color:var(--color-primary);font-weight:700">IaC/</span>
+            <div class="panel__section">
+              <h4 class="block-title" style="display:flex;align-items:center;gap:8px">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                </svg>
+                Arborescence complète du dépôt IaC
+              </h4>
+              <div class="code-block" style="background:rgba(0,0,0,.05);padding:var(--space-6)">
+                <pre style="font-size:10px;color:var(--color-text);line-height:1.5"><code><span style="color:var(--color-primary);font-weight:700">IaC/</span>
 ├── .gitlab-ci.yml           <span style="opacity:.5">(565 lignes — pipeline paramétrable deploy/destroy/backup/restore)</span>
 ├── .gitignore
 ├── README.md
@@ -728,23 +843,26 @@ vault write auth/jwt/role/gitlab-iac-role \
     │
     └── <span style="color:var(--color-primary)">templates/</span>
         └── <span style="opacity:.5">(templates Jinja2 supplémentaires)</span></code></pre>
-                  </div>
-                </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION I — PIPELINE GITLAB CI
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">I. Pipeline GitLab CI — Architecture Atomique &amp; Paramétrable</h4>
-                  <p class="panel__text">
-                    La pipeline est conçue comme un outil d'opérations complet à 7 stages, déclenchable avec 3 paramètres d'entrée. Chaque job hérite d'un template réutilisable qui gère l'authentification Vault, l'injection SSH et la configuration Ansible.
-                  </p>
+            <div class="panel__section">
+              <h4 class="block-title">I. Pipeline GitLab CI — Architecture Atomique &amp; Paramétrable</h4>
+              <p class="panel__text">
+                La pipeline est conçue comme un outil d'opérations complet à 7 stages, déclenchable avec 3 paramètres
+                d'entrée. Chaque job hérite d'un template réutilisable qui gère l'authentification Vault, l'injection
+                SSH et la configuration Ansible.
+              </p>
 
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Inputs paramétrables (déclenchement manuel)</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml">spec:
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Inputs
+                    paramétrables (déclenchement manuel)</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml">spec:
   inputs:
     action:
       description: "Action à effectuer"
@@ -756,12 +874,13 @@ vault write auth/jwt/role/gitlab-iac-role \
     backup_date:
       description: "Date backup (Format: YYYYMMDD_HHMM)"
       default: ""          <span style="color:var(--color-primary);opacity:.7"># vide = plus récent</span></code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Stages &amp; dépendances</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code><span style="color:var(--color-primary)">deploy</span>      destroy
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Stages &amp;
+                    dépendances</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code><span style="color:var(--color-primary)">deploy</span>      destroy
   plan    →  tf:init → tf:plan
   apply   →  tf:apply (when: manual) → tf:inventory:check
             ↓              ↓              ↓
@@ -776,17 +895,20 @@ configure → ansible:db  ansible:minio  ansible:k3s:master
      monitoring       cloudflared
               ↓
   validate → connectivity → services</code></pre>
-                      </div>
-                    </div>
                   </div>
+                </div>
+              </div>
 
-                  <div style="margin-top:var(--space-6)">
-                    <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Template JWT — Authentification Vault (17 secrets extraits)</h5>
-                    <p class="panel__text" style="font-size:12px;margin-bottom:var(--space-3)">
-                      Aucun secret n'est stocké en clair dans GitLab. Chaque job s'authentifie via un token JWT OIDC, échange ce token contre un token Vault, et extrait ses secrets via l'API KV v2.
-                    </p>
-                    <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml">.vault_secrets:
+              <div style="margin-top:var(--space-6)">
+                <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Template JWT —
+                  Authentification Vault (17 secrets extraits)</h5>
+                <p class="panel__text" style="font-size:12px;margin-bottom:var(--space-3)">
+                  Aucun secret n'est stocké en clair dans GitLab. Chaque job s'authentifie via un token JWT OIDC,
+                  échange ce token contre un token Vault, et extrait ses secrets via l'API KV v2.
+                </p>
+                <div class="code-block">
+                  <pre
+                    style="font-size:10px"><code class="language-yaml">.vault_secrets:
   id_tokens:
     VAULT_JWT:
       aud: "${VAULT_SERVER_URL}"   <span style="color:var(--color-primary);opacity:.7"># JWT signé par GitLab</span>
@@ -802,23 +924,25 @@ configure → ansible:db  ansible:minio  ansible:k3s:master
         "${VAULT_SERVER_URL}/v1/secret/data/projet_devops")
     <span style="color:var(--color-primary);opacity:.7"># Exports : TF_VAR_pm_api_url, SSH_PRIVATE_KEY, DB_PASSWORD,</span>
     <span style="color:var(--color-primary);opacity:.7"># ARGOCD_*, WP_AUTH_KEY, CF_TUNNEL_TOKEN, MINIO_*, B2_*</span></code></pre>
-                    </div>
-                  </div>
+                </div>
+              </div>
 
-                  <div style="margin-top:var(--space-6)">
-                    <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Templates de base réutilisables</h5>
-                    <div class="technical-grid">
-                      <div>
-                        <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml">.tf_base:
+              <div style="margin-top:var(--space-6)">
+                <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Templates de
+                  base réutilisables</h5>
+                <div class="technical-grid">
+                  <div>
+                    <div class="code-block">
+                      <pre
+                        style="font-size:10px"><code class="language-yaml">.tf_base:
   extends: [.vault_secrets]
   image: hashicorp/terraform:1.5.0
   tags: [proxmox]         <span style="color:var(--color-primary);opacity:.7"># Runner GitLab physique</span></code></pre>
-                        </div>
-                      </div>
-                      <div>
-                        <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml">.ansible_base:
+                    </div>
+                  </div>
+                  <div>
+                    <div class="code-block">
+                      <pre style="font-size:10px"><code class="language-yaml">.ansible_base:
   extends: [.vault_secrets]
   image: alpine:latest
   tags: [proxmox]
@@ -827,55 +951,56 @@ configure → ansible:db  ansible:minio  ansible:k3s:master
     - pip install pymysql
     - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
     - chmod 600 ~/.ssh/id_ed25519</code></pre>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Screenshots Pipeline -->
-                  <div style="margin-top:var(--space-8)">
-                    <h5 style="color:var(--color-text);font-size:13px;font-weight:600;margin-bottom:var(--space-4)">Captures de pipeline</h5>
-                    <div class="technical-grid">
-                      <div class="pipeline-images" style="display:flex;flex-direction:column;gap:var(--space-2)">
-                        <img src="assets/pipedeploy1.jpg" alt="Pipeline Deploy Part 1" class="zoomable" style="width:100%;height:auto;border-radius:8px">
-                        <img src="assets/pipedeploy2.jpg" alt="Pipeline Deploy Part 2" class="zoomable" style="width:100%;height:auto;border-radius:8px">
-                      </div>
-                      <div class="pipeline-images">
-                        <img src="assets/backup.jpg" alt="Pipeline Backup" class="zoomable" style="width:100%;height:auto;border-radius:8px">
-                      </div>
-                    </div>
-                    <div class="technical-grid" style="margin-top:var(--space-4)">
-                      <div class="pipeline-images">
-                        <img src="assets/restore.jpg" alt="Pipeline Restore" class="zoomable" style="width:100%;height:auto;border-radius:8px">
-                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+              <!-- Screenshots Pipeline -->
+              <div style="margin-top:var(--space-8)">
+                <h5 style="color:var(--color-text);font-size:13px;font-weight:600;margin-bottom:var(--space-4)">Captures
+                  de pipeline</h5>
+                <div class="technical-grid">
+                  <div class="pipeline-images">
+                    <img src="assets/deploy.png" alt="Pipeline Deploy Full" class="zoomable"
+                      style="width:100%;height:auto;border-radius:8px">
+                  </div>
+                  <div class="pipeline-images">
+                    <img src="assets/backup.jpg" alt="Pipeline Backup" class="zoomable"
+                      style="width:100%;height:auto;border-radius:8px">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION II — TERRAFORM
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">II. Provisioning Proxmox (Terraform) — 4 VMs, specs réelles</h4>
-                  <p class="panel__text">Terraform utilise le backend HTTP GitLab pour stocker l'état (<code>TF_STATE_NAME: IaC-Project-Infra-State</code>). Les VMs sont déployées avec Cloud-init via une image template Ubuntu. L'ordre est garanti par des <code>depends_on</code> explicites.</p>
+            <div class="panel__section">
+              <h4 class="block-title">II. Provisioning Proxmox (Terraform) — 4 VMs, specs réelles</h4>
+              <p class="panel__text">Terraform utilise le backend HTTP GitLab pour stocker l'état
+                (<code>TF_STATE_NAME: IaC-Project-Infra-State</code>). Les VMs sont déployées avec Cloud-init via une
+                image template Ubuntu. L'ordre est garanti par des <code>depends_on</code> explicites.</p>
 
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Specs complètes des VMs</h5>
-                      <div class="code-block">
-<pre style="font-size:10px;line-height:1.8"><code><span style="color:var(--color-primary)">Nom</span>             <span style="color:var(--color-primary)">CPU</span>  <span style="color:var(--color-primary)">RAM</span>   <span style="color:var(--color-primary)">Disques</span>        <span style="color:var(--color-primary)">Bridge</span>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Specs
+                    complètes des VMs</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px;line-height:1.8"><code><span style="color:var(--color-primary)">Nom</span>             <span style="color:var(--color-primary)">CPU</span>  <span style="color:var(--color-primary)">RAM</span>   <span style="color:var(--color-primary)">Disques</span>        <span style="color:var(--color-primary)">Bridge</span>
 server-db-01    4c   8 Go  30 Go           vmbr2
 k3s-master-01   4c   8 Go  40 Go           vmbr2
 k3s-worker-01   4c   8 Go  40 Go           vmbr2
 k3s-worker-02   4c   8 Go  40 Go           vmbr2
 server-minio    2c   4 Go  20 Go + 40 Go   vmbr2
                               ↑ OS     ↑ Data /dev/sdb</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Plan ciblé ou global</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Plan global ou ciblé sur un host</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Plan ciblé ou
+                    global</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Plan global ou ciblé sur un host</span>
 if [ -n "$[[ inputs.target_host ]]" ]; then
   terraform plan -out=tfplan \
     -target=proxmox_vm_qemu.${{ inputs.target_host }}
@@ -885,16 +1010,17 @@ fi
 
 <span style="color:var(--color-primary);opacity:.7"># Apply manuel (protection)</span>
 terraform apply -parallelism=1 -auto-approve tfplan</code></pre>
-                      </div>
-                    </div>
                   </div>
+                </div>
+              </div>
 
-                  <div style="margin-top:var(--space-4)">
-                    <h5 style="color:var(--color-text);font-size:12px;margin-bottom:8px;font-weight:600">Workers scalables (count) + MinIO double disque</h5>
-                    <div class="technical-grid">
-                      <div>
-                        <div class="code-block">
-<pre style="font-size:10px"><code class="language-hcl"><span style="color:var(--color-primary);opacity:.7"># count = len(k3s_worker_ips) → scalabilité</span>
+              <div style="margin-top:var(--space-4)">
+                <h5 style="color:var(--color-text);font-size:12px;margin-bottom:8px;font-weight:600">Workers scalables
+                  (count) + MinIO double disque</h5>
+                <div class="technical-grid">
+                  <div>
+                    <div class="code-block">
+                      <pre style="font-size:10px"><code class="language-hcl"><span style="color:var(--color-primary);opacity:.7"># count = len(k3s_worker_ips) → scalabilité</span>
 resource "proxmox_vm_qemu" "k3s-workers" {
   count       = length(var.k3s_worker_ips)
   vmid        = var.k3s_worker_vmid_start + count.index
@@ -906,11 +1032,11 @@ resource "proxmox_vm_qemu" "k3s-workers" {
   memory      = 8192
   ipconfig0   = "ip=${var.k3s_worker_ips[count.index]}/24"
 }</code></pre>
-                        </div>
-                      </div>
-                      <div>
-                        <div class="code-block">
-<pre style="font-size:10px"><code class="language-hcl"><span style="color:var(--color-primary);opacity:.7"># MinIO : 2 disques séparés (OS + Data)</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="code-block">
+                      <pre style="font-size:10px"><code class="language-hcl"><span style="color:var(--color-primary);opacity:.7"># MinIO : 2 disques séparés (OS + Data)</span>
 resource "proxmox_vm_qemu" "server-minio-01" {
   depends_on = [proxmox_vm_qemu.server-db-01]
   disks {
@@ -920,15 +1046,16 @@ resource "proxmox_vm_qemu" "server-minio-01" {
     }
   }
 }</code></pre>
-                        </div>
-                      </div>
                     </div>
                   </div>
+                </div>
+              </div>
 
-                  <div style="margin-top:var(--space-4)">
-                    <h5 style="color:var(--color-text);font-size:12px;margin-bottom:8px;font-weight:600">Génération automatique de l'inventaire Ansible</h5>
-                    <div class="code-block">
-<pre style="font-size:10px"><code class="language-hcl"><span style="color:var(--color-primary);opacity:.7"># Après tf:apply → fichier ansible/inventory.yml généré dynamiquement</span>
+              <div style="margin-top:var(--space-4)">
+                <h5 style="color:var(--color-text);font-size:12px;margin-bottom:8px;font-weight:600">Génération
+                  automatique de l'inventaire Ansible</h5>
+                <div class="code-block">
+                  <pre style="font-size:10px"><code class="language-hcl"><span style="color:var(--color-primary);opacity:.7"># Après tf:apply → fichier ansible/inventory.yml généré dynamiquement</span>
 resource "local_file" "ansible_inventory" {
   content = templatefile("${path.module}/templates/inventory.yml.tmpl", {
     k3s_master_ip    = var.k3s_master_ip
@@ -939,21 +1066,24 @@ resource "local_file" "ansible_inventory" {
   })
   filename = "${path.module}/../ansible/inventory.yml"
 }</code></pre>
-                    </div>
-                  </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION III — MARIADB
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">III. MariaDB Externe — 3 Bases par environnement</h4>
-                  <p class="panel__text">MariaDB est déployé sur sa propre VM (4c / 8 Go / 30 Go), isolée du cluster K3s. Cette séparation garantit que la base de données n'est pas impactée par un redémarrage du cluster. L'accès réseau est ouvert à <code>0.0.0.0</code> et filtré au niveau du pare-feu Proxmox.</p>
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Provisionnement des 3 bases</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># bind-address → réseau (Kubernetes peut atteindre MariaDB)</span>
+            <div class="panel__section">
+              <h4 class="block-title">III. MariaDB Externe — 3 Bases par environnement</h4>
+              <p class="panel__text">MariaDB est déployé sur sa propre VM (4c / 8 Go / 30 Go), isolée du cluster K3s.
+                Cette séparation garantit que la base de données n'est pas impactée par un redémarrage du cluster.
+                L'accès réseau est ouvert à <code>0.0.0.0</code> et filtré au niveau du pare-feu Proxmox.</p>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">
+                    Provisionnement des 3 bases</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># bind-address → réseau (Kubernetes peut atteindre MariaDB)</span>
 - lineinfile:
     path: /etc/mysql/mariadb.conf.d/50-server.cnf
     regexp: '^bind-address'
@@ -967,12 +1097,13 @@ resource "local_file" "ansible_inventory" {
     - wp_dev_db
     - wp_staging_db
     - wp_prod_db</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Utilisateur unique avec droits multi-DB</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># User wp_admin avec ALL sur les 3 bases</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Utilisateur
+                    unique avec droits multi-DB</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># User wp_admin avec ALL sur les 3 bases</span>
 - community.mysql.mysql_user:
     name: "wp_admin"
     password: "{{ wp_db_pass }}"  <span style="color:var(--color-primary);opacity:.7"># Vault</span>
@@ -985,22 +1116,25 @@ resource "local_file" "ansible_inventory" {
     - "localhost"
     - "%"              <span style="color:var(--color-primary);opacity:.7"># Accès réseau pour K3s</span>
   no_log: true</code></pre>
-                      </div>
-                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION IV — MINIO
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">IV. MinIO — Stockage S3 Local + Réplication Cloudflare R2</h4>
-                  <p class="panel__text">MinIO est déployé sur un disque <code>/dev/sdb</code> dédié de 40 Go. Un service systemd <code>rclone-backup</code> synchronise les données vers Cloudflare R2 toutes les 5 minutes pour garantir une copie off-site permanente.</p>
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Préparation disque + Service systemd</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Partition + formatage + montage fstab</span>
+            <div class="panel__section">
+              <h4 class="block-title">IV. MinIO — Stockage S3 Local + Réplication Cloudflare R2</h4>
+              <p class="panel__text">MinIO est déployé sur un disque <code>/dev/sdb</code> dédié de 40 Go. Un service
+                systemd <code>rclone-backup</code> synchronise les données vers Cloudflare R2 toutes les 5 minutes pour
+                garantir une copie off-site permanente.</p>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Préparation
+                    disque + Service systemd</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Partition + formatage + montage fstab</span>
 - community.general.parted:
     device: /dev/sdb
     number: 1
@@ -1015,12 +1149,13 @@ resource "local_file" "ansible_inventory" {
 
 MINIO_VOLUMES="/mnt/data"
 MINIO_OPTS="--address :9000 --console-address :9001"</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Sync continu MinIO → Cloudflare R2</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-ini"><span style="color:var(--color-primary);opacity:.7"># /etc/systemd/system/rclone-backup.service</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Sync continu
+                    MinIO → Cloudflare R2</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-ini"><span style="color:var(--color-primary);opacity:.7"># /etc/systemd/system/rclone-backup.service</span>
 [Service]
 ExecStart=/bin/bash -c "while true; do \
   /usr/bin/rclone copy local: r2:{{ b2_bucket_name }} \
@@ -1033,13 +1168,14 @@ Restart=always
     if [ "$(find /mnt/data -type f | wc -l)" -eq 0 ]; then
       rclone copy r2:{{ b2_bucket_name }} local: --verbose
     fi</code></pre>
-                      </div>
-                    </div>
                   </div>
-                  <div style="margin-top:var(--space-4)">
-                    <h5 style="color:var(--color-text);font-size:12px;margin-bottom:8px;font-weight:600">Buckets créés + utilisateur client</h5>
-                    <div class="code-block">
-<pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># 3 buckets créés automatiquement (idempotent)</span>
+                </div>
+              </div>
+              <div style="margin-top:var(--space-4)">
+                <h5 style="color:var(--color-text);font-size:12px;margin-bottom:8px;font-weight:600">Buckets créés +
+                  utilisateur client</h5>
+                <div class="code-block">
+                  <pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># 3 buckets créés automatiquement (idempotent)</span>
 mc mb local/logs     --ignore-existing
 mc mb local/mariadb  --ignore-existing
 mc mb local/longhorn --ignore-existing
@@ -1047,21 +1183,24 @@ mc mb local/longhorn --ignore-existing
 <span style="color:var(--color-primary);opacity:.7"># Utilisateur client limité (lecture/écriture uniquement)</span>
 mc admin user add local {{ minio_client_user }} {{ minio_client_password }}
 mc admin policy attach local readwrite --user {{ minio_client_user }}</code></pre>
-                    </div>
-                  </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION V — K3S
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">V. Bootstrap K3s v1.32.2+k3s1 — Master &amp; Workers</h4>
-                  <p class="panel__text">L'installation s'effectue en deux passes séquentielles. La version K3s est fixée pour garantir la reproductibilité. Le kubeconfig est rapatrié et corrigé automatiquement pour pointer vers l'IP externe.</p>
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">k3s_master.yml — Séquence complète</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># 1. Installation (idempotent : creates: /usr/local/bin/k3s)</span>
+            <div class="panel__section">
+              <h4 class="block-title">V. Bootstrap K3s v1.32.2+k3s1 — Master &amp; Workers</h4>
+              <p class="panel__text">L'installation s'effectue en deux passes séquentielles. La version K3s est fixée
+                pour garantir la reproductibilité. Le kubeconfig est rapatrié et corrigé automatiquement pour pointer
+                vers l'IP externe.</p>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">k3s_master.yml
+                    — Séquence complète</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># 1. Installation (idempotent : creates: /usr/local/bin/k3s)</span>
 - shell: |
     curl -sfL https://get.k3s.io | \
     INSTALL_K3S_VERSION="v1.32.2+k3s1" sh -s - server \
@@ -1093,12 +1232,13 @@ mc admin policy attach local readwrite --user {{ minio_client_user }}</code></pr
     regexp: '127\.0\.0\.1'
     replace: "{{ k3s_master_ip }}"
   delegate_to: localhost</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">k3s_workers.yml — Jonction cross-host</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Token lu directement sur le Master via delegate_to</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">
+                    k3s_workers.yml — Jonction cross-host</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Token lu directement sur le Master via delegate_to</span>
 - slurp:
     src: /var/lib/rancher/k3s/server/node-token
   delegate_to: "{{ groups['k3s_server'][0] }}"
@@ -1120,22 +1260,25 @@ mc admin policy attach local readwrite --user {{ minio_client_user }}</code></pr
   retries: 15
   delay: 10
   until: cluster_nodes.stdout_lines | length >= 3</code></pre>
-                      </div>
-                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION VI — LONGHORN
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">VI. Stockage Distribué — Longhorn v1.7.2</h4>
-                  <p class="panel__text">Longhorn exige une préparation kernel rigoureuse sur <strong>tous les nœuds</strong> avant l'installation Helm. Les conflits I/O avec Multipath sont évités par une blacklist explicite. Les disques sont labellisés individuellement par nœud.</p>
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Préparation kernel (tous nœuds)</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Module dm_crypt + persistance au boot</span>
+            <div class="panel__section">
+              <h4 class="block-title">VI. Stockage Distribué — Longhorn v1.7.2</h4>
+              <p class="panel__text">Longhorn exige une préparation kernel rigoureuse sur <strong>tous les
+                  nœuds</strong> avant l'installation Helm. Les conflits I/O avec Multipath sont évités par une
+                blacklist explicite. Les disques sont labellisés individuellement par nœud.</p>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Préparation
+                    kernel (tous nœuds)</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Module dm_crypt + persistance au boot</span>
 - community.general.modprobe:
     name: dm_crypt
     state: present
@@ -1158,12 +1301,13 @@ mc admin policy attach local readwrite --user {{ minio_client_user }}</code></pr
     name: iscsid
     enabled: yes
     state: started</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Labels nœuds + Installation Helm</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Label pour découverte auto des disques</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Labels nœuds +
+                    Installation Helm</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Label pour découverte auto des disques</span>
 kubectl label node {{ node }} \
   node.longhorn.io/create-default-disk=config
 
@@ -1179,32 +1323,35 @@ helm upgrade --install longhorn longhorn/longhorn \
   --set persistence.defaultClassReplicaCount=2 \
   --set defaultSettings.createDefaultDiskLabeledNodes=true \
   --wait --timeout 10m</code></pre>
-                      </div>
-                    </div>
                   </div>
-                  <div style="margin-top:var(--space-4)">
-                    <div class="code-block">
-<pre style="font-size:11px;color:var(--color-primary)"><code>[PersistentVolume WordPress]      replicaCount: 2
+                </div>
+              </div>
+              <div style="margin-top:var(--space-4)">
+                <div class="code-block">
+                  <pre style="font-size:11px;color:var(--color-primary)"><code>[PersistentVolume WordPress]      replicaCount: 2
   ├── /var/lib/longhorn  k3s-master-01  ✅ Primary
   └── /var/lib/longhorn  k3s-worker-01  ✅ Replica
                                          ↓
   Si worker-01 tombe → Pod continue sur master (seule réplique)
   Au retour de worker-01 → Re-sync automatique en arrière-plan</code></pre>
-                    </div>
-                  </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION VII — ARGOCD
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">VII. GitOps Multi-env — ArgoCD (dev / staging / prod)</h4>
-                  <p class="panel__text">ArgoCD est exposé via NodePort <strong>30443</strong>. Chaque environnement dispose de son propre namespace, ses secrets WordPress, son credential Docker Registry et son endpoint MariaDB. Le déploiement est entièrement idempotent.</p>
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">3 Applications ArgoCD</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml">environments:    <span style="color:var(--color-primary);opacity:.7"># 3 apps créées en boucle</span>
+            <div class="panel__section">
+              <h4 class="block-title">VII. GitOps Multi-env — ArgoCD (dev / staging / prod)</h4>
+              <p class="panel__text">ArgoCD est exposé via NodePort <strong>30443</strong>. Chaque environnement dispose
+                de son propre namespace, ses secrets WordPress, son credential Docker Registry et son endpoint MariaDB.
+                Le déploiement est entièrement idempotent.</p>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">3 Applications
+                    ArgoCD</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml">environments:    <span style="color:var(--color-primary);opacity:.7"># 3 apps créées en boucle</span>
   - name: dev,     branch: adil   <span style="color:var(--color-primary);opacity:.7"># feature branch</span>
   - name: staging, branch: main
   - name: prod,    branch: main
@@ -1222,12 +1369,13 @@ spec:
       prune: true      <span style="color:var(--color-primary);opacity:.7"># Supprime orphelins</span>
       selfHeal: true   <span style="color:var(--color-primary);opacity:.7"># Corrige drifts</span>
     syncOptions: [CreateNamespace=true]</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Endpoints MariaDB + Secrets K8s</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Endpoints K8s natifs → MariaDB externe</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Endpoints
+                    MariaDB + Secrets K8s</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Endpoints K8s natifs → MariaDB externe</span>
 kind: Endpoints
 metadata:
   name: mariadb-external
@@ -1247,27 +1395,31 @@ kubectl create secret generic wordpress-secret \
 <span style="color:var(--color-primary);opacity:.7"># Si secret change → redémarrage rolling update</span>
 kubectl rollout restart deployment wordpress \
   -n wordpress-{{ item.name }}</code></pre>
-                      </div>
-                    </div>
-                  </div>
-                  <div style="margin-top:var(--space-4)">
-                    <div class="screenshot-placeholder zoomable">
-                      📸 ArgoCD UI — 3 Applications (dev/staging/prod) en état Synced &amp; Healthy
-                    </div>
                   </div>
                 </div>
+              </div>
+              <div style="margin-top:var(--space-4)">
+                <div class="pipeline-images">
+                  <img src="assets/argocd.png" alt="ArgoCD UI - Multi-environment Sync" class="zoomable"
+                    style="width:100%;height:auto;border-radius:8px">
+                </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION VIII — CLOUDFLARED
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">VIII. Exposition HTTPS — Cloudflare Tunnel (cloudflared)</h4>
-                  <p class="panel__text">Aucun port n'est ouvert sur la box Internet. Le Tunnel Cloudflare établit une connexion sortante persistante depuis le cluster vers les serveurs Cloudflare. Déployé avec 2 réplicas pour la haute disponibilité du tunnel.</p>
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Deployment K8s cloudflared</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml">apiVersion: apps/v1
+            <div class="panel__section">
+              <h4 class="block-title">VIII. Exposition HTTPS — Cloudflare Tunnel (cloudflared)</h4>
+              <p class="panel__text">Aucun port n'est ouvert sur la box Internet. Le Tunnel Cloudflare établit une
+                connexion sortante persistante depuis le cluster vers les serveurs Cloudflare. Déployé avec 2 réplicas
+                pour la haute disponibilité du tunnel.</p>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Deployment K8s
+                    cloudflared</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml">apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cloudflared
@@ -1289,12 +1441,13 @@ spec:
           resources:
             requests: { cpu: "50m", memory: "64Mi" }
             limits:   { cpu: "200m", memory: "128Mi" }</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Flux d'accès public</h5>
-                      <div class="code-block" style="background:transparent;border:none;padding:0">
-<pre style="font-size:11px;color:var(--color-primary)"><code>Utilisateur Internet
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Flux d'accès
+                    public</h5>
+                  <div class="code-block" style="background:transparent;border:none;padding:0">
+                    <pre style="font-size:11px;color:var(--color-primary)"><code>Utilisateur Internet
       ↓ HTTPS (443)
   Cloudflare DNS + WAF
       ↓ Tunnel chiffré (sortant)
@@ -1303,22 +1456,25 @@ spec:
   WordPress pods (wordpress-prod)
       ↓ PHP-FPM
   MariaDB External (server-db-01)</code></pre>
-                      </div>
-                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION IX — MONITORING
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">IX. Observabilité — kube-prometheus-stack v69.4.1</h4>
-                  <p class="panel__text">Les CRDs Prometheus sont installés manuellement avant Helm pour éviter les timeouts. Les données sont persistées sur Longhorn. Un dashboard JSON custom est provisionné via ConfigMap labellisée.</p>
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">CRDs manuels + Helm</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># 10 CRDs installés manuellement (évite timeout Helm)</span>
+            <div class="panel__section">
+              <h4 class="block-title">IX. Observabilité — kube-prometheus-stack v69.4.1</h4>
+              <p class="panel__text">Les CRDs Prometheus sont installés manuellement avant Helm pour éviter les
+                timeouts. Les données sont persistées sur Longhorn. Un dashboard JSON custom est provisionné via
+                ConfigMap labellisée.</p>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">CRDs manuels +
+                    Helm</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># 10 CRDs installés manuellement (évite timeout Helm)</span>
 kubectl apply --server-side -f \
   https://...prometheus-operator.../monitoring.coreos.com_alertmanagers.yaml
 <span style="color:var(--color-primary);opacity:.7"># (alertmanagerconfigs, podmonitors, probes, prometheuses...)</span>
@@ -1334,12 +1490,13 @@ helm upgrade --install prometheus \
   --set prometheus.prometheusSpec.retention=15d \
   --set prometheus.prometheusSpec...storage=10Gi \
   --wait --timeout 15m</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Dashboard custom (ConfigMap)</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Copie du JSON sur le master</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Dashboard
+                    custom (ConfigMap)</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Copie du JSON sur le master</span>
 ansible.builtin.copy:
   src: ../files/custom-dashboard.json
   dest: /tmp/dashboards/pro-infra-dashboard.json
@@ -1350,27 +1507,30 @@ kubectl create configmap grafana-pro-dashboard \
   -n monitoring --dry-run=client -o yaml | kubectl apply -f -
 kubectl label configmap grafana-pro-dashboard \
   grafana_dashboard=1 -n monitoring</code></pre>
-                      </div>
-                    </div>
-                  </div>
-                  <div style="margin-top:var(--space-4)">
-                    <div class="screenshot-placeholder zoomable">
-                      📸 Grafana — Dashboard Infrastructure Custom (CPU, RAM, I/O, Network, Longhorn)
-                    </div>
                   </div>
                 </div>
+              </div>
+              <div style="margin-top:var(--space-4)">
+                <div class="pipeline-images">
+                  <img src="assets/grafana.png" alt="Grafana Infrastructure Dashboard" class="zoomable"
+                    style="width:100%;height:auto;border-radius:8px">
+                </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION X — BACKUP
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">X. Stratégie Backup Multi-couches — PRA</h4>
-                  <p class="panel__text">Trois niveaux de sauvegarde indépendants fonctionnent en parallèle. La chaîne MinIO → Cloudflare R2 assure une copie off-site sans dépendance humaine.</p>
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Planification des Crons</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code><span style="color:var(--color-primary)">01h00</span>  backup-logs.sh        (tous les serveurs)
+            <div class="panel__section">
+              <h4 class="block-title">X. Stratégie Backup Multi-couches — PRA</h4>
+              <p class="panel__text">Trois niveaux de sauvegarde indépendants fonctionnent en parallèle. La chaîne MinIO
+                → Cloudflare R2 assure une copie off-site sans dépendance humaine.</p>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Planification
+                    des Crons</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code><span style="color:var(--color-primary)">01h00</span>  backup-logs.sh        (tous les serveurs)
        Archive sélective 90j → MinIO s3://local/logs/
 
 <span style="color:var(--color-primary)">02h00</span>  backup-mariadb.sh     (server-db-01)
@@ -1382,12 +1542,13 @@ kubectl label configmap grafana-pro-dashboard \
 
 <span style="color:var(--color-primary)">Toutes les 5min</span>  rclone-backup.service (server-minio)
        MinIO local/ → Cloudflare R2 (off-site)</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Longhorn → MinIO S3 (backup cible)</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># DNS interne K8s → MinIO (Service + Endpoints)</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Longhorn →
+                    MinIO S3 (backup cible)</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># DNS interne K8s → MinIO (Service + Endpoints)</span>
 kind: Service
 metadata: { name: minio-local, namespace: longhorn-system }
 <span style="color:var(--color-primary);opacity:.7"># Endpoints → IP VM server-minio-01</span>
@@ -1402,39 +1563,45 @@ kubectl create secret generic longhorn-backup-secret \
 <span style="color:var(--color-primary);opacity:.7"># Configuration Backup Target Longhorn</span>
 kubectl patch settings.longhorn.io backup-target \
   --type merge -p '{"value":"s3://longhorn@minio-local/"}'</code></pre>
-                      </div>
-                    </div>
                   </div>
-                  <div style="margin-top:var(--space-4)">
-                    <h5 style="color:var(--color-text);font-size:12px;margin-bottom:8px;font-weight:600">RecurringJob Longhorn — Politique snapshot prod</h5>
-                    <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Activation sur les volumes prod (résolution volumeHandle CSI)</span>
+                </div>
+              </div>
+              <div style="margin-top:var(--space-4)">
+                <h5 style="color:var(--color-text);font-size:12px;margin-bottom:8px;font-weight:600">RecurringJob
+                  Longhorn — Politique snapshot prod</h5>
+                <div class="code-block">
+                  <pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Activation sur les volumes prod (résolution volumeHandle CSI)</span>
 for pvc in $(kubectl get pvc -n wordpress-prod ...); do
   LH_HANDLE=$(kubectl get pv "$PV_NAME" \
     -o jsonpath='{.spec.csi.volumeHandle}')
   kubectl label volumes.longhorn.io -n longhorn-system "$LH_HANDLE" \
     recurring-job-group.longhorn.io/prod-backup=enabled
 done</code></pre>
-                    </div>
-                  </div>
-                  <div style="margin-top:var(--space-4)">
-                    <div class="screenshot-placeholder zoomable">
-                      📸 Longhorn UI — Liste des snapshots et backups vers MinIO S3
-                    </div>
-                  </div>
                 </div>
+              </div>
+              <div style="margin-top:var(--space-4)">
+                <div class="pipeline-images">
+                  <img src="assets/longhorn.png" alt="Longhorn UI Storage Management" class="zoomable"
+                    style="width:100%;height:auto;border-radius:8px">
+                </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION XI — RESTORE
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">XI. Plan de Restauration (PRA) — MariaDB &amp; Volumes Longhorn</h4>
-                  <p class="panel__text">La restauration est déclenchée via Pipeline avec le paramètre <code>backup_date</code>. Elle couvre deux cibles indépendantes : la base MariaDB et les volumes persistants WordPress.</p>
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Restauration MariaDB (restore.yml)</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Sans date → dernier backup disponible</span>
+            <div class="panel__section">
+              <h4 class="block-title">XI. Plan de Restauration (PRA) — MariaDB &amp; Volumes Longhorn</h4>
+              <p class="panel__text">La restauration est déclenchée via Pipeline avec le paramètre
+                <code>backup_date</code>. Elle couvre deux cibles indépendantes : la base MariaDB et les volumes
+                persistants WordPress.
+              </p>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Restauration
+                    MariaDB (restore.yml)</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Sans date → dernier backup disponible</span>
 if [ -z "{{ restore_date }}" ]; then
   FILE=$(/usr/local/bin/mc ls local/mariadb/ \
     --recursive | sort | tail -n 1 | awk '{print $NF}')
@@ -1446,12 +1613,13 @@ fi
 <span style="color:var(--color-primary);opacity:.7"># Téléchargement + injection directe</span>
 /usr/local/bin/mc cp local/mariadb/$FILE /tmp/restore.sql.gz
 gunzip -c /tmp/restore.sql.gz | sudo mariadb</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Restauration Volume Longhorn</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Parsing de la date (YYYYMMDD_HHMM → ISO 8601)</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Restauration
+                    Volume Longhorn</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># Parsing de la date (YYYYMMDD_HHMM → ISO 8601)</span>
 DATE_PART="${DATE_INPUT%%_*}"
 DATE_FORMATTED="${DATE_PART:0:4}-${DATE_PART:4:2}-${DATE_PART:6:2}"
 
@@ -1466,27 +1634,30 @@ ansible.builtin.template:
   src: ../files/restore-longhorn-volume.sh.j2
   dest: /tmp/restore-longhorn-volume.sh
   mode: '0700'</code></pre>
-                      </div>
-                    </div>
-                  </div>
-                  <div style="margin-top:var(--space-4)">
-                    <div class="screenshot-placeholder zoomable">
-                      📸 Pipeline Restore — Paramètre backup_date + logs de restauration MariaDB + Longhorn
-                    </div>
                   </div>
                 </div>
+              </div>
+              <div style="margin-top:var(--space-4)">
+                <div class="pipeline-images">
+                  <img src="assets/restore.jpg" alt="Pipeline Restore Logs" class="zoomable"
+                    style="width:100%;height:auto;border-radius:8px">
+                </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION XII — VALIDATE
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">XII. Validation Post-Déploiement — 4 niveaux de contrôle</h4>
-                  <p class="panel__text">Le stage <code>validate</code> s'exécute en fin de pipeline <code>deploy</code>. Il garantit la complétude du déploiement via des tests réseau, SQL et Kubernetes.</p>
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">validate:connectivity</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Ansible ping sur tous les hosts</span>
+            <div class="panel__section">
+              <h4 class="block-title">XII. Validation Post-Déploiement — 4 niveaux de contrôle</h4>
+              <p class="panel__text">Le stage <code>validate</code> s'exécute en fin de pipeline <code>deploy</code>. Il
+                garantit la complétude du déploiement via des tests réseau, SQL et Kubernetes.</p>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">
+                    validate:connectivity</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Ansible ping sur tous les hosts</span>
 ansible -i inventory.yml all -m ping
 
 <span style="color:var(--color-primary);opacity:.7"># Résultat attendu</span>
@@ -1495,12 +1666,13 @@ k3s-master-01  | SUCCESS => {"ping": "pong"}
 k3s-worker-01  | SUCCESS => {"ping": "pong"}
 k3s-worker-02  | SUCCESS => {"ping": "pong"}
 server-minio   | SUCCESS => {"ping": "pong"}</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">validate:services</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Test port MariaDB 3306</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">
+                    validate:services</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Test port MariaDB 3306</span>
 - wait_for:
     host: "{{ target_ip_db }}"
     port: 3306, timeout: 20
@@ -1521,65 +1693,86 @@ server-minio   | SUCCESS => {"ping": "pong"}</code></pre>
 - wait_for:
     host: "{{ K3S_MASTER_IP }}"
     port: 30443, timeout: 30</code></pre>
-                      </div>
-                    </div>
-                  </div>
-                  <div style="margin-top:var(--space-4)">
-                    <div class="screenshot-placeholder zoomable">
-                      📸 Stage validate — Tous les tests verts (ping, SQL, Ready×3, ArgoCD 30443)
-                    </div>
                   </div>
                 </div>
+              </div>
 
-                <!-- GITHUB LINK -->
-                <div class="panel__section" style="border-top:1px solid var(--color-border-subtle);padding-top:var(--space-8);display:flex;flex-direction:column;align-items:center;text-align:center">
-                  <h4 class="block-title" style="margin-bottom:var(--space-4)">Explorer le code IaC</h4>
-                  <p class="panel__text" style="max-width:500px;margin-bottom:var(--space-6)">L'intégralité des playbooks Ansible (12), modules Terraform, pipeline CI (565 lignes) et configurations K8s est disponible en open-source.</p>
-                  <a href="https://github.com/azarqane/IaC" target="_blank" class="btn btn-outline" style="display:inline-flex;align-items:center;gap:10px;border-radius:50px">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58V22"></path></svg>
-                    Consulter le dépôt IaC
-                  </a>
-                </div>
-              </article>
+              <!-- GITHUB LINK -->
+              <div class="panel__section"
+                style="border-top:1px solid var(--color-border-subtle);padding-top:var(--space-8);display:flex;flex-direction:column;align-items:center;text-align:center">
+                <h4 class="block-title" style="margin-bottom:var(--space-4)">Explorer le code IaC</h4>
+                <p class="panel__text" style="max-width:500px;margin-bottom:var(--space-6)">L'intégralité des playbooks
+                  Ansible (12), modules Terraform, pipeline CI (565 lignes) et configurations K8s est disponible en
+                  open-source.</p>
+                <a href="https://github.com/azarqane/IaC" target="_blank" class="btn btn-outline"
+                  style="display:inline-flex;align-items:center;gap:10px;border-radius:50px">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58V22">
+                    </path>
+                  </svg>
+                  Consulter le dépôt IaC
+                </a>
+              </div>
+          </article>
 
-              <!-- PHASE 03 : APP -->
-              <article class="project-panel" id="proj-3">
+          <!-- PHASE 03 : APP -->
+          <article class="project-panel" id="proj-3">
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      INTRO + COMPOSANTS
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <div class="panel__tag">Image Custom &amp; GitOps Continu</div>
-                  <h3 class="panel__title">Application WordPress — Docker, Helm &amp; Pipeline CI/CD</h3>
-                  <p class="panel__text">
-                    La phase 03 ferme la boucle DevSecOps complète. A chaque <code>git push</code>, une image Docker durcie est construite sans daemon (Kaniko), scannée par Trivy, puis le chart Helm est mis à jour automatiquement avec le SHA du commit — ArgoCD détecte la divergence et déploie en rolling update. Zéro intervention manuelle, zéro secret en clair.
-                  </p>
-                  <div class="technical-grid" style="margin-top:var(--space-6)">
-                    <div>
-                      <h4 class="block-title">Composants &amp; responsabilités</h4>
-                      <ul class="tech-list">
-                        <li><strong>Image Custom WordPress 6.9 / PHP 8.3-FPM</strong><span style="display:block;opacity:.8;margin-top:4px">Base officielle durcie : upgrade sélectif des CVE (libmagickwand, libpng16, libtiff6, libheif, libnghttp2…). Extensions PHP compilées : <code>mysqli</code>, <code>pdo_mysql</code>, <code>exif</code>, <code>opcache</code>. <code>expose_php = Off</code>.</span></li>
-                        <li><strong>Pipeline CI/CD — 3 stages atomiques</strong><span style="display:block;opacity:.8;margin-top:4px"><code>build</code> : Kaniko (sans daemon Docker). <code>security</code> : Trivy HTML+JSON + barre de filtres interactive injectée via Python. <code>validate</code> : helm lint + GitOps update via <code>yq</code>.</span></li>
-                        <li><strong>Helm Chart — Pattern Sidecar (WP + Nginx)</strong><span style="display:block;opacity:.8;margin-top:4px">6 templates K8s. Pod à 2 conteneurs : WordPress PHP-FPM (<code>:9000</code>) + Nginx reverse-proxy (<code>:80</code>). Volume partagé Longhorn 5Gi ReadWriteMany. <code>podAntiAffinity</code> pour la HA.</span></li>
-                        <li><strong>Multi-env via values overrides</strong><span style="display:block;opacity:.8;margin-top:4px">3 fichiers <code>values-{env}.yaml</code> (dev/staging/prod). Base DB et hostname surchargés par env. ArgoCD applique la couche correspondante. Prod : <code>wordpress.vaultias.com</code>.</span></li>
-                      </ul>
-                    </div>
-                    <div class="diagram-container">
-                      <img src="assets/phase3.svg" alt="Architecture App WordPress CI/CD" class="zoomable" style="width:100%;height:auto;border-radius:8px">
-                    </div>
-                  </div>
+            <div class="panel__section">
+              <div class="panel__tag">Image Custom &amp; GitOps Continu</div>
+              <h3 class="panel__title">Application WordPress — Docker, Helm &amp; Pipeline CI/CD</h3>
+              <p class="panel__text">
+                La phase 03 ferme la boucle DevSecOps complète. A chaque <code>git push</code>, une image Docker durcie
+                est construite sans daemon (Kaniko), scannée par Trivy, puis le chart Helm est mis à jour
+                automatiquement avec le SHA du commit — ArgoCD détecte la divergence et déploie en rolling update. Zéro
+                intervention manuelle, zéro secret en clair.
+              </p>
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Composants &amp; responsabilités</h4>
+                  <ul class="tech-list">
+                    <li><strong>Image Custom WordPress 6.9 / PHP 8.3-FPM</strong><span
+                        style="display:block;opacity:.8;margin-top:4px">Base officielle durcie : upgrade sélectif des
+                        CVE (libmagickwand, libpng16, libtiff6, libheif, libnghttp2…). Extensions PHP compilées :
+                        <code>mysqli</code>, <code>pdo_mysql</code>, <code>exif</code>, <code>opcache</code>.
+                        <code>expose_php = Off</code>.</span></li>
+                    <li><strong>Pipeline CI/CD — 3 stages atomiques</strong><span
+                        style="display:block;opacity:.8;margin-top:4px"><code>build</code> : Kaniko (sans daemon
+                        Docker). <code>security</code> : Trivy HTML+JSON + barre de filtres interactive injectée via
+                        Python. <code>validate</code> : helm lint + GitOps update via <code>yq</code>.</span></li>
+                    <li><strong>Helm Chart — Pattern Sidecar (WP + Nginx)</strong><span
+                        style="display:block;opacity:.8;margin-top:4px">6 templates K8s. Pod à 2 conteneurs : WordPress
+                        PHP-FPM (<code>:9000</code>) + Nginx reverse-proxy (<code>:80</code>). Volume partagé Longhorn
+                        5Gi ReadWriteMany. <code>podAntiAffinity</code> pour la HA.</span></li>
+                    <li><strong>Multi-env via values overrides</strong><span
+                        style="display:block;opacity:.8;margin-top:4px">3 fichiers <code>values-{env}.yaml</code>
+                        (dev/staging/prod). Base DB et hostname surchargés par env. ArgoCD applique la couche
+                        correspondante. Prod : <code>wordpress.vaultias.com</code>.</span></li>
+                  </ul>
                 </div>
+                <div class="diagram-container">
+                  <img src="assets/phase3.svg" alt="Architecture App WordPress CI/CD" class="zoomable"
+                    style="width:100%;height:auto;border-radius:8px">
+                </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      ARBORESCENCE
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title" style="display:flex;align-items:center;gap:8px">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-                    Arborescence complète du dépôt app-wordpress
-                  </h4>
-                  <div class="code-block" style="background:rgba(0,0,0,.05);padding:var(--space-6)">
-<pre style="font-size:10px;color:var(--color-text);line-height:1.5"><code><span style="color:var(--color-primary);font-weight:700">app-wordpress/</span>
+            <div class="panel__section">
+              <h4 class="block-title" style="display:flex;align-items:center;gap:8px">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                </svg>
+                Arborescence complète du dépôt app-wordpress
+              </h4>
+              <div class="code-block" style="background:rgba(0,0,0,.05);padding:var(--space-6)">
+                <pre style="font-size:10px;color:var(--color-text);line-height:1.5"><code><span style="color:var(--color-primary);font-weight:700">app-wordpress/</span>
 ├── .gitlab-ci.yml        <span style="opacity:.5">(179 lignes — 3 stages : build/security/validate)</span>
 ├── Dockerfile            <span style="opacity:.5">(hardening image wordpress:6.9-php8.3-fpm + 5 extensions PHP)</span>
 ├── php.ini               <span style="opacity:.5">(upload 64M, memory 256M, exec 300s, expose_php Off)</span>
@@ -1600,21 +1793,25 @@ server-minio   | SUCCESS => {"ping": "pong"}</code></pre>
         ├── external-db.yaml     <span style="opacity:.5">(Service + Endpoints → VM MariaDB externe)</span>
         ├── ingress.yaml         <span style="opacity:.5">(Traefik, TLS conditionnel cert-manager letsencrypt-prod)</span>
         └── service.yaml         <span style="opacity:.5">(ClusterIP:80 → pods wordpress)</span></code></pre>
-                  </div>
-                </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION I — PIPELINE CI/CD
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">I. Pipeline CI/CD — 3 Stages (Build · Security · GitOps)</h4>
-                  <p class="panel__text">La pipeline est déclenchée à chaque push. Elle produit une image immuable taggée par SHA, un rapport de sécurité interactif, et met à jour le dépôt GitOps automatiquement pour qu'ArgoCD détecte le nouveau tag.</p>
+            <div class="panel__section">
+              <h4 class="block-title">I. Pipeline CI/CD — 3 Stages (Build · Security · GitOps)</h4>
+              <p class="panel__text">La pipeline est déclenchée à chaque push. Elle produit une image immuable taggée
+                par SHA, un rapport de sécurité interactif, et met à jour le dépôt GitOps automatiquement pour qu'ArgoCD
+                détecte le nouveau tag.</p>
 
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Stage build — Kaniko (sans Docker daemon)</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml">docker-build:
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Stage build —
+                    Kaniko (sans Docker daemon)</h5>
+                  <div class="code-block">
+                    <pre
+                      style="font-size:10px"><code class="language-yaml">docker-build:
   stage: build
   image:
     name: gcr.io/kaniko-project/executor:debug
@@ -1632,12 +1829,13 @@ server-minio   | SUCCESS => {"ping": "pong"}</code></pre>
         --dockerfile $CI_PROJECT_DIR/Dockerfile
         --destination $IMAGE_NAME:$CI_COMMIT_SHA   <span style="color:var(--color-primary);opacity:.7"># immuable</span>
         --destination $IMAGE_NAME:latest           <span style="color:var(--color-primary);opacity:.7"># flottant</span></code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Stage security — Trivy + Rapport interactif</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml">trivy-scan-html:
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Stage security
+                    — Trivy + Rapport interactif</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml">trivy-scan-html:
   stage: security
   image: ghcr.io/aquasecurity/trivy:latest
   variables:
@@ -1662,14 +1860,15 @@ server-minio   | SUCCESS => {"ping": "pong"}</code></pre>
     paths: [container_security_report.html, container_security_report.json]
     expire_in: 1 week
   needs: [docker-build]</code></pre>
-                      </div>
-                    </div>
                   </div>
+                </div>
+              </div>
 
-                  <div style="margin-top:var(--space-4)">
-                    <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Stage validate — Helm lint + GitOps update (yq + git push)</h5>
-                    <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml">helm-validate:
+              <div style="margin-top:var(--space-4)">
+                <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Stage validate —
+                  Helm lint + GitOps update (yq + git push)</h5>
+                <div class="code-block">
+                  <pre style="font-size:10px"><code class="language-yaml">helm-validate:
   extends: .vault_secrets     <span style="color:var(--color-primary);opacity:.7"># JWT auth → 5 WP secrets extraits</span>
   stage: validate
   image: alpine/helm:3.14.0
@@ -1696,34 +1895,41 @@ server-minio   | SUCCESS => {"ping": "pong"}</code></pre>
         --set wpLoggedInKey="$WP_LOGGED_IN_KEY"
         --set wpNonceKey="$WP_NONCE_KEY"
   needs: [docker-build]</code></pre>
-                    </div>
-                  </div>
+                </div>
+              </div>
 
-                  <!-- Screenshots pipeline -->
-                  <div style="margin-top:var(--space-6)">
-                    <h5 style="color:var(--color-text);font-size:13px;font-weight:600;margin-bottom:var(--space-4)">Captures de pipeline</h5>
-                    <div class="technical-grid">
-                      <div class="screenshot-placeholder zoomable">
-                        📸 Pipeline — 3 stages (build ✅ · security ✅ · validate ✅) avec SHA du commit
-                      </div>
-                      <div class="screenshot-placeholder zoomable">
-                        📸 Rapport Trivy HTML — Barre filtre HIGH/MEDIUM/LOW + search paquet
-                      </div>
-                    </div>
+              <!-- Screenshots pipeline -->
+              <div style="margin-top:var(--space-6)">
+                <h5 style="color:var(--color-text);font-size:13px;font-weight:600;margin-bottom:var(--space-4)">Captures
+                  de pipeline</h5>
+                <div class="technical-grid">
+                  <div class="pipeline-images">
+                    <img src="assets/pipephase3.png" alt="WordPress App CI/CD Pipeline" class="zoomable"
+                      style="width:100%;height:auto;border-radius:8px">
+                  </div>
+                  <div class="pipeline-images">
+                    <img src="assets/trivy.png" alt="Trivy Security Report" class="zoomable"
+                      style="width:100%;height:auto;border-radius:8px">
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION II — DOCKERFILE
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">II. Dockerfile — Hardening Image WordPress PHP-FPM 8.3</h4>
-                  <p class="panel__text">L'image <strong>n'embarque pas Apache</strong> — uniquement PHP-FPM sur le port 9000. Nginx est déployé dans un conteneur sidecar séparé. Les paquets vulnérables sont upgradés sélectivement avant que Trivy ne génère son rapport.</p>
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Dockerfile complet annoté</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-dockerfile">FROM wordpress:6.9-php8.3-fpm
+            <div class="panel__section">
+              <h4 class="block-title">II. Dockerfile — Hardening Image WordPress PHP-FPM 8.3</h4>
+              <p class="panel__text">L'image <strong>n'embarque pas Apache</strong> — uniquement PHP-FPM sur le port
+                9000. Nginx est déployé dans un conteneur sidecar séparé. Les paquets vulnérables sont upgradés
+                sélectivement avant que Trivy ne génère son rapport.</p>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Dockerfile
+                    complet annoté</h5>
+                  <div class="code-block">
+                    <pre
+                      style="font-size:10px"><code class="language-dockerfile">FROM wordpress:6.9-php8.3-fpm
 <span style="color:var(--color-primary);opacity:.7"># Upgrade CVE connus (libmagick, libpng, libtiff, libheif,</span>
 <span style="color:var(--color-primary);opacity:.7"># libnghttp2, libudev, ncurses...)</span>
 RUN apt-get update && apt-get install -y --only-upgrade \
@@ -1750,12 +1956,14 @@ COPY opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 
 RUN chown -R www-data:www-data /var/www/html
 EXPOSE 9000       <span style="color:var(--color-primary);opacity:.7"># PHP-FPM seulement — Nginx est un sidecar</span></code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Config PHP + OPcache (production)</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-ini"><span style="color:var(--color-primary);opacity:.7"># php.ini → wordpress.ini</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Config PHP +
+                    OPcache (production)</h5>
+                  <div class="code-block">
+                    <pre
+                      style="font-size:10px"><code class="language-ini"><span style="color:var(--color-primary);opacity:.7"># php.ini → wordpress.ini</span>
 upload_max_filesize = 64M    <span style="color:var(--color-primary);opacity:.7"># médias WordPress</span>
 post_max_size       = 64M
 max_execution_time  = 300    <span style="color:var(--color-primary);opacity:.7"># import/export WP-CLI</span>
@@ -1771,31 +1979,37 @@ opcache.interned_strings_buffer = 8
 opcache.max_accelerated_files = 4000  <span style="color:var(--color-primary);opacity:.7"># fichiers WP core</span>
 opcache.revalidate_freq      = 2      <span style="color:var(--color-primary);opacity:.7"># vérification toutes les 2s</span>
 opcache.fast_shutdown        = 1      <span style="color:var(--color-primary);opacity:.7"># libération mémoire rapide</span></code></pre>
-                      </div>
-                      <div style="margin-top:var(--space-4)">
-                        <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Impact OPcache</h5>
-                        <div class="code-block" style="background:transparent;border:none;padding:0">
-<pre style="font-size:11px;color:var(--color-primary)"><code>Sans OPcache : chaque requête → lecture + parse PHP
+                  </div>
+                  <div style="margin-top:var(--space-4)">
+                    <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Impact
+                      OPcache</h5>
+                    <div class="code-block" style="background:transparent;border:none;padding:0">
+                      <pre style="font-size:11px;color:var(--color-primary)"><code>Sans OPcache : chaque requête → lecture + parse PHP
 Avec OPcache : bytecode en RAM → -70% temps CPU PHP
 128 Mo couvre l'intégralité du core WordPress + plugins</code></pre>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION III — HELM CHART
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">III. Helm Chart — Déploiement Paramétré Multi-env</h4>
-                  <p class="panel__text">Le chart est conçu pour être déployé 3 fois par ArgoCD, avec une couche <code>values-{env}.yaml</code> qui surcharge uniquement les différences par environnement. Tout le reste (image, resources, sidecar, PVC) est partagé.</p>
+            <div class="panel__section">
+              <h4 class="block-title">III. Helm Chart — Déploiement Paramétré Multi-env</h4>
+              <p class="panel__text">Le chart est conçu pour être déployé 3 fois par ArgoCD, avec une couche
+                <code>values-{env}.yaml</code> qui surcharge uniquement les différences par environnement. Tout le reste
+                (image, resources, sidecar, PVC) est partagé.
+              </p>
 
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">values.yaml — Paramètres par défaut</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml">replicaCount: 2                 <span style="color:var(--color-primary);opacity:.7"># HA — 2 pods</span>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">values.yaml —
+                    Paramètres par défaut</h5>
+                  <div class="code-block">
+                    <pre
+                      style="font-size:10px"><code class="language-yaml">replicaCount: 2                 <span style="color:var(--color-primary);opacity:.7"># HA — 2 pods</span>
 imagePullSecrets:
   - name: registry-credentials  <span style="color:var(--color-primary);opacity:.7"># GitLab Registry</span>
 
@@ -1827,12 +2041,14 @@ sharedVolume:
   accessMode: ReadWriteMany       <span style="color:var(--color-primary);opacity:.7"># partagé WP+Nginx</span>
 
 createSecret: false               <span style="color:var(--color-primary);opacity:.7"># secret créé par Ansible</span></code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Surcharges par environnement</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># values-dev.yaml</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Surcharges par
+                    environnement</h5>
+                  <div class="code-block">
+                    <pre
+                      style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># values-dev.yaml</span>
 database:
   name: "wp_dev_db"
 ingress:
@@ -1850,35 +2066,42 @@ ingress:
 
 <span style="color:var(--color-primary);opacity:.7"># ArgoCD applique values.yaml + values-{env}.yaml</span>
 <span style="color:var(--color-primary);opacity:.7"># → 3 namespaces isolés, 3 bases MariaDB séparées</span></code></pre>
-                      </div>
-                      <div style="margin-top:var(--space-4)">
-                        <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Mise à jour GitOps automatique</h5>
-                        <div class="code-block">
-<pre style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># helm-validate : après chaque build réussi</span>
+                  </div>
+                  <div style="margin-top:var(--space-4)">
+                    <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Mise à jour
+                      GitOps automatique</h5>
+                    <div class="code-block">
+                      <pre
+                        style="font-size:10px"><code class="language-bash"><span style="color:var(--color-primary);opacity:.7"># helm-validate : après chaque build réussi</span>
 yq -i '.wordpress.image.tag = env(CI_COMMIT_SHA)' values.yaml
 git commit -m "ci: update image tag to $SHA [skip ci]"
 git push https://$GIT_PUSH_TOKEN@gitlab.com/...
 
 <span style="color:var(--color-primary);opacity:.7"># ArgoCD polling (3min) → détecte divergence</span>
 <span style="color:var(--color-primary);opacity:.7"># → helm upgrade automatique → rollout sans downtime</span></code></pre>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION IV — DEPLOYMENT SIDECAR
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">IV. Deployment K8s — Pattern Sidecar &amp; Haute Disponibilité</h4>
-                  <p class="panel__text">Un seul pod contient deux conteneurs qui partagent le même volume <code>/var/www/html</code>. Nginx sert les statiques directement et délègue le PHP à FPM via <code>127.0.0.1:9000</code> (loopback dans le pod). Le <code>podAntiAffinity</code> garantit que les 2 réplicas sont sur des nœuds différents.</p>
+            <div class="panel__section">
+              <h4 class="block-title">IV. Deployment K8s — Pattern Sidecar &amp; Haute Disponibilité</h4>
+              <p class="panel__text">Un seul pod contient deux conteneurs qui partagent le même volume
+                <code>/var/www/html</code>. Nginx sert les statiques directement et délègue le PHP à FPM via
+                <code>127.0.0.1:9000</code> (loopback dans le pod). Le <code>podAntiAffinity</code> garantit que les 2
+                réplicas sont sur des nœuds différents.
+              </p>
 
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Pattern Sidecar — volume partagé</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml">spec:
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Pattern
+                    Sidecar — volume partagé</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml">spec:
   replicas: {{ .Values.replicaCount }}  <span style="color:var(--color-primary);opacity:.7"># 2</span>
   affinity:
     podAntiAffinity:
@@ -1905,12 +2128,14 @@ git push https://$GIT_PUSH_TOKEN@gitlab.com/...
         - mountPath: /var/www/html     <span style="color:var(--color-primary);opacity:.7"># même volume</span>
         - mountPath: /etc/nginx/conf.d/default.conf
           subPath: nginx.conf</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Secrets K8s via secretKeyRef (5 clés)</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Aucune valeur en clair — tout depuis wordpress-secret</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Secrets K8s
+                    via secretKeyRef (5 clés)</h5>
+                  <div class="code-block">
+                    <pre
+                      style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Aucune valeur en clair — tout depuis wordpress-secret</span>
 env:
   - name: WORDPRESS_DB_HOST
     value: "mariadb-external:3306"   <span style="color:var(--color-primary);opacity:.7"># Service K8s</span>
@@ -1930,30 +2155,32 @@ env:
   - name: WORDPRESS_LOGGED_IN_KEY    &gt; wp-logged-in-key
   - name: WORDPRESS_NONCE_KEY        &gt; wp-nonce-key
 <span style="color:var(--color-primary);opacity:.7"># Secret créé par Ansible (phase 2) — createSecret: false</span></code></pre>
-                      </div>
-                      <div style="margin-top:var(--space-4)">
-                        <div class="code-block" style="background:transparent;border:none;padding:0">
-<pre style="font-size:11px;color:var(--color-primary)"><code>Flux d'une requête HTTP :
+                  </div>
+                  <div style="margin-top:var(--space-4)">
+                    <div class="code-block" style="background:transparent;border:none;padding:0">
+                      <pre style="font-size:11px;color:var(--color-primary)"><code>Flux d'une requête HTTP :
   Internet → Cloudflare → Tunnel
     → Service K8s :80
       → Pod (nginx:80)
         → 127.0.0.1:9000 (php-fpm)
           → /var/www/html (Longhorn)
             → MariaDB External:3306</code></pre>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION V — CONFIGMAP NGINX
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">V. ConfigMap Nginx — Proxy FastCGI &amp; Sécurité</h4>
-                  <p class="panel__text">La configuration Nginx est injectée via ConfigMap, ce qui la rend versionnable et rechargeable sans rebuild d'image. Les fichiers statiques sont servis avec 30 jours de cache, les fichiers sensibles (<code>.ht</code>, <code>.git</code>, <code>.env</code>) sont bloqués.</p>
-                  <div class="code-block" style="margin-top:var(--space-4)">
-<pre style="font-size:10px"><code class="language-nginx">server {
+            <div class="panel__section">
+              <h4 class="block-title">V. ConfigMap Nginx — Proxy FastCGI &amp; Sécurité</h4>
+              <p class="panel__text">La configuration Nginx est injectée via ConfigMap, ce qui la rend versionnable et
+                rechargeable sans rebuild d'image. Les fichiers statiques sont servis avec 30 jours de cache, les
+                fichiers sensibles (<code>.ht</code>, <code>.git</code>, <code>.env</code>) sont bloqués.</p>
+              <div class="code-block" style="margin-top:var(--space-4)">
+                <pre style="font-size:10px"><code class="language-nginx">server {
     listen 80;
     server_name {{ .Values.ingress.host }};  <span style="color:var(--color-primary);opacity:.7"># injecté par Helm</span>
     root /var/www/html;
@@ -1985,19 +2212,20 @@ env:
     <span style="color:var(--color-primary);opacity:.7"># Sécurité : bloquer fichiers sensibles</span>
     location ~ /\.(ht|git|env) { deny all; }
 }</code></pre>
-                  </div>
-                </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      SECTION VI — INGRESS & EXTERNAL-DB
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">VI. Ingress Traefik &amp; Service External-DB</h4>
-                  <div class="technical-grid" style="margin-top:var(--space-4)">
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Ingress Traefik — TLS conditionnel</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml">{{- if .Values.ingress.enabled }}
+            <div class="panel__section">
+              <h4 class="block-title">VI. Ingress Traefik &amp; Service External-DB</h4>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">Ingress
+                    Traefik — TLS conditionnel</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml">{{- if .Values.ingress.enabled }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -2019,12 +2247,13 @@ spec:
                 name: wordpress
                 port: { number: 80 }
 {{- end }}</code></pre>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">external-db.yaml — MariaDB hors cluster</h5>
-                      <div class="code-block">
-<pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Service headless → Endpoints Manuel</span>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:8px;font-weight:700">
+                    external-db.yaml — MariaDB hors cluster</h5>
+                  <div class="code-block">
+                    <pre style="font-size:10px"><code class="language-yaml"><span style="color:var(--color-primary);opacity:.7"># Service headless → Endpoints Manuel</span>
 kind: Service
 metadata:
   name: mariadb-external
@@ -2042,18 +2271,18 @@ subsets:
       - port: 3306
 <span style="color:var(--color-primary);opacity:.7"># DNS K8s : mariadb-external:3306</span>
 <span style="color:var(--color-primary);opacity:.7"># résout vers la VM MariaDB externe</span></code></pre>
-                      </div>
-                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- ═══════════════════════════════════════════════════════
+            <!-- ═══════════════════════════════════════════════════════
                      FLUX CICD COMPLET
                      ═══════════════════════════════════════════════════════ -->
-                <div class="panel__section">
-                  <h4 class="block-title">VII. Flux DevSecOps Complet — git push → production</h4>
-                  <div class="code-block" style="background:rgba(0,0,0,.05)">
-<pre style="font-size:11px;color:var(--color-primary)"><code>git push (branche feature/main)
+            <div class="panel__section">
+              <h4 class="block-title">VII. Flux DevSecOps Complet — git push → production</h4>
+              <div class="code-block" style="background:rgba(0,0,0,.05)">
+                <pre style="font-size:11px;color:var(--color-primary)"><code>git push (branche feature/main)
   │
   ▼ Stage: build
   Kaniko build → registry.gitlab.com/…/app-wordpress:$SHA
@@ -2079,33 +2308,32 @@ subsets:
   ▼ Utilisateur
   wordpress.vaultias.com → Cloudflare Zero Trust
   → cloudflared (2 pods) → Traefik → Service → Pod → FPM → MariaDB</code></pre>
-                  </div>
-                  <div style="margin-top:var(--space-4)">
-                    <div class="screenshot-placeholder zoomable">
-                      📸 ArgoCD — App wordpress-prod Synced &amp; Healthy, image tag mis à jour
-                    </div>
-                  </div>
-                  <div style="margin-top:var(--space-4)">
-                    <div class="screenshot-placeholder zoomable">
-                      📸 WordPress en production sur wordpress.vaultias.com (via Cloudflare Tunnel)
-                    </div>
-                  </div>
-                </div>
+              </div>
 
-                <!-- GITHUB LINK -->
-                <div class="panel__section" style="border-top:1px solid var(--color-border-subtle);padding-top:var(--space-8);display:flex;flex-direction:column;align-items:center;text-align:center">
-                  <h4 class="block-title" style="margin-bottom:var(--space-4)">Explorer le code source</h4>
-                  <p class="panel__text" style="max-width:500px;margin-bottom:var(--space-6)">Dockerfile, Helm chart (6 templates), pipeline CI/CD (179 lignes) et configurations PHP/OPcache disponibles en open-source.</p>
-                  <a href="https://github.com/azarqane/app-wordpress" target="_blank" class="btn btn-outline" style="display:inline-flex;align-items:center;gap:10px;border-radius:50px">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58V22"></path></svg>
-                    Consulter le dépôt app-wordpress
-                  </a>
-                </div>
-              </article>
 
             </div>
-          </div>
-        </div>
 
+            <!-- GITHUB LINK -->
+            <div class="panel__section"
+              style="border-top:1px solid var(--color-border-subtle);padding-top:var(--space-8);display:flex;flex-direction:column;align-items:center;text-align:center">
+              <h4 class="block-title" style="margin-bottom:var(--space-4)">Explorer le code source</h4>
+              <p class="panel__text" style="max-width:500px;margin-bottom:var(--space-6)">Dockerfile, Helm chart (6
+                templates), pipeline CI/CD (179 lignes) et configurations PHP/OPcache disponibles en open-source.</p>
+              <a href="https://github.com/azarqane/app-wordpress" target="_blank" class="btn btn-outline"
+                style="display:inline-flex;align-items:center;gap:10px;border-radius:50px">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58V22">
+                  </path>
+                </svg>
+                Consulter le dépôt app-wordpress
+              </a>
+            </div>
+          </article>
+
+        </div>
       </div>
-    </section>
+    </div>
+
+  </div>
+</section>
