@@ -1,0 +1,723 @@
+20/05/2023
+20/05/2023
+Adil ZARQANE
+     
+Adil ZARQANE
+     
+DOSSIER PROJET - AIS
+Titre RNCP Niveau II Administrateur d’infrastructures sécurisées
+DOSSIER PROJET - AIS
+Titre RNCP Niveau II Administrateur d’infrastructures sécurisées
+Sommaire
+Remerciements	1
+Abstract (Français)	2
+Abstract (Anglais)	3
+Agoravita	4
+1. Présentation de l’entreprise	4
+2.  Mon rôle et missions chez Agoravita	6
+3. Missions étudiées dans ce document	8
+Mission1 : Migration RDS vers RemoteApp	9
+1. Entreprise	9
+2. Architecture SI	9
+3. Les limites de l’architecture	10
+4. Solution (RemoteApp)	11
+5. Mise en place (RemoteApp)	13
+6. Configuration des postes utilisateurs	23
+7. Impact positif sur les performances	26
+Mission 2: Automatisation de création de comptes AD	28
+1. Entreprise	28
+2. Contexte	28
+3. Processus de création des utilisateurs initialement	28
+4. Solution (Automatisation)	30
+5. Création du formulaire (Forms)	32
+6. Création du flux (Power Automate)	36
+7. Création des comptes utilisateurs par script PS	39
+8. Intégration dans l’infrastructure	46
+Mission3 : Supervision Sophos (Sophos Central)	47
+1.	Contexte de la mission	47
+2.	Description de la mission	47
+3.	Sophos Central : Présentation générale	48
+4.	Supervision des pares-feux sur Sophos Central	48
+5.	Ajout du pare-feu à Sophos Central	50
+Mission 4 : Audit de vulnérabilités	55
+1.	Contexte de la mission	55
+2.	Description de la mission	55
+3.	Périmètre de l’audit	55
+4.	Méthodologie et outils utilisés	55
+5.	Aperçu de l’outil Nessus	57
+6.	Répartition des vulnérabilités selon la gravité	58
+7.	Évaluation de la Gravité des Vulnérabilités par Nessus	58
+8.	Récapitulatif des vulnérabilités découvertes	59
+9.	Récapitulatif des risques et recommandations	60
+10.	Présentation des résultats	61
+11.	Conclusion	61
+Annexes	62
+
+	
+	
+« …Je suis ravi d’avoir pu partager ce parcours avec vous tous. »
+« …Je suis ravi d’avoir pu partager ce parcours avec vous tous. »
+
+Tout d'abord, je tiens à exprimer ma profonde gratitude à mon formateur, Monsieur Amadou LY. Vos conseils, votre patience et votre expertise ont été fondamentales pour ma croissance et mon apprentissage. Vous avez su instaurer un environnement propice à l'apprentissage, favorisant à la fois le questionnement et l'exploration. Vous nous avez poussé à aller le plus loin possible dans notre métier.
+Ensuite, je souhaite remercier l'entreprise qui m'a accueilli en stage. L'opportunité que vous m'avez offerte a été d'une grande valeur pour mon parcours académique et professionnel. J'apprécie énormément le temps, l'énergie et les ressources que vous avez investies pour rendre cette expérience formatrice et enrichissante.
+Un merci tout particulier au personnel du centre de formation ADRAR. Votre soutien constant et votre dévouement ont joué un rôle crucial dans mon parcours. La disponibilité et la compétence de chaque membre de l'équipe ont fait de cette formation une expérience unique et précieuse.
+Je voudrais également adresser mes remerciements à mes collègues de formation. Nous avons partagé des moments d'apprentissage, de défis et de réussite. Votre camaraderie et votre soutien mutuel ont enrichi cette expérience. Je suis ravi d'avoir pu partager ce parcours avec vous tous.
+Enfin, je tiens à remercier mes collègues en entreprise. Votre aide, votre soutien et votre amitié ont grandement facilité ma transition de la théorie à la pratique. Vous avez joué un rôle essentiel dans ma capacité à appliquer ce que j'ai appris et à m'épanouir dans un environnement professionnel.
+Abstract (Français)
+
+Pendant ma formation en tant qu’Administrateur d’Infrastructures Sécurisées, j’ai effectué mon alternance chez Agoravita, une entreprise spécialisée dans l’infogérance, la programmation informatique et les formations. Mon alternance s'est déroulée dans le pôle bleu, responsable de la surveillance et la maintenance des serveurs, du support technique, de la gestion des sauvegardes et de la sécurité.
+Dans ce mémoire, je présente quatre projets réalisés durant mon alternance :
+	•	Migration de plusieurs agences d’intérim de Remote Desktop Services (RDS) à Remote App pour améliorer la flexibilité et la sécurité.
+	•	Automatisation de la création des comptes Active Directory avec Microsoft Forms pour simplifier la gestion des utilisateurs.
+	•	Intégration du matériel Sophos à Sophos Central, une plateforme de gestion unifiée, pour une meilleure sécurité globale.
+	•	Audit de cybersécurité du serveur LDAP d’Agoravita et des sous-domaines d’Agoravita.com pour identifier et renforcer les vulnérabilités éventuelles.
+Ces projets démontrent ma compétence en administration des infrastructures sécurisées et en cybersécurité, tout en contribuant aux activités d'Agoravita. 
+
+
+
+
+
+Abstract (Anglais)
+
+During my training as a Secure Infrastructure Administrator, I completed my apprenticeship at Agoravita, a company specialized in IT outsourcing, computer programming, and training. I worked in the "Blue Division" during my apprenticeship, which is responsible for server monitoring, maintenance, technical support, backup management, and security.
+In this dissertation, I present four projects undertaken during my apprenticeship:
+	•	Migration of several temporary staffing agencies from Remote Desktop Services (RDS) to Remote App to enhance flexibility and security.
+	•	Automation of Active Directory account creation using Microsoft Forms to simplify user management.
+	•	Integration of Sophos hardware into Sophos Central, a unified management platform, for improved overall security.
+	•	Cybersecurity audit of Agoravita's LDAP server and Agoravita.com subdomains to identify and strengthen potential vulnerabilities.
+These projects demonstrate my expertise in secure infrastructure administration and cybersecurity, while also contributing to Agoravita's operations.
+Agoravita
+ 1. Présentation de l’entreprise 
+Agoravita est une ESN basée à Toulouse, située au 1 rue Paul Mesplé. La société a été créée le 1er septembre 1999 et est active depuis 23 ans.
+L’entreprise est spécialisée dans le secteur de l’infogérance, la programmation informatique et formations. Elle offre une gamme de services liés au domaine du digital, notamment :
+	•	Communication digitale : Agoravita aide à la conception et à la mise en place de stratégies digitales, incluant la création de sites internet, de sites e-commerce, d'intranet et d'extranet, ainsi que la proposition de solutions webmarketing.
+
+	•	Stratégie digitale : L'entreprise propose d'élaborer avec ses clients une stratégie digitale qui servira de guide dans le choix des outils, des plateformes et des services à utiliser.
+
+	•	Marketing Digital : Agoravita accompagne ses clients dans tous les aspects du marketing digital, allant de la définition des objectifs au choix des moyens pour développer la visibilité en ligne de leurs produits ou services.
+
+	•	Développement web : En tant qu'agence digitale, Agoravita développe des sites et des applications qui répondent aux besoins de ses clients et de leurs utilisateurs. Le client est impliqué dans tout le processus de conception et de réalisation, et l'entreprise reste à ses côtés après la mise en production.
+
+	•	Infogérance : Agoravita propose des services d'infogérance pour accompagner ses clients dans la gestion et la maintenance de leur infrastructure informatique. Cela comprend la surveillance et la maintenance des serveurs, le support technique, la gestion des sauvegardes et de la sécurité, ainsi que la gestion des incidents et des problèmes.
+
+	•	Formation : Agoravita propose également des services de formation dans le domaine de l'informatique et du digital. Ces formations peuvent être personnalisées en fonction des besoins spécifiques de l'entreprise cliente. 
+
+
+
+
+
+
+
+
+
+
+2.  Mon rôle et missions chez Agoravita
+En tant qu'administrateur systèmes et réseaux chez Agoravita, j'ai été affecté à diverses missions, en commençant par le support de niveau 1 et des tâches à l'atelier, avant de prendre en charge des responsabilités d'administration système plus avancées. Ma mission principale était d'assurer le bon fonctionnement et la gestion efficace des infrastructures informatiques de nos clients. Voici comment j'ai évolué dans mes responsabilités :
+	•	Support et préparation à l'atelier : J'ai débuté en fournissant un support technique de niveau 1 et 2 à nos clients. J'ai aidé à résoudre des problèmes utilisateur, tels que des pannes matérielles, des erreurs système ou des problèmes de connectivité réseau. J'ai également été impliqué dans des tâches à l'atelier, comme la maintenance des équipements informatiques, la configuration des appareils et la préparation de nouveaux systèmes.
+
+	•	Automatisation et gestion des procédures : Au fur et à mesure de ma progression, j'ai développé des compétences en automatisation des tâches récurrentes et en gestion des procédures. J'ai utilisé des scripts et des outils pour automatiser des processus, tels que la création des nouveaux utilisateurs AD à partir d’un formulaire. J'ai également créé des procédures détaillées pour guider les équipes techniques et les utilisateurs finaux dans l'utilisation efficace des systèmes.
+
+	•	Interventions préventives et curatives avancées : Grâce à mon expérience croissante, j'ai été en mesure de prendre en charge des interventions préventives et curatives plus avancées. En cas d'incident, j'ai réagi rapidement pour diagnostiquer et résoudre les problèmes système ou réseau, en minimisant les temps d'arrêt et en assurant la continuité des activités de nos clients.
+
+
+	•	Administration système avancée : Avec le temps, j'ai été assigné à des responsabilités d'administration système plus avancée. J'ai participé à la planification, à la conception et à la mise en œuvre de nouvelles infrastructures pour nos clients. J'ai travaillé sur des projets de migration, de virtualisation et d'expansion de l'infrastructure. J'ai également été impliqué dans l'optimisation des performances des systèmes, la gestion des droits d'accès et la sécurité des données.
+Au fil de mon parcours chez Agoravita, j'ai acquis une solide expérience en administration systèmes et réseaux. J'ai été formé et encadré par des experts de l'entreprise, ce qui m'a permis de développer mes compétences techniques et de prendre en charge des responsabilités de plus en plus importantes. Mon objectif principal était de garantir la satisfaction de nos clients en maintenant leurs infrastructures informatiques performantes, sécurisées et évolutives.
+
+
+
+
+
+
+
+
+
+
+3. Missions étudiées dans ce document 
+Le projet comprend quatre missions clés : 
+	•	La migration d’une solution d’accès à distance par RDS vers Remote App.
+	•	L'automatisation de la création d'utilisateurs AD via un formulaire.
+	•	Supervision Sophos (Sophos Central).
+	•	Audit de vulnérabilités.
+
+
+	•	La migration vers Remote App vise à réduire la latence et à améliorer les performances en exécutant les applications métier essentielles à distance. 
+	•	L'automatisation de la création d'utilisateurs AD simplifiera la gestion des utilisateurs en automatisant le processus de création, y compris l'application des licences et l'ajout aux groupes de sécurité appropriés. Ces missions visent à améliorer l'efficacité et l'expérience utilisateur, tout en simplifiant la gestion des utilisateurs.
+	•	La supervision Sophos, également connue sous le nom de Sophos Central, fait référence à une plateforme de gestion centralisée de la sécurité proposée par l'entreprise Sophos. Cette plateforme permet de surveiller et de gérer différents aspects de la sécurité informatique de l'organisation.
+	•	L'audit de cybersécurité est une évaluation approfondie et systématique des mesures de sécurité informatique mises en place au sein de l'organisation. L'objectif principal d'un audit de cybersécurité est de détecter les éventuelles vulnérabilités et faiblesses dans les systèmes et les politiques de sécurité, afin de mieux protéger l'entreprise contre les cyberattaques.
+Mission1 : Migration RDS vers RemoteApp 
+1. Entreprise 
+Composé à 95% d’agences en franchise, Temporis est le 1er réseau national de travail temporaire et de recrutement en franchise ! L’enseigne rassemble à ce jour plus de 170 agences. Elle emploie plus de 8 500 intérimaires dans 3 900 entreprises clientes.
+2. Architecture SI 
+Dans ce schéma réseau, plusieurs agences intérimaires se connectent aux serveurs RDS situés dans le datacenter d'Agoravita via un VPN IPSEC. Chaque agence dispose de son propre serveur RDS dédié, tandis que le datacenter joue un rôle central dans la gestion et la maintenance de ces serveurs.
+
+3. Les limites de l’architecture
+	•	 Surcharge et latence :
+Les jours de paie sont souvent marqués par une forte affluence d'utilisateurs qui accèdent aux systèmes de paie via les serveurs RDS, entraînant une surcharge et des ralentissements des sessions distantes. Cette situation peut entraîner des retards dans les temps de réponse et une diminution de la productivité des utilisateurs.
+Jour du mois
+Utilisation du processeur RDS (%)
+Latence (ms)
+9
+Entre 80% et 90%
+Entre 60 et 80
+10
+Entre 90% et 100%
+Entre 80 et 120
+11
+Entre 90% et 100%
+Entre 80 et 120
+12
+Entre 80% et 90%
+Entre 60 et 80
+
+
+
+
+
+
+
+
+	•	Augmentation des tickets support :
+Lorsque des problèmes de latence et de surcharge des serveurs RDS surviennent, le support informatique est souvent inondé de tickets, les utilisateurs signalant les ralentissements des sessions distantes. Cela crée une charge de travail importante pour les équipes de support.
+
+4. Solution (RemoteApp)
+	•	Étude des solutions
+Dans cette partie, nous avons examiné différentes solutions pour résoudre les problèmes de latence et de surcharge des serveurs RDS lors des sessions distantes. Parmi les solutions envisagées, nous avons étudié l'augmentation des ressources des machines virtuelles (CPU, RAM, etc.) et la migration vers l'utilisation de RemoteApp.
+	•	Solution retenue
+Après une analyse approfondie, la solution retenue pour résoudre les problèmes de latence et de surcharge des serveurs RDS est la migration vers l'utilisation de RemoteApp. Cette approche permet d'exécuter uniquement les applications métier essentielles en tant qu'applications distantes, réduisant ainsi les exigences de bande passante et de puissance de calcul.
+
+
+
+
+
+	•	Avantages
+La solution de RemoteApp présente plusieurs avantages significatifs. Tout d'abord, elle permet une réduction significative de la latence, offrant ainsi une expérience utilisateur plus fluide et réactive. De plus, cette approche permet une utilisation plus efficace des ressources du serveur RDS, car seules les applications métier essentielles sont exécutées à distance. En outre, elle permet une meilleure flexibilité pour adapter les ressources allouées à chaque application distante, en fonction des besoins spécifiques de chaque agence.
+
+
+	•	Inconvénients
+Dans les inconvénients identifiés, il a été constaté que l'adaptation des utilisateurs à leur nouvel environnement pouvait prendre du temps. Lors de la migration vers l'utilisation de RemoteApp, les utilisateurs ont dû s'habituer à une nouvelle façon de travailler, où certaines tâches étaient exécutées localement tandis que d'autres étaient effectuées via des applications distantes. Cette transition a pu entraîner une perturbation initiale dans leurs routines de travail habituelles et nécessiter une période d'ajustement et d'apprentissage. 
+	•	Conclusion
+En conclusion, après avoir étudié différentes solutions, la migration vers l'utilisation de RemoteApp a été choisie comme la solution la plus appropriée pour résoudre les problèmes de latence et de surcharge des serveurs RDS. Cette approche offre une réduction significative de la latence, une utilisation efficace des ressources et une meilleure expérience utilisateur dans les agences d’intérim. Cependant, il est important de prendre en compte les inconvénients potentiels et de s'assurer d'une configuration et d'une gestion adéquates pour tirer pleinement parti de cette solution.
+
+
+5. Mise en place (RemoteApp)
+	•	C’est quoi le RemoteApp de Microsoft
+La solution RemoteApp de Microsoft est une technologie qui permet aux utilisateurs d'accéder à des applications hébergées sur des serveurs à distance, de manière transparente et sécurisée. Elle offre une expérience utilisateur similaire à celle d'une application locale, permettant aux utilisateurs d'exécuter des applications spécifiques sans avoir à les installer sur leurs propres appareils.
+Lors de la mise en place du RemoteApp, voici les étapes clés à considérer :
+	•	Configuration du serveur RDS : mise en place d'un serveur RDS dédié pour héberger les applications à distance. Dans notre cas il y a déjà une VM RDS pour chaque agence.
+
+	•	Sélection des applications à publier : identification des applications qu’on souhaite rendre disponibles via RemoteApp. Il est important de tenir compte des besoins des utilisateurs et des exigences de l'entreprise. 
+	•	Préparation des applications : préparation des applications pour une utilisation à distance. Cela peut inclure l'assurance que les applications sont compatibles avec le mode RemoteApp et l'optimisation des paramètres de performance pour une expérience utilisateur optimale. 
+	•	Configuration des collections d'applications : création des collections d'applications regroupant les applications à publier. Cela permet de gérer plus facilement les autorisations d'accès et les paramètres spécifiques à chaque application. 
+	•	Configuration des autorisations d'accès : définition des autorisations d'accès pour les utilisateurs ou les groupes d'utilisateurs afin de contrôler qui peut accéder à quelles applications. Assurez-vous de configurer des niveaux de sécurité appropriés.
+
+	•	Configuration du client : les postes utilisateurs doivent être configurés et paramétrés.
+
+	•	Test et validation : avant de déployer le RemoteApp à grande échelle, réalisation des tests approfondis pour s’assurer que les applications fonctionnent correctement à distance et que les performances répondent aux attentes.
+
+	•	Résumé des étapes de mise en place
+La mise en place de la solution de migration vers Remote App implique plusieurs étapes clés. Tout d'abord, des modifications sont apportées sur le serveur Active Directory Temporis, telles que :
+	•	La sécurisation des applications TEMPO-BANCO-MIKADO et les ajustements dans la gestion de la stratégie de groupe et la gestion des imprimantes.
+	•	Ensuite, des modifications sont effectuées sur le serveur RDS d'agence, notamment la création des autorisations de partage de fichiers et la sécurisation du "Dossier Perso" pour l'agence. 
+	•	Enfin, des modifications sont apportées aux PC en agence, comprenant l'application des GPO, la vérification du mappage réseau, l'installation des applications RemoteApp nécessaires et la gestion des imprimantes. Pour les ordinateurs portables, l'installation d'un VPN est également prévue. 
+L'ensemble de ces actions permet de mettre en place la migration vers RemoteApp de manière efficace et de garantir une expérience utilisateur optimale dans les agences.
+
+
+
+
+
+	•	Sécurisation des applications TEMPO-BANCO-MIKADO
+Afin de garantir la sécurisation des accès aux applications, j'ai entrepris une démarche de clarification en collaboration avec chaque agence. Cela m'a permis d'obtenir une matrice des droits, identifiant précisément les utilisateurs et leurs besoins d'accès aux différentes applications. Ensuite, j'ai procédé à l'ajout de chaque utilisateur dans les groupes de sécurité correspondants.
+
+	•	GpUser-RemoteApp_Banco : Le droit de se connecter au logiciel Banco
+	•	GpUser-RemoteApp_Mikado : Le droit de se connecter au logiciel Mikado
+	•	GpUser-RemoteApp_Tempo : Le droit de se connecter au logiciel Tempo
+	•	GpUser-RemoteApp_Full : Le droit de se connecter aux trois logiciels
+
+	•	Gestion de la sécurité par groupe sur les programmes REMOTEAPP
+Après avoir créé les collections pour chaque agence, depuis le Gestionnaire de Serveur, dans Services Bureau à Distance, dans Collections : choisir la Collection de l’agence concernée puis sélectionner le programme souhaité. 
+
+
+
+
+  
+Sélectionner l’onglet Affectation d’utilisateurs et choisir l’option Seuls les utilisateurs et les groupes spécifiés.
+Selon les programmes TEMPO-BANCO-MIKADO, voici la configuration à suivre :
+	•	TEMPO:
+	•	GpUser-RemoteApp_Full-AGxxx
+	•	GpUser-RemoteApp_Tempo-AGxxx
+	•	BANCO:
+	•	GpUser-RemoteApp_Full-AGxxx
+	•	GpUser-RemoteApp_Banco-AGxxx
+	•	MIKADO:
+	•	GpUser-RemoteApp_Full-AGxxx
+	•	GpUser-RemoteApp_Mikado-AGxxx
+
+5.5 Gestion des GPO : Lecteurs mappés
+J’ai choisi de mettre des raccourcis des logiciels en Remote dans un lecteur mappé appelé « V : logiciel$ », pour cela j’ai modifié la GPO déjà existante pour ajouter le mappage du nouveau lecteur.
+
+Sélectionner la GPO « Lecteurs_AGXXX » et sur l’OU correspondante à l’agence : 
+	•	Appliqué : Oui | Lien activé : Oui
+
+Pour que les mappages de lecteurs remontent automatiquement sur le bureau de l’utilisateur, les mappages de lecteurs sont normalement déjà configurés comme ceci pour (R :) ; (S :) ; (T :) ; (U :) ; Il reste dans certains cas à créer le mappage du lecteur (V :) pour logiciel$.
+
+	•	Action : Mettre à jour
+	•	Emplacement : \\server\logiciel$
+	•	Reconnecter : coché
+	•	Libeller en tant que : Logiciel
+	•	Utiliser : V
+	•	Commun : Exécuter dans le contexte de sécurité de l’utilisateur connecté.
+
+	•	Gestion des raccourcis des lecteurs réseau
+Pour que les raccourcis des lecteurs réseau remontent automatiquement sur le bureau de l’utilisateur, j’ai dû modifier les propriétés de chaque lecteur dans la GPO.
+
+J’ai configuré chaque raccourci comme ceci :
+	•	Action : Mettre à jour 
+	•	Nom : CARTE BTP | SCAN | Dossier Agence      | Dossier Perso | Logiciel  
+	•	Type de cible : Objet du système de fichiers 
+	•	Emplacement : Bureau du profil Tous les utilisateurs 
+	•	Chemin d’accès cible : \\server\sharename$ 
+	•	Chemin d’accès du fichier d’icône : %SystemRoot%\System32\SHELL32.dll Index  
+	•	Icône : 273 
+	•	Gestion des redirection imprimantes 
+Afin de permettre aux logiciels exécutés sur le serveur RDS distant d'imprimer sur les imprimantes locales des agences, il est nécessaire d'activer la redirection des requêtes d'impression.
+
+Pour permettre la redirection des imprimantes locales vers TEMPO/BANCO/MIKADO, il est nécessaire de cocher l'option de redirection de l'imprimante client dans la collection de l'agence cliente au niveau de la gestion serveur. Assurez-vous d'appliquer la modification afin d'activer cette fonctionnalité.
+
+
+
+
+	•	Création et Sécurisation du « Dossier Perso » pour l’agence
+Le « Dossier Perso » couramment appelé́ Dossier utilisateurs contient les données personnelles de chaque utilisateur. Chaque utilisateur a un accès privatisé à son dossier. 
+Il faut donc sécuriser cet accès. Prenons l’exemple de l’agence de Lorient AG126 : 
+
+Désactiver l’héritage et ajouter les utilisateurs de l’agence en « Modification » et « Autorisation » sur le dossier maitre qui contient tous les sous-dossiers.  Prenons ce dossier et ouvrons les autorisations. L’objectif va être de refuser l’accès aux autres utilisateurs sauf « agence3.lorient ».
+Faire de même pour tous les dossiers.
+Vérifier que les droits d’écriture fonctionnent et qu’un utilisateur étranger à ce dossier ne puisse pas entrer (pour tester).
+Faire le test par exemple lorsque les raccourcis sont montés hors serveur (RemoteApp).
+6. Configuration des postes utilisateurs
+	•	Application des GPO
+Pour que les stratégies de groupe mises en place soient effectives sur les postes utilisateur, il a été nécessaire d'exécuter la commande "gpupdate /force" et de redémarrer les postes. Cette commande a permis de forcer la mise à jour des stratégies de groupe sur chaque poste, garantissant ainsi l'application correcte des dernières configurations et paramètres. Les postes ont ensuite été redémarrés pour finaliser le processus, assurant une prise en compte complète des stratégies de groupe et une cohérence dans les paramètres appliqués.
+
+	•	Vérification du mappage réseau et création de raccourcis
+Après l'application des stratégies de groupe, j'ai effectué des vérifications pour m'assurer de la présence des emplacements réseau dans la session utilisateur, ainsi que la présence des raccourcis des lecteurs réseau sur le bureau. Ces vérifications ont permis de confirmer que les stratégies de groupe ont été appliquées avec succès et que les utilisateurs ont accès aux emplacements réseau requis. La présence des raccourcis sur le bureau facilite également la navigation et l'accès aux lecteurs réseau, offrant ainsi une expérience utilisateur plus fluide et pratique.
+ 
+	•	Vérification du RemoteApp (raccourcis / logiciels)
+Après avoir déployé les applications en RemoteApp, j'ai procédé à des vérifications pour confirmer la présence des raccourcis des logiciels sur les postes utilisateurs. Cette étape était essentielle pour s'assurer que les utilisateurs ont accès aux applications distantes de manière pratique et facile. En vérifiant la présence des raccourcis, j'ai pu confirmer que le déploiement des applications en RemoteApp a été effectué avec succès.
+
+Je tiens à signaler que certains postes ne remontaient pas les raccourcis des logiciels déployés en RemoteApp. Pour résoudre ce problème, j'ai dû effectuer les mises à jour Windows sur ces postes. Si nécessaire, il est recommandé de vérifier et d'effectuer les mises à jour Windows sur les postes qui pourraient être obsolètes ou nécessiter des améliorations en termes de fiabilité, performances et sécurité. Cela permettra de garantir un fonctionnement optimal des applications en RemoteApp et de remédier aux problèmes de remontée des raccourcis sur les postes concernés.
+	•	Installation du VPN (ordinateur portable uniquement).
+Pour la configuration d’un profil utilisateur VPN pour les ordinateurs portables. Relever le compte et lui attribuer l’autorisation GpUser-VPNSSL. 
+Se connecter à l’adresse IP WAN du Pare-feu de l’agence : 
+
+Authentifier l’utilisateur avec son login AD et son mot de passe.
+
+
+
+
+
+
+
+7. Impact positif sur les performances 
+Jour du mois
+Utilisation du processeur RDS (%)
+Latence (ms)
+9
+Entre 40% et 50%
+Entre 40 et 60
+10
+Entre 50% et 60%
+Entre 60et 80
+11
+Entre 50% et 60%
+Entre 60 et 80
+12
+Entre 40% et 50%
+Entre 40 et 60
+Après la mise en place du RemoteApp, nous avons constaté une nette amélioration des performances par rapport à l'ancienne configuration. Auparavant, les serveurs RDS étaient souvent soumis à des pics de charge processeur dépassant les 60%, ce qui entraînait des ralentissements et une latence élevée. Cependant, avec l'implémentation du RemoteApp, la charge processeur des serveurs RDS a été significativement réduite, maintenant maintenue en dessous de 60% même lors des périodes de pointe.  
+   
+
+
+ 
+Cette amélioration a eu un impact positif sur la latence, offrant aux utilisateurs une expérience plus réactive et fluide lors de l'utilisation des applications à distance. Les sessions distantes sont désormais beaucoup plus fluides et réactives, ce qui contribue à une augmentation de la productivité des utilisateurs.
+De plus, depuis la mise en place du RemoteApp, nous avons constaté une diminution significative du nombre de tickets soumis à l'équipe de support les jours de pic d'activité. Auparavant, les utilisateurs rencontraient fréquemment des problèmes de latence et de ralentissement des sessions distantes, ce qui se traduisait par un afflux important de demandes d'assistance. Cependant, grâce à l'amélioration des performances du RemoteApp, les utilisateurs bénéficient désormais d'une expérience plus fluide, ce qui a considérablement réduit le nombre de tickets générés les jours de forte affluence. Cette réduction de la charge de travail pour l'équipe de support permet de consacrer davantage de temps à des tâches prioritaires et d'améliorer la réactivité globale du support aux besoins des utilisateurs.
+
+Pour faciliter l'adaptation des utilisateurs à leur nouvel environnement de travail, nous avons mis en place une procédure détaillée d'assistance et d'adaptation. Cette procédure, qui comprend des instructions et des conseils pratiques, sera incluse dans les annexes du projet. 
+Elle vise à fournir aux utilisateurs un soutien supplémentaire pour les aider à se familiariser avec le RemoteApp et à tirer pleinement parti de ses fonctionnalités.
+En résumé, l'implémentation du RemoteApp a considérablement amélioré les performances en réduisant la charge processeur des serveurs RDS, ce qui a entraîné une réduction de la latence et des ralentissements des sessions distantes. De plus, la diminution du nombre de tickets soumis à l'équipe de support les jours de pic d'activité témoigne de l'amélioration de l'expérience utilisateur. La mise en place d'une procédure d'assistance et d'adaptation vient compléter ces améliorations, offrant aux utilisateurs un accompagnement supplémentaire pour faciliter leur transition vers le RemoteApp.
+
+Mission 2: Automatisation de création de comptes AD
+1. Entreprise 
+Geosys est une société spécialisée dans l'agriculture de précision et l'analyse des données satellitaires pour l'agriculture. Elle fournit des solutions technologiques pour aider les agriculteurs et les entreprises agricoles à optimiser leurs pratiques agricoles, à améliorer la productivité des cultures et à réduire les risques liés aux conditions météorologiques et aux variations des cultures.
+2. Contexte
+Geosys est une entreprise dynamique qui accueille régulièrement de nouveaux utilisateurs, tels que des stagiaires, des prestataires et des employés internes. Cependant, la création des utilisateurs dans Active Directory (AD) ainsi que l'attribution des licences rencontrent souvent des retards, pouvant aller jusqu'à une semaine. Étant donné que les interventions d'Agoravita ont lieu une fois par semaine, cela entraînait une dépendance externe et des délais supplémentaires pour Geosys.
+Dans ce contexte, ma mission était de simplifier et d'automatiser le processus de création des utilisateurs afin que Geosys puisse effectuer cette tâche en interne, sans avoir à attendre l'intervention d'Agoravita. L'objectif était de réduire les retards et d'améliorer l'efficacité du flux de travail. En mettant en place des solutions adéquates, j'ai travaillé pour permettre à Geosys de gérer de manière autonome la création des utilisateurs AD et l'attribution des licences, en éliminant ainsi les délais inutiles et en garantissant une transition plus fluide pour les nouveaux arrivants au sein de l'entreprise.
+3. Processus de création des utilisateurs initialement
+Le processus de création d'un nouvel utilisateur au sein de Geosys rencontrait certaines limites qui pouvaient entraîner des délais considérables, pouvant parfois atteindre jusqu'à six jours ou plus (J+6). Ces délais étaient principalement dus à une dépendance vis-à-vis des interventions préventives d'Agoravita.
+Cette attente pouvait poser des problèmes dans les situations où une création d'utilisateur rapide était nécessaire, par exemple pour un nouveau collaborateur qui devait rapidement accéder aux ressources et aux systèmes de l'entreprise. Les délais prolongés étaient source de frustration pour les responsables des ressources humaines et pour les utilisateurs concernés.
+
+En conclusion, les délais prolongés dans la création d'un utilisateur, résultant de l'attente de la prochaine intervention préventive d'Agoravita, représentaient une limite du processus existant. L'identification de solutions permettant d'accélérer cette procédure serait essentielle pour améliorer l'efficacité globale du système de gestion des utilisateurs de Geosys.
+
+
+4. Solution (Automatisation)
+	•	Processus
+Pour accélérer le processus de création d'un utilisateur et réduire les délais, une solution efficace consiste à mettre en place un formulaire Microsoft Forms. Ce formulaire sera utilisé par le ou la secrétaire pour renseigner les informations du nouvel employé de manière directe et simplifiée. À chaque réponse enregistrée dans le formulaire, un flux Power Automate sera déclenché automatiquement. Ce flux extraira les informations de la réponse et les exportera dans un fichier Excel. Ensuite, un script PowerShell utilisera ce fichier pour créer l'utilisateur, l'ajouter aux groupes de sécurité appropriés et lui attribuer les licences nécessaires. Grâce à cette solution, la secrétaire pourra remplir le formulaire directement, ce qui permettra de créer l'utilisateur en un jour, éliminant ainsi les délais liés aux interventions préventives.
+
+En résumé, en utilisant un formulaire Microsoft Forms, un flux Power Automate et un script PowerShell, il est possible de simplifier et d'accélérer le processus de création d'un utilisateur. La secrétaire pourra remplir le formulaire, déclenchant ainsi la création de l'utilisateur en un jour. Cette approche automatisée éliminera les dépendances vis-à-vis des interventions préventives et garantira une intégration plus rapide des nouveaux employés dans le système de gestion des utilisateurs.
+	•	Définition des outils
+Microsoft Forms :
+Microsoft Forms est un outil de création de formulaires en ligne et de sondages développé par Microsoft. Il permet aux utilisateurs de concevoir facilement des questionnaires, des enquêtes, des évaluations et d'autres types de formulaires interactifs. Avec Microsoft Forms, vous pouvez poser différentes questions, inclure des options de réponse variées telles que des choix multiples, des cases à cocher et des échelles linéaires, et personnaliser l'apparence de votre formulaire.
+	Power Automate :
+Power Automate est une plateforme de Microsoft qui permet d'automatiser les processus et les tâches répétitives au sein d'une organisation. Auparavant connu sous le nom de "Microsoft Flow", Power Automate offre des fonctionnalités permettant de créer des flux de travail automatisés entre différentes applications, services et systèmes.
+	PowerShell :
+PowerShell est basé sur le Framework .NET de Microsoft et tire parti de sa puissance et de sa flexibilité. Il fournit une syntaxe simple et concise qui permet aux administrateurs système et aux développeurs d'écrire des scripts pour exécuter des commandes et des opérations complexes.
+En utilisant PowerShell, vous pouvez automatiser des tâches courantes, telles que la gestion des utilisateurs, la configuration du réseau, la manipulation de fichiers, l'exécution de requêtes, la gestion des services, la gestion des bases de données et bien plus encore. Il permet également d'interagir avec des services web, des API et d'autres applications, ce qui facilite l'intégration et l'automatisation des flux de travail.
+5. Création du formulaire (Forms)
+	•	Avantages du formulaire Microsoft Forms
+J'ai opté pour l'utilisation de Microsoft Forms sur le tenant 365 de l'entreprise GEOSYS afin de créer le formulaire. Cette décision s'est avérée bénéfique car elle m'a permis de sécuriser le formulaire en restreignant l'accès aux seules personnes internes autorisées à y répondre. De plus, grâce à Microsoft Forms, nous avons la possibilité de savoir qui a répondu au formulaire.
+Traçabilité : Ce qui est essentiel dans notre contexte est connaître l’utilisateur ayant créé chaque réponse et à quel moment cela s'est produit.
+Dans la capture ci-dessous, les informations suivantes sont visibles :
+	•	Heure de début : l'heure à laquelle le formulaire a été ouvert.
+	•	Heure de fin : l'heure à laquelle les réponses ont été envoyées.
+	•	Adresse de messagerie : le compte 365 ayant répondu au formulaire.
+	•	Nom : le nom de la personne associée au compte 365 ayant répondu au formulaire.
+ 
+
+Sécurité et confidentialité : Microsoft Forms offre des mesures de sécurité robustes pour protéger les données collectées. Vous pouvez restreindre l'accès au formulaire aux personnes internes de votre organisation et gérer les autorisations de réponse.
+	•	Inconvénients du formulaire Microsoft Forms
+Bien que Microsoft Forms soit un outil pratique pour collecter des informations et les intégrer dans des flux de travail automatisés, il présente certains inconvénients à prendre en compte :
+	•	Limitations de personnalisation : Microsoft Forms offre des options de personnalisation limitées en termes de mise en page et de branding. Si vous avez besoin d'un contrôle plus précis sur l'apparence du formulaire, vous pourriez vous sentir limité.
+
+	•	Sécurité et confidentialité : Microsoft Forms offre des fonctionnalités de sécurité de base, telles que la restriction d'accès aux répondants internes. Cependant, si vous traitez des informations sensibles ou réglementées, vous devez vous assurer que les mesures de sécurité de Microsoft Forms répondent à vos exigences spécifiques. 
+	•	Dépendance à la plateforme Microsoft : Utiliser Microsoft Forms signifie que vous dépendez de la suite d'applications Microsoft 365. Si vous préférez utiliser des solutions open-source ou des alternatives à la suite Microsoft, cela peut être un inconvénient. 
+Il est important de prendre en compte ces inconvénients potentiels et d'évaluer si Microsoft Forms répond adéquatement à vos besoins en matière de collecte d'informations et d'automatisation des flux de travail.
+
+
+
+
+	•	Création du formulaire
+Lors de la création du formulaire, j'ai veillé à inclure toutes les informations nécessaires pour créer un utilisateur dans Active Directory (AD). Les champs requis comprennent le nom, le prénom, la fonction, le groupe de sécurité auquel l'utilisateur doit être ajouté, la licence associée à l'utilisateur, ainsi que l'adresse électronique du responsable du nouvel utilisateur.
+En demandant ces informations, je m'assure d'avoir toutes les données essentielles pour générer un compte AD complet. L'adresse électronique du manager du nouvel utilisateur est particulièrement importante, car c'est à cette adresse que le mot de passe généré par le script sera envoyé. 
+
+En résumé, le formulaire que j'ai créé comprend des champs spécifiques pour enregistrer les informations nécessaires à la création d'un utilisateur AD, garantissant ainsi que toutes les données requises sont fournies de manière structurée et précise.
+	•	Sécurisation du formulaire
+Afin de garantir la sécurité du formulaire, j'ai mis en place une mesure de restriction d'accès en choisissant l'option "Certains membres de mon organisation peuvent répondre". Cette décision permet de limiter les personnes autorisées à répondre au formulaire à celles qui font partie de notre organisation.
+
+En optant pour cette option, seuls les membres spécifiquement sélectionnés auront la permission de répondre au formulaire. Cela garantit que seules les personnes internes ayant l'autorisation appropriée peuvent accéder et soumettre des réponses. Ainsi, les informations sensibles ou confidentielles collectées dans le formulaire restent entre les mains des membres de l'organisation désignés.
+6. Création du flux (Power Automate)
+Pour créer le flux dans Power Automate, j'ai utilisé le même compte qui a créé le formulaire, ce qui permet une intégration fluide entre les deux. Voici les étapes que j'ai suivies pour mettre en place le flux :
+J'ai choisi le déclencheur approprié pour le flux, qui est "Quand une réponse est soumise dans Microsoft Forms". Cela garantit que chaque fois qu'une réponse est soumise via le formulaire, le flux sera déclenché.
+
+Ensuite, j'ai ajouté l’étape « Obtenir les détails de la réponse », cette étape permet au flux de récupérer les réponses du formulaire pour ensuite les ajouter dans un tableau Excel dans le OneDrive.
+
+Pour ajouter les lignes dans un fichier Excel situé dans OneDrive, j'ai utilisé l'action "Ajouter une ligne dans un fichier Excel" fournie par Power Automate. J'ai spécifié le chemin d'accès du fichier Excel dans OneDrive, ainsi que les valeurs des colonnes correspondantes que je souhaitais ajouter.
+
+J'ai paramétré les correspondances entre les données de la réponse du formulaire et les colonnes du fichier Excel, en m'assurant que les informations étaient correctement enregistrées dans les bonnes cellules.
+Après avoir configuré toutes les étapes du flux, j'ai enregistré et activé le flux pour qu'il soit opérationnel.
+Une fois que le flux a été activé, j'ai procédé à la création d'un utilisateur via le formulaire afin de tester son bon fonctionnement. Ensuite, j'ai vérifié que toutes les informations collectées lors de la soumission du formulaire ont été correctement ajoutées dans le tableau Excel situé sur OneDrive.
+
+Pour transformer la réponse sur la fonction de l'utilisateur en un chemin d'unité d'organisation (OU) approprié, j'ai utilisé une expression dans Power Automate. Cette expression permet de convertir la réponse "Stagiaires" en un chemin spécifique, tel que "OU=Stagiaires,OU=Utilisateurs,DC=..." pour indiquer l'emplacement où l'utilisateur sera créé dans l'Active Directory.
+
+7. Création des comptes utilisateurs par script PS
+Ce script PowerShell importe des données à partir d'un fichier Excel pour créer des utilisateurs dans l'Active Directory. Il génère des mots de passe aléatoires, configure les attributs des utilisateurs tels que le nom complet, l'adresse électronique et l'unité organisationnelle, les ajoute à des groupes spécifiques, envoie des e-mails de notification avec les mots de passe générés, synchronise les modifications avec Active Directory et attribue des licences dans Office 365. Il simplifie et accélère le processus de création d'utilisateurs tout en garantissant une configuration cohérente et précise.
+7.1 Importation des modules
+# Importer les modules ActiveDirectory, ImportExcel et ADSync
+Import-Module ImportExcel
+Import-Module ActiveDirectory
+Import-Module ADSync
+
+Ce bloc de script vise à importer les modules ActiveDirectory, ImportExcel et ADSync, qui sont nécessaires pour accéder aux fonctionnalités spécifiques de ces modules.
+	•	L'importation du module ActiveDirectory permet d'utiliser les fonctionnalités de gestion de l'Active Directory, telles que la création d'utilisateurs et la recherche d'objets dans l'annuaire.
+	•	L'importation du module ImportExcel facilite l'importation et la manipulation de données à partir de fichiers Excel, ce qui est utile lorsque nous avons besoin de récupérer des informations spécifiques pour le traitement.
+	•	Quant au module ADSync, il offre des fonctionnalités de synchronisation des modifications entre l'Active Directory local et le cloud, ce qui peut être important lorsque nous travaillons avec des environnements hybrides ou des services tels qu'Azure AD Connect.
+
+
+7.2 Importation des Données
+# Importer les données du fichier Excel
+$worksheet = Import-Excel -Path "C:\Users\admin\OneDrive - domaine\ADDUSER.xlsx"
+
+# Importer les informations d'identification pour l'envoi de courrier électronique
+$Credential = Import-CliXml -Path "C:\Users\admin\OneDrive - domaine\cred.cred"
+
+Ce bloc de script concerne l'importation des données à partir d'un fichier Excel et des informations d'identification nécessaires pour l'envoi de courrier électronique.
+La première ligne de code utilise la fonction "Import-Excel" pour importer les données du fichier Excel spécifié par le chemin d'accès "C:\Users\admin\...". 
+La deuxième ligne de code utilise la fonction "Import-CliXml" pour importer les informations d'identification nécessaires à l'envoi de courrier électronique à partir d'un fichier XML sécurisé. 
+7.3 Paramétrage de l’envoi de mail
+# Utiliser TLS 1.2 pour l'envoi de courrier électronique
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+# Définir l'adresse e-mail de l'expéditeur et le serveur SMTP
+$exped = "admin@domaine.com"
+$smtpexped = "smtp.office365.com"
+
+Ce bloc de script configure la sécurité de l'envoi de courrier électronique en utilisant le protocole TLS 1.2 et définit l'adresse électronique de l'expéditeur ainsi que le serveur SMTP à utiliser.
+
+
+
+
+7.5 Création d'utilisateurs et attributions des attributs
+Ce bloc de script se concentre sur la création d'utilisateurs dans l'Active Directory et l'attribution des attributs associés à chaque utilisateur.
+# Pour chaque ligne dans la feuille de calcul
+foreach ($row in $worksheet) {
+
+# Générer un mot de passe aléatoire
+    $password = (-join (11..99 | Get-Random -Count 1)) + (-join (33..47 | Get-Random -Count 1| % {[char]$_})) + (-join ((65..90) + (97..122) | Get-Random -Count 5 | % {[char]$_}))
+
+    # Créer le nom complet avec la première lettre du prénom et du nom en majuscules
+    $name = ($row.Prenom.Substring(0,1).ToUpper() + $row.Prenom.Substring(1).ToLower()) + " " + ($row.Nom.Substring(0,1).ToUpper() + $row.Nom.Substring(1).ToLower())
+
+    # Convertir les groupes de la chaîne en tableau et les nettoyer
+    $groups = $row.GS.Trim().Replace("[", "").Replace("]", "") -split ","
+
+    # Créer le nom de compte SAM en utilisant la première lettre du prénom et du nom, ainsi que la première et la dernière lettre du nom
+    $samAccountName = $row.Prenom.Substring(0,1) + $row.Nom.Substring(0,1) + $row.Nom.Substring($row.Nom.Length - 1)
+
+    # Créer l'adresse e-mail en utilisant la première lettre du prénom, un point, et le nom complet
+    $mailaccount = $row.Prenom.Substring(0,1) + "." + $row.Nom
+
+    # Définir les alias SMTP
+    $smtp1 = $row.Prenom.Substring(0,1) + "." + $row.Nom
+    $smtp2 = $row.Prenom.Substring(0,1) + $row.Nom
+    $smtp3 = $row.Prenom + "." + $row.Nom
+    $smtp4 = $row.Prenom.Substring(0,1) + $row.Nom.Substring(0,1) + $row.Nom.Substring($row.Nom.Length - 1)
+
+    # Rechercher si l'utilisateur existe déjà dans Active Directory
+    $user = Get-ADUser -Filter "SamAccountName -eq '$samAccountName'"
+
+    # Spécifier l'unité organisationnelle (OU) pour la création de l'utilisateur
+    $uo = $row.OU
+
+    # Définir le lecteur et le dossier de base de l'utilisateur
+    $homeDrive = "H:"
+    $homeDirectory = "\\domaine.local\Private\home\$samAccountName"
+
+    # Définir l'adresse e-mail de l'utilisateur
+    $mailbox = $mailaccount + "@domaine.com"
+
+    $licences = $row.licence.Trim().Replace("[", "").Replace("]", "")
+
+À l'intérieur de la boucle "foreach" qui parcourt chaque ligne du fichier Excel, plusieurs opérations sont effectuées pour chaque utilisateur :
+	•	Génération d'un mot de passe aléatoire : Le script génère un mot de passe aléatoire pour chaque utilisateur en combinant des chiffres, des caractères spéciaux et des lettres majuscules et minuscules.
+	•	Création du nom complet de l'utilisateur : Le script utilise les prénoms et noms fournis dans le fichier Excel pour créer le nom complet de l'utilisateur en s'assurant que la première lettre de chaque prénom et nom est en majuscule.
+	•	Conversion des groupes de la chaîne en tableau : Le script extrait les groupes de sécurité fournis dans le fichier Excel, les nettoie des caractères indésirables et les convertit en tableau pour une manipulation plus facile.
+	•	Création du nom de compte SAM : Le script génère le nom de compte SAM de l'utilisateur en utilisant la première lettre du prénom, la première lettre du nom et la dernière lettre du nom. Cela permet de créer un nom de compte unique pour chaque utilisateur.
+	•	Création de l'adresse électronique : Le script génère l'adresse e-mail de l'utilisateur en utilisant la première lettre du prénom, un point et le nom complet de l'utilisateur.
+	•	Définition des alias SMTP : Le script définit plusieurs alias SMTP pour l'utilisateur en utilisant différentes combinaisons du prénom et du nom. Cela offre des options d'alias personnalisées pour les utilisateurs.
+	•	Spécification de l'unité organisationnelle (OU) : Le script utilise les informations fournies dans le fichier Excel pour spécifier l'unité organisationnelle (OU) où l'utilisateur sera créé dans l'Active Directory.
+	•	Définition du lecteur et du dossier de base de l'utilisateur : Le script définit le lecteur réseau et le dossier de base de l'utilisateur dans l'Active Directory en utilisant les informations spécifiées dans le fichier Excel.
+	•	Définition de l'adresse électronique de l'utilisateur : Le script définit l'adresse électronique de l'utilisateur en utilisant l'adresse e-mail générée précédemment.
+	•	Attribution des licences : Le script attribue les licences spécifiées dans le fichier Excel à l'utilisateur.
+
+7.6 Vérification de l'existence de l'utilisateur et création
+Ce bloc de script vérifie l'existence de l'utilisateur dans l'Active Directory et le crée si l'utilisateur n'existe pas déjà.
+# Vérification de l'éxistance de l'utilisateur sinon ça le créer
+
+    if ($user -eq $null) {  
+        Write-Output "Creating user with name: $name, SamAccountName: $samAccountName, OU: $uo"
+        New-ADUser -Name $name -SamAccountName $samAccountName -GivenName $row.Prenom -Surname $row.Nom -UserPrincipalName "$($samAccountName)@domaine.com"  -HomeDrive $homeDrive -HomeDirectory $homeDirectory -DisplayName $name -EmailAddress $mailbox -AccountPassword (ConvertTo-SecureString $password -AsPlainText -Force) -Enabled $true -Path $uo -PasswordNeverExpires $false
+        Set-ADUser $samAccountName -add @{ProxyAddresses="SMTP:$smtp1@domaine.com","smtp:$smtp4@domaine.com","smtp:$smtp2@domaine.com","smtp:$smtp3@domaine.com" -split ","}
+        Add-ADGroupMember -Identity $group -Members $samAccountName
+        Send-MailMessage -SMTPServer $smtpexped -Port 587 -Credential $Credential -To $row.Email  -From $exped -Subject "Mot de passe $samAccountName" -Body "Le mot de passe de l'utilisateur $samAccountName est : $password" -UseSsl
+    }
+}
+
+La condition "if ($user -eq $null)" vérifie si la variable "$user", qui contient le résultat de la recherche de l'utilisateur, est égale à "null". Cela indique que l'utilisateur n'existe pas déjà dans l'Active Directory.
+Si l'utilisateur n'existe pas, le script exécute les opérations suivantes pour créer l'utilisateur:
+	•	Affichage d'un message de création : Le script affiche un message indiquant les informations de l'utilisateur en cours de création, telles que le nom complet, le nom de compte SAM et l'unité organisationnelle.
+	•	Création de l'utilisateur : Le script utilise la fonction "New-ADUser" pour créer l'utilisateur dans l'Active Directory. Les attributs de l'utilisateur tels que le nom complet, le nom de compte SAM, le prénom, le nom, l'adresse électronique, le mot de passe, le lecteur réseau, le dossier de base, etc., sont configurés lors de la création.
+	•	Attribution des alias SMTP : Le script utilise la fonction "Set-ADUser" pour attribuer les alias SMTP définis précédemment à l'utilisateur créé. Cela permet d'associer plusieurs adresses électroniques à l'utilisateur.
+	•	Ajout de l'utilisateur à un groupe : Le script utilise la fonction "Add-ADGroupMember" pour ajouter l'utilisateur créé au groupe spécifié dans le fichier Excel. Cela permet de gérer les autorisations et les accès pour l'utilisateur.
+	•	Envoi d'un courriel de notification : Le script envoie un e-mail de notification à l'adresse e-mail spécifiée dans le fichier Excel. Le courriel contient le nom de compte SAM et le mot de passe généré pour l'utilisateur.
+7.7 Synchronisation et attribution des licences dans Office 365
+Ce bloc de script gère la synchronisation des modifications avec l'Active Directory local et l'attribution des licences dans Office 365 pour les utilisateurs créés.
+
+# Attendre 5 minutes avant la synchro
+Start-Sleep -Seconds 300
+
+Start-ADSyncSyncCycle -PolicyType Delta
+
+#Attendre 5 minutes avant l'attribution des licences
+Start-Sleep -Seconds 300
+
+# Se connecter à office
+Connect-MsolService -Credential $Credential
+
+#Attribution des licences
+foreach ($row in $worksheet) {
+    Set-MsolUser -UserPrincipalName "$samAccountName@domaine.com" -UsageLocation FR
+    Set-MsolUserLicense -UserPrincipalName "$samAccountName@domaine.com" -AddLicenses "domaine:$licences"
+}
+
+La première ligne "Start-Sleep -Seconds 300" suspend l'exécution du script pendant 5 minutes, permettant ainsi la synchronisation des modifications entre l'Active Directory local et le cloud.
+La ligne suivante "Start-ADSyncSyncCycle -PolicyType Delta" déclenche la synchronisation des modifications avec l'Active Directory local en utilisant la stratégie "Delta". Cela permet de propager les modifications effectuées localement vers Office 365.
+Ensuite, le script attend à nouveau pendant 5 minutes en utilisant "Start-Sleep -Seconds 300" pour laisser suffisamment de temps à la synchronisation de se terminer.
+La ligne "Connect-MsolService -Credential $Credential" permet de se connecter à Office 365 en utilisant les informations d'identification fournies dans le fichier XML sécurisé. Cela permet d'établir une connexion avec les services Microsoft Online et d'accéder aux fonctionnalités de gestion des utilisateurs et des licences.
+Enfin, dans la boucle "foreach" qui parcourt chaque ligne du fichier Excel, le script utilise les commandes "Set-MsolUser" et "Set-MsolUserLicense" pour définir l'emplacement d'utilisation (FR pour France) et attribuer les licences spécifiées dans le fichier Excel à chaque utilisateur dans Office 365. Cela garantit que les utilisateurs créés ont les licences appropriées pour accéder aux services et fonctionnalités nécessaires.
+
+8. Intégration dans l’infrastructure
+Dans le cadre de l'intégration de cette solution dans l'infrastructure, j'ai mis en place une connexion entre OneDrive et le serveur Active Directory (AD). Cela permet d'assurer que le fichier Excel contenant les informations des utilisateurs est accessible et mis à jour en temps réel via Power Automate.
+En connectant OneDrive au serveur AD, j'ai configuré un partage de fichiers qui permet au serveur AD d'accéder au fichier Excel contenant les données des utilisateurs. Cette intégration garantit que les modifications apportées au fichier Excel dans OneDrive sont automatiquement synchronisées avec le serveur AD, assurant ainsi que les informations utilisées par le script PowerShell sont toujours à jour.
+De plus, pour automatiser l'exécution régulière du script, j'ai planifié une tâche dans le serveur AD pour l'exécuter chaque jour à une heure prédéfinie. 
+En résumé, j'ai intégré la solution en connectant OneDrive au serveur AD, permettant ainsi la synchronisation des données du fichier Excel. De plus, j'ai planifié une tâche pour exécuter le script PowerShell chaque jour, garantissant un traitement automatique et régulier des informations des utilisateurs. Cette intégration facilite la gestion efficace et automatisée des utilisateurs dans l'infrastructure globale.
+
+
+Mission3 : Supervision Sophos (Sophos Central)
+
+	•	Contexte de la mission
+Composé à 95% d’agences en franchise, Temporis est le 1er réseau national de travail temporaire et de recrutement en franchise ! L’enseigne rassemble à ce jour plus de 170 agences. Elle emploie plus de 8 500 intérimaires dans 3 900 entreprises clientes.
+	•	Description de la mission
+En tant qu'administrateur système et réseaux d’Agoravita, ma mission comprenait plusieurs étapes :
+	•	Ajouter les nouveaux équipements Sophos XG sur la plate-forme Sophos Central.
+	•	Configurer les paramètres de ces équipements en fonction des besoins spécifiques de la société Valoris.
+	•	Surveiller et tester la fonctionnalité de ces équipements pour assurer leur performance et leur intégrité.
+	•	Sophos Central : Présentation générale
+Sophos Central est une plate-forme unifiée qui consolide les différents outils de sécurité informatique sous un seul tableau de bord. Cela comprend des solutions pour la protection des systèmes d'exploitation, la sécurité du réseau, la protection des données, le contrôle des applications mobiles et bien plus encore. Les principaux éléments supervisés sur Sophos Central incluent les pares-feux, les bornes Wifi, et les antivirus Endpoint.
+
+	•	Supervision des pares-feux sur Sophos Central
+Sophos Central offre une visibilité complète sur l'activité du pare-feu en temps réel, permettant d'identifier et de réagir rapidement aux menaces potentielles. Des rapports détaillés sur les activités suspectes, le trafic de données, et les tentatives d'attaques sont disponibles pour une analyse plus approfondie. 
+
+
+Cette interface fournit un aperçu complet du statut et des performances du pare-feu ainsi que des informations sur le trafic réseau, les utilisateurs et appareils connectés, et les différentes activités de sécurité. Voici un aperçu des principales sections de cette interface:
+
+
+
+
+	•	Ajout du pare-feu à Sophos Central
+	•	Préparation
+Avant le début de la mission, un compte Sophos Central a été créé. C'est une plateforme de gestion de la sécurité unifiée qui permet de centraliser et de simplifier la gestion des différentes solutions de sécurité.
+5.2 Activation des services Sophos Central sur le pare-feu
+Avant d’ajouter le pare-feu à Central, j'avais activé les services « Sophos Central » sur le pare-feu Sophos et sélectionné les services nécessaires pour mon organisation, en allant dans la partie "Système" > "Sophos Central".
+
+
+
+
+J'avais coché « Sophos Central services ».
+
+
+
+
+Ici, on peut cocher les options qui nous intéressent, comme par exemple administrer depuis Sophos Central.
+
+
+
+	•	Activation de la gestion Sophos Central
+Le pare-feu Sophos avait été configuré pour permettre la gestion via Sophos Central. Pour ce faire, je m'étais connecté à l'interface de gestion de Sophos Central, j'avais navigué jusqu'au tenant du client « Valoris Développement », et j'avais cliqué sur "Ajouter un Pare-feu".
+
+Sophos Central nous permet d’ajouter du matériel de deux manières différentes. La première consiste à ajouter un pare-feu pas encore configuré, la seconde est pour ajouter un pare-feu déjà configuré et prêt à être mis en production. C’était notre cas, car Valoris Développement configurait les pare-feu au siège à Toulouse avant de les envoyer aux différentes agences de France. J'avais donc choisi “connecter un pare-feu qui est déjà déployé".
+
+ Il avait ensuite fallu renseigner le numéro de série du pare-feu dans la partie “Saisir le numéro de série de l’appareil”.
+
+
+
+
+Dans ce pop-up on peut constater que le pare feu a été ajouté avec le numéro de série et l’option « Administrer depuis Sophos Central » activé.
+
+	•	Vérification du statut de gestion
+Ensuite, j'ai vérifié le statut de gestion du pare-feu sur l'interface de gestion du pare-feu Sophos. J'ai constaté que le statut avait changé de "en attente d’approbation" à "Synchronisé".
+Une fois que le statut a changé pour " Synchronisé ", le pare-feu Sophos était prêt à être géré via Sophos Central. Dans les futures tâches, j'ai géré le pare-feu en cliquant simplement sur son nom dans Sophos Central sur la page "Firewalls".
+
+
+
+
+
+
+
+
+
+
+
+Dans Système > Sophos Central du pare-feu, on peut voir que l'enregistrement a bien été effectué.
+	•	Gestion des Antivirus Intercept X :
+Sophos Central ne se limite pas à la gestion des pares-feux et des bornes Wi-Fi. Cette plateforme étendue englobe également la supervision des antivirus Intercept X, déployés sur les postes de travail de l'organisation. Sophos Central facilite la gestion, les mises à jour et la surveillance des antivirus Intercept X. Cette fonctionnalité garantit que tous les postes de travail bénéficient d'une protection constamment à jour contre une variété de menaces.
+Protection Web avancée :
+En plus de cela, Intercept X propose une gamme de fonctionnalités de protection avancée, dont le blocage de catégories de sites web. Par exemple, les administrateurs peuvent définir des règles de filtrage pour contrôler l'accès à Internet, même pour les utilisateurs en dehors du réseau de l'entreprise.
+Mission 4 : Audit de vulnérabilités 
+	•	Contexte de la mission
+Dans le cadre de mon alternance j'ai eu l'opportunité de travailler sur une mission d'audit de sécurité informatique pour Agoravita suite à un incident de sécurité que notre organisation a subi, spécifiquement une attaque de ransomware. Le ransomware a bloqué l'accès à nos données en les chiffrant, nécessitant une rançon pour le déverrouillage. Cet incident a déclenché un audit de sécurité informatique pour évaluer l'état de nos systèmes et déterminer les mesures nécessaires pour prévenir de futurs incidents.
+	•	Description de la mission
+À la suite de l'incident, mon superviseur m'a confié la mission de réaliser un audit de sécurité de nos systèmes. L'objectif n'était pas de comprendre comment l'attaque par ransomware s'était produite, mais plutôt d'identifier les vulnérabilités susceptibles d'être exploitées par des acteurs malveillants et de proposer des mesures correctives pour renforcer notre sécurité. La mission comprenait la rédaction d'un rapport détaillé sur les vulnérabilités identifiées, y compris leur description, leur niveau de criticité et les recommandations pour les corriger.
+	•	Périmètre de l’audit
+Le périmètre de l'audit comprenait notre serveur Active Directory (AD) et les sous-domaines d'Agoravita. Ce périmètre a été choisi car ces systèmes sont essentiels pour notre organisation et constituent des cibles potentielles pour des acteurs malveillants.
+	•	Méthodologie et outils utilisés
+La méthodologie appliquée pour cet audit est structurée pour offrir une analyse superficielle, mais néanmoins significative, de l'infrastructure cible. Elle respecte les normes internationales de sécurité de l'information et suit le processus suivant :
+	•	Reconnaissance : Durant cette phase initiale, l'objectif est de collecter autant d'informations que possible sur l'infrastructure cible. Cela comprend l'identification des adresses IP, des noms de domaine, et d'autres informations pertinentes relatives à l'infrastructure.
+	•	Balayage : Une fois ces informations recueillies, nous réalisons un balayage des services et des ports afin de déterminer quels services sont actifs et quels ports sont ouverts. Cela nous permet de comprendre les potentiels points d'entrée dans le système.
+	•	Évaluation des vulnérabilités : À cette étape, nous utilisons les informations précédemment recueillies pour identifier les vulnérabilités potentielles dans le système. Ceci est réalisé par le biais de tests automatisés, tout en respectant l'intégrité et la disponibilité du système audité.
+	•	Rapport : Enfin, les données collectées sont utilisées pour rédiger un rapport détaillé qui souligne les vulnérabilités identifiées, leur niveau de gravité, et les recommandations pour leur remédiation.
+Pour mener à bien cet audit, nous avons employé plusieurs outils largement reconnus dans l'industrie de la cybersécurité :
+	•	Nessus : Utilisé pour la détection automatisée des vulnérabilités, Nessus est l'un des scanners les plus fiables et réputés de l'industrie. Il propose une gamme complète de fonctionnalités qui permettent de détecter, d'analyser et de prioriser les vulnérabilités.
+	•	Nmap : Cet outil open-source est employé pour effectuer des scans de ports et de réseaux. Il fournit des informations précieuses qui nous aident à comprendre la composition du réseau cible, ce qui est crucial pour l'étape d'évaluation des vulnérabilités.
+	•	Metasploit : Même si nous n'exploitons pas directement les vulnérabilités, Metasploit est un outil utile pour comprendre la nature de certaines vulnérabilités et envisager leurs possibles exploitations. 
+	•	Aperçu de l’outil Nessus
+Nessus est un logiciel puissant qui offre la possibilité d'effectuer des audits sur divers types de cibles et d'applications grâce à des processus automatisés prêts à l'emploi, tels que le "test d'applications web".
+
+Lors de la création d'un nouveau scan, plusieurs étapes sont nécessaires. Tout d'abord, il faut choisir un nom pour l'audit, fournir une description, sélectionner le dossier dans lequel le scan sera enregistré, et enfin définir les cibles, que ce soit par adresse IP ou par URL. De plus, il est possible de cocher l'option "Live results" pour obtenir en temps réel la liste des vulnérabilités détectées.
+
+	•	Répartition des vulnérabilités selon la gravité
+Pour visualiser de manière plus efficace l'étendue des vulnérabilités découvertes, j'ai élaboré un graphique qui répartit ces vulnérabilités selon leur gravité. La gravité était classée selon plusieurs niveaux, notamment faible, moyen, élevé et critique. Ce classement permet de prioriser les mesures de correction à mettre en place, les vulnérabilités les plus critiques nécessitant une attention immédiate.
+	•	Évaluation de la Gravité des Vulnérabilités par Nessus
+Nessus utilise le système de notation CVSS (Common Vulnerability Scoring System) pour évaluer la gravité des vulnérabilités. Cette notation est basée sur des scores CVSSv2 ou CVSSv3 provenant de la National Vulnerability Database (NVD). Ces scores permettent de déterminer la sévérité d'une vulnérabilité, qui peut être classée en cinq niveaux : Info, Faible, Moyen, Élevé ou Critique, en fonction du score CVSS attribué. La gravité est déterminée en fonction de la plage de score dans laquelle se situe la vulnérabilité. Par exemple, une vulnérabilité avec un score entre 7.0 et 9.9 serait classée comme "Élevée" (High). Tenable utilise également le VPR (Vulnerability Priority Rating), une valeur dynamique, pour refléter le paysage des menaces actuel. Plus la valeur du VPR est élevée, plus le risque d'exploitation de la vulnérabilité est élevé.
+
+	•	Récapitulatif des vulnérabilités découvertes 
+À la suite de l'audit mené, une série de vulnérabilités ont été mises à jour, regroupées sous différentes catégories selon leur nature. Ces vulnérabilités sont résumées dans le tableau suivant, avec pour chaque vulnérabilité sa référence, la nature du problème, le ou les port(s) concerné(s), et la gravité.
+Pour une meilleure compréhension, voici un éclaircissement sur quelques termes utilisés :
+	•	Référence : Il s'agit d'un identifiant unique associé à chaque vulnérabilité. Cela facilite le suivi et la gestion des vulnérabilités.
+	•	Titre : C'est une description succincte de la vulnérabilité qui indique en quoi elle consiste. Par exemple, "Algorithme de hachage faible" ou "Le certificat SSL n'est pas fiable" donne une idée de la nature du problème sans entrer dans les détails techniques.
+	•	Protocole/Ports : Cette colonne indique sur quels protocoles et ports de communication la vulnérabilité a été découverte.
+	•	Catégorie : Il s'agit d'une classification de la vulnérabilité basée sur le type de problème qu'elle représente. Par exemple, une vulnérabilité peut être catégorisée comme un problème de "Chiffrement" ou de "Gestion de la configuration", indiquant la nature de la vulnérabilité et le domaine du système qu'elle affecte.
+	•	Gravité : Cette catégorie reflète l'impact potentiel de la vulnérabilité sur le système. Les vulnérabilités sont classées en utilisant l'échelle de gravité du logiciel Nessus. Cette échelle évalue la gravité en prenant en compte divers facteurs, tels que la complexité de l'exploitation, les conséquences potentielles, et la disponibilité d'une solution de contournement. Les vulnérabilités sont classées comme ‘Critique’, 'Haute', 'Moyenne' ou 'Faible'.
+Référence
+Titre
+Protocol/Ports
+Catégorie
+Gravité
+SSL.CERT.UNTRUSTED
+Algorithme de hachage faible
+TCP/636/LDAP TCP/3269/LDAP
+Chiffrement
+Haute
+SSL.TLS.001
+Détection du protocole TLS 1.0
+TCP/636/LDAP TCP/3269/LDAP TCP/3389
+Gestion de la configuration
+Moyenne
+SSL.RSA.001
+Clés RSA de moins de 2048 bits
+TCP/636/LDAP TCP/3269/LDAP
+Gestion de la configuration
+Faible
+
+	•	Récapitulatif des risques et recommandations
+Après avoir identifié et classifié les vulnérabilités, un récapitulatif des risques associés à ces vulnérabilités ainsi que des recommandations pour les atténuer a été élaboré. Ces informations ont été présentées sous forme de tableau, en utilisant les mêmes références que celles utilisées pour énumérer les vulnérabilités.
+Référence
+Risques
+Recommandations
+SSL.CERT.UNTRUSTED
+L'utilisation d'un algorithme de hachage faible peut être exploité par des attaquants pour créer un autre certificat avec la même signature numérique, leur permettant de se faire passer pour le service affecté.
+Contacter l'autorité de certification pour obtenir un certificat SSL fiable.
+SSL.TLS.001
+L'utilisation du protocole TLS 1.0 peut exposer les connexions au risque d'attaques basées sur des vulnérabilités connues et des faiblesses de conception.
+Activer la prise en charge des versions TLS 1.2 et 1.3 et désactiver la prise en charge de TLS 1.0.
+SSL.RSA.001
+L'utilisation de clés RSA de moins de 2048 bits peut être exploitée par des attaquants pour casser la clé et décrypter les communications sécurisées.
+Remplacer le certificat avec une clé RSA de moins de 2048 bits par une clé plus longue et réémettre les certificats signés par l'ancien certificat.
+	•	Présentation des résultats
+Après avoir réalisé l'audit de sécurité, j'ai préparé un rapport détaillé et un diaporama PowerPoint simplifié. Ces deux éléments sont inclus dans les annexes du dossier.  Le rapport complet fournit une vue approfondie des vulnérabilités identifiées, des risques associés et des recommandations pour atténuer ces risques. Il est destiné à un public spécialisé, qui possède une connaissance technique des systèmes et de la sécurité informatique.
+Parallèlement, le diaporama PowerPoint a été conçu pour vulgariser les résultats de l'audit de sécurité, permettant une compréhension claire des problèmes et des solutions proposées, même pour un public non spécialisé. Il utilise des représentations visuelles et un langage simple pour rendre les informations accessibles à tous les intervenants, indépendamment de leur niveau d'expertise technique.
+	•	Conclusion
+En conclusion, l'audit de sécurité sur le serveur AD et les sous-domaines d'Agoravita a été une expérience enrichissante qui m'a permis de monter en compétence dans le domaine de la cybersécurité. Cette mission m'a offert l'opportunité de mettre en pratique et d'approfondir mes connaissances en audit de sécurité, en identification de vulnérabilités et en proposition de mesures correctives. De plus, la préparation du rapport détaillé et du diaporama PowerPoint a renforcé mes compétences en communication technique, en me permettant de présenter des informations complexes de manière accessible à différents publics. 
+
+
+
+
+
+Annexes
+
+
+
+
+
+
+
+
+
+
+
