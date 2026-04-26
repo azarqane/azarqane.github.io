@@ -21,36 +21,41 @@
   --content-wide:1200px;--content-default:960px;
 }
 
-/* ── Thème sombre ── */
-[data-theme="dark"] {
-  --color-bg:#0d0e11;--color-surface:#13151a;--color-surface-2:#181b22;
-  --color-surface-offset:#1e2130;--color-divider:oklch(1 0 0/.06);
-  --color-border:oklch(1 0 0/.08);--color-text:#e2e8f0;
-  --color-text-muted:#8892a4;--color-text-faint:#4a5568;
-  --color-primary:#22d3ee;--color-primary-hover:#06b6d4;
-  --color-primary-dim:oklch(0.72 0.15 195/.12);
-  --color-primary-border:oklch(0.72 0.15 195/.3);
-  --color-green:#4ade80;--color-green-dim:oklch(0.75 0.17 145/.12);
-  --color-green-border:oklch(0.75 0.17 145/.3);
-  --shadow-sm:0 1px 2px oklch(0 0 0/.4);--shadow-md:0 4px 16px oklch(0 0 0/.5);
-  --shadow-lg:0 12px 40px oklch(0 0 0/.6);
-  --shadow-glow:0 0 24px oklch(0.72 0.15 195/.18);
-}
+/* ── Couleurs — thème clair minimaliste professionnel ── */
+:root {
+  /* Fonds : blanc cassé légèrement warm-neutral */
+  --color-bg:             #f7f8fa;
+  --color-surface:        #ffffff;
+  --color-surface-2:      #f3f4f6;
+  --color-surface-offset: #ebedf0;
 
-/* ── Thème clair ── */
-[data-theme="light"] {
-  --color-bg:#f4f6fb;--color-surface:#ffffff;--color-surface-2:#f8fafc;
-  --color-surface-offset:#eef2f7;--color-divider:oklch(0 0 0/.07);
-  --color-border:oklch(0 0 0/.1);--color-text:#0f172a;
-  --color-text-muted:#475569;--color-text-faint:#94a3b8;
-  --color-primary:#0891b2;--color-primary-hover:#0e7490;
-  --color-primary-dim:oklch(0.55 0.14 215/.1);
-  --color-primary-border:oklch(0.55 0.14 215/.28);
-  --color-green:#16a34a;--color-green-dim:oklch(0.55 0.17 145/.1);
-  --color-green-border:oklch(0.55 0.17 145/.28);
-  --shadow-sm:0 1px 3px oklch(0 0 0/.08);--shadow-md:0 4px 16px oklch(0 0 0/.1);
-  --shadow-lg:0 12px 40px oklch(0 0 0/.15);
-  --shadow-glow:0 0 24px oklch(0.55 0.14 215/.15);
+  /* Séparateurs et bordures : gris très subtils */
+  --color-divider:        rgba(0,0,0,0.06);
+  --color-border:         rgba(0,0,0,0.09);
+
+  /* Textes : noir charbon pour le corps, grays pour le secondaire */
+  --color-text:           #111827;
+  --color-text-muted:     #6b7280;
+  --color-text-faint:     #9ca3af;
+
+  /* Accent : gris-ardoise sobre — quasi monochrome */
+  --color-primary:        #374151;
+  --color-primary-hover:  #1f2937;
+  --color-primary-rgb:    55,65,81;
+  --color-primary-dim:    rgba(55,65,81,0.06);
+  --color-primary-border: rgba(55,65,81,0.18);
+
+  /* Accent statut : vert sobre pour le badge "disponible" */
+  --color-green:          #16a34a;
+  --color-green-dim:      rgba(22,163,74,0.07);
+  --color-green-border:   rgba(22,163,74,0.2);
+
+  /* Ombres : légères et douces */
+  --shadow-sm:  0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.07);
+  --shadow-lg:  0 12px 32px rgba(0,0,0,0.09);
+  --shadow-xl:  0 20px 48px rgba(0,0,0,0.11);
+  --shadow-glow:0 0 0 3px rgba(55,65,81,0.1);
 }
 
 /* ============================================================
