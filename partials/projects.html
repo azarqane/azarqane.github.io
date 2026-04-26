@@ -2609,9 +2609,9 @@ subsets:
             style="font-weight: 700; color: var(--color-primary); letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; margin-bottom: var(--space-4);">
             Cycle de vie</div>
           <button class="project-tab active" data-target="ra-0" aria-selected="true" role="tab">
-            <div class="project-tab__num" style="font-size:9px;letter-spacing:.05em">Phase 0</div>
-            <div class="project-tab__name" style="font-weight: 600;">Contexte</div>
-            <div class="project-tab__desc" style="font-size: 11px; opacity: 0.7;">Limites de l'existant</div>
+            <div class="project-tab__num" style="font-size:9px;letter-spacing:.05em">Vue globale</div>
+            <div class="project-tab__name" style="font-weight: 600;">Présentation</div>
+            <div class="project-tab__desc" style="font-size: 11px; opacity: 0.7;">Contexte &amp; Architecture</div>
           </button>
           <button class="project-tab" data-target="ra-1" aria-selected="false" role="tab">
             <div class="project-tab__num">Phase 1</div>
@@ -2636,19 +2636,431 @@ subsets:
         </nav>
         <div class="projects__panels">
           <article id="ra-0" class="project-panel active">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+
+            <!-- EN-TÊTE -->
+            <div class="panel__section">
+              <div class="panel__tag">Migration d'Infrastructure · Windows Server · RDS</div>
+              <h3 class="panel__title">Migration RDS vers RemoteApp — Vue d'ensemble</h3>
+              <p class="panel__text">
+                Optimisation critique d'une infrastructure d'accès distant pour le réseau national <strong>Temporis</strong>. La mission consistait à transformer une architecture RDS classique (bureau complet) saturée en une plateforme <strong>RemoteApp</strong> agile. L'objectif : éliminer les pics de latence lors des clôtures de paie et garantir une fluidité applicative pour 170+ agences via des tunnels sécurisés.
+              </p>
+            </div>
+
+            <!-- CHIFFRES CLÉS -->
+            <div class="panel__section">
+              <h4 class="block-title">Chiffres clés</h4>
+              <div class="technical-grid" style="margin-top:var(--space-4);gap:var(--space-4)">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)">
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">170+</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Agences en franchise</div>
+                  </div>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">-40%</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Charge CPU Serveur</div>
+                  </div>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">8500+</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Intérimaires gérés</div>
+                  </div>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">60ms</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Gain de latence réseau</div>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:var(--space-3);font-weight:700">Stack technique complète</h5>
+                  <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
+                    <span class="badge badge-accent">Windows Server 2022</span>
+                    <span class="badge badge-accent">RDS / RemoteApp</span>
+                    <span class="badge badge-accent">Active Directory</span>
+                    <span class="badge badge-accent">GPO Management</span>
+                    <span class="badge badge-accent">TCP/UDP 3389</span>
+                    <span class="badge">VPN IPSEC & SSL</span>
+                    <span class="badge">FortiGate / Sophos</span>
+                    <span class="badge">PRTG Monitoring</span>
+                    <span class="badge">M365 Integration</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ARCHITECTURE MODULAIRE -->
+            <div class="panel__section">
+              <h4 class="block-title">Architecture de la solution</h4>
+              <div class="code-block" style="background:transparent;border:none;padding:0;margin-top:var(--space-4)">
+                <pre style="font-size:11px;color:var(--color-primary);line-height:2"><code>┌─────────────────────────────────────────────────────────────────┐
+│  PHASE 01 — Diagnostic & Étude                                   │
+│  Audit PRTG → Analyse des pics CPU (100%) & Latence (120ms)     │
+│  <span style="opacity:.7">Identification des applications métiers (Tempo, Banco, Mikado)</span> │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │ Transformation RemoteApp
+┌───────────────────────────▼─────────────────────────────────────┐
+│  PHASE 02 — Configuration Serveur & Sécurité                    │
+│  RDS Collections → Publication d'Apps · Filtrage par Groupes AD │
+│  <span style="opacity:.7">GPO "Lecteurs_AG" · Sécurisation des Dossiers Persos (NTFS)</span>    │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │ Déploiement Postes Clients
+┌───────────────────────────▼─────────────────────────────────────┐
+│  PHASE 03 — Optimisation & UX Post-Migration                    │
+│  Mappage Lecteur V: (Logiciel$) · Raccourcis Bureau (.rdp)      │
+│  <span style="opacity:.7">VPN SSL Nomades · Redirection d'impression locale activée</span>      │
+└─────────────────────────────────────────────────────────────────┘</code></pre>
+              </div>
+            </div>
+
+            <!-- PILIERS DU PROJET -->
+            <div class="panel__section">
+              <h4 class="block-title">4 piliers de la migration</h4>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <ul class="tech-list">
+                    <li><strong>Performance</strong><span style="display:block;opacity:.8;margin-top:4px">Réduction drastique de la consommation CPU en éliminant le rendu du bureau Windows complet. Focus exclusif sur les ressources applicatives.</span></li>
+                    <li><strong>Expé-Utilisateur (UX)</strong><span style="display:block;opacity:.8;margin-top:4px">Transparence totale : l'application distante s'intègre au bureau local comme une application native. Fluidité accrue du curseur et de la saisie.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <ul class="tech-list">
+                    <li><strong>Sécurité & Droits</strong><span style="display:block;opacity:.8;margin-top:4px">Accès granulaire via Groupes de Sécurité AD (GpUser-RemoteApp). Isolation stricte des dossiers personnels par agence.</span></li>
+                    <li><strong>Économie de Bande Passante</strong><span style="display:block;opacity:.8;margin-top:4px">Optimisation des flux RDP via VPN IPSEC. Priorisation des paquets applicatifs pour maintenir la stabilité en multi-sites.</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- TABLEAU D'AUDIT (Intégré à la vue globale) -->
+            <div class="panel__section">
+                <h4 class="block-title">Audit Comparatif (Charge CPU vs Latence)</h4>
+                <div class="code-block" style="background:rgba(var(--color-primary-rgb),.05);border:1px solid rgba(var(--color-primary-rgb),.1); padding: var(--space-4); margin-top: var(--space-4);">
+                    <table style="width:100%; border-collapse: collapse; font-size:11px; font-family:var(--font-mono);">
+                        <thead>
+                            <tr style="color:var(--color-primary); border-bottom:1px solid rgba(var(--color-primary-rgb),.2)">
+                                <th style="padding:8px; text-align:left">Période (Mois)</th>
+                                <th style="padding:8px; text-align:center">Statut</th>
+                                <th style="padding:8px; text-align:center">Charge CPU</th>
+                                <th style="padding:8px; text-align:right">Latence</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="opacity:0.6">
+                                <td style="padding:8px; border-bottom:1px solid rgba(0,0,0,0.05)">Avant Migration (RDS)</td>
+                                <td style="padding:8px; text-align:center; border-bottom:1px solid rgba(0,0,0,0.05)">Surchargé</td>
+                                <td style="padding:8px; text-align:center; border-bottom:1px solid rgba(0,0,0,0.05)">90% - 100%</td>
+                                <td style="padding:8px; text-align:right; border-bottom:1px solid rgba(0,0,0,0.05)">80 - 120ms</td>
+                            </tr>
+                            <tr style="background:rgba(var(--color-primary-rgb),.05)">
+                                <td style="padding:8px; border-bottom:1px solid rgba(0,0,0,0.05); font-weight:700">Après Migration (RA)</td>
+                                <td style="padding:8px; text-align:center; border-bottom:1px solid rgba(0,0,0,0.05); font-weight:700; color:var(--color-primary)">Optimisé</td>
+                                <td style="padding:8px; text-align:center; border-bottom:1px solid rgba(0,0,0,0.05); font-weight:700; color:var(--color-primary)">40% - 60%</td>
+                                <td style="padding:8px; text-align:right; border-bottom:1px solid rgba(0,0,0,0.05); font-weight:700; color:var(--color-primary)">40 - 70ms</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
           </article>
           <article id="ra-1" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- INTRODUCTION -->
+            <div class="panel__section">
+              <div class="panel__tag">Diagnostic · Stratégie · Arbitrage</div>
+              <h3 class="panel__title">Phase 1 : Étude de la solution & Avantages techniques</h3>
+              <p class="panel__text">
+                Face à la saturation des serveurs RDS, deux scénarios ont été arbitrés. Le premier consistait à augmenter verticalement les ressources (Scale-Up RAM/CPU), mais cette solution ne réglait pas l'encombrement de la bande passante VPN et les limites du protocole RDP en bureau complet. Le choix s'est porté sur la <strong>virtualisation d'applications (RemoteApp)</strong>, permettant de déporter uniquement le rendu des logiciels critiques tout en utilisant les ressources locales pour l'OS et les applications bureautiques usuelles.
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Arbitrage technique (Scale-Up vs RemoteApp)</h4>
+                  <div class="code-block" style="background:rgba(0,0,0,.03); border-radius:8px; padding:var(--space-4)">
+                    <table style="width:100%; border-collapse: collapse; font-size:11px;">
+                      <thead>
+                        <tr style="border-bottom:1px solid rgba(0,0,0,0.1); color:var(--color-primary)">
+                          <th style="padding:8px; text-align:left">Solution</th>
+                          <th style="padding:8px; text-align:left">Avantages</th>
+                          <th style="padding:8px; text-align:left">Inconvénients</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr style="border-bottom:1px solid rgba(0,0,0,0.05)">
+                          <td style="padding:8px; font-weight:700">Augmentation Hard (CPU/RAM)</td>
+                          <td style="padding:8px">Mise en œuvre immédiate.</td>
+                          <td style="padding:8px; color:#ef4444">Coût croissant, saturation VPN persistante, latence RDP graphique.</td>
+                        </tr>
+                        <tr>
+                          <td style="padding:8px; font-weight:700; color:var(--color-primary)">Migration RemoteApp</td>
+                          <td style="padding:8px">Économie de BP, fluidité UX, isolation applicative, réactivité.</td>
+                          <td style="padding:8px">Nécessite une reconfiguration des postes et de l'AD.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- COMPOSANTS & MATRICE DES DROITS -->
+            <div class="panel__section">
+              <h4 class="block-title">Matrice des droits & Sécurisation AD</h4>
+              <p class="panel__text">
+                La sécurité repose sur une <strong>affectation granulaire</strong> via Active Directory. Quatre catégories de groupes ont été créées pour restreindre l'accès aux collections d'applications selon le profil de l'utilisateur en agence.
+              </p>
+              
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Groupes de Sécurité (Active Directory)</h5>
+                  <ul class="tech-list">
+                    <li><strong>GpUser-RemoteApp_Tempo</strong><span style="display:block;opacity:.8;margin-top:4px">Accès exclusif au logiciel de gestion de paie Tempo.</span></li>
+                    <li><strong>GpUser-RemoteApp_Banco</strong><span style="display:block;opacity:.8;margin-top:4px">Accès au module de gestion financière Banco.</span></li>
+                    <li><strong>GpUser-RemoteApp_Mikado</strong><span style="display:block;opacity:.8;margin-top:4px">Accès au logiciel Mikado pour les contrats intérimaires.</span></li>
+                    <li><strong>GpUser-RemoteApp_Full</strong><span style="display:block;opacity:.8;margin-top:4px">Accès complet à la suite applicative pour les responsables d'agence.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Configuration des Collections</h5>
+                  <div class="code-block" style="background:rgba(var(--color-primary-rgb),.05); border:1px solid rgba(var(--color-primary-rgb),.1); padding:var(--space-4)">
+                    <pre style="font-size:10px; color:var(--color-primary); line-height:1.6"><code># Étapes de création dans Server Manager
+1. New Session Collection (Par Agence)
+2. Add RD Session Host Server
+3. Publish RemoteApp Programs:
+   - tempo.exe (Path: \\server\share\tempo)
+   - banco.exe (Path: \\server\share\banco)
+   - mikado.exe (Path: \\server\share\mikado)
+4. User Assignment:
+   - Select: "Only specified users/groups"
+   - Match with AD GpUser-RemoteApp_XXX</code></pre>
+                  </div>
+                  <p style="font-size:10px; color:var(--color-text-muted); margin-top:8px; font-style:italic">
+                    * Cette structure garantit que chaque agence ne voit que ses propres licences et sessions.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- AVANTAGES CONSTATÉS -->
+            <div class="panel__section">
+              <h4 class="block-title">Bénéfices de l'architecture RemoteApp</h4>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div style="background:rgba(0,0,0,0.02); padding:var(--space-4); border-radius:8px">
+                  <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--color-primary)"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    <span style="font-weight:700; font-size:12px">Efficacité Ressource</span>
+                  </div>
+                  <p style="font-size:11px; opacity:0.8">Exécution ciblée des binaires critiques. Zéro chargement de procesus Windows Explorer distant.</p>
+                </div>
+                <div style="background:rgba(0,0,0,0.02); padding:var(--space-4); border-radius:8px">
+                  <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--color-primary)"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <span style="font-weight:700; font-size:12px">Transparence OS</span>
+                  </div>
+                  <p style="font-size:11px; opacity:0.8">L'utilisateur garde son bureau local fluide (Spotify, Outlook, Chrome) tout en travaillant sur l'app distante.</p>
+                </div>
+              </div>
+            </div>
           </article>
           <article id="ra-2" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- GPO & MAPPAGES -->
+            <div class="panel__section">
+              <div class="panel__tag">Administration Windows · GPO · Automatisation</div>
+              <h3 class="panel__title">Phase 2 : Configuration Serveur & Stratégies de Groupes</h3>
+              <p class="panel__text">
+                L'automatisation de l'environnement utilisateur repose sur une GPO structurée (<code>Lecteurs_AGXXX</code>) appliquée à l'Unité d'Organisation (OU) de chaque agence. L'objectif est de garantir que les lecteurs réseau et les raccourcis applicatifs sont montés automatiquement dès l'authentification VPN, sans action de l'utilisateur.
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Mappage des lecteurs (GPO Preferences)</h4>
+                  <ul class="tech-list">
+                    <li><strong>Lecteur V: [Logiciels]</strong><span style="display:block;opacity:.8;margin-top:4px">Point de montage vers <code>\\server\logiciel$</code> contenant les exécutables déportés.</span></li>
+                    <li><strong>Lecteurs Métiers (R, S, T, U)</strong><span style="display:block;opacity:.8;margin-top:4px">Persistance des accès aux données partagées (Dossier Agence, Scan, etc.).</span></li>
+                    <li><strong>Ciblage item-level</strong><span style="display:block;opacity:.8;margin-top:4px">Utilisation du filtrage GPO pour n'appliquer les mappages qu'aux groupes de sécurité correspondants.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Paramétrage GPO (Détails)</h5>
+                  <div class="code-block" style="background:rgba(0,0,0,.03); padding:var(--space-4)">
+                    <pre style="font-size:10px; line-height:1.6"><code>Action : Mettre à jour
+Emplacement : \\server\logiciel$
+Libellé : "Logiciel Temporis"
+Lettre : V
+Commun : "Exécuter dans le contexte 
+         de sécurité de l'utilisateur"</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- IMPRESSION & NTFS -->
+            <div class="panel__section">
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h4 class="block-title">Redirection d'impression locale</h4>
+                  <p class="panel__text">
+                    L'un des défis majeurs du RemoteApp est l'impression. Nous avons activé la <strong>redirection d'imprimante client</strong> au niveau de la collection RDS pour permettre aux applications distantes (Tempo/Banco) d'utiliser les imprimantes locales de l'agence.
+                  </p>
+                  <div class="code-block" style="background:rgba(var(--color-primary-rgb),.05); border-radius:8px; padding:var(--space-4); margin-top:12px">
+                    <span style="font-size:10px; color:var(--color-primary); font-weight:700">Configuration Collection :</span>
+                    <p style="font-size:10px; opacity:0.8; margin-top:4px">
+                      RD Connection Broker > Client Settings > <br>
+                      ☑ Allow client printer redirection <br>
+                      ☑ Use the RD Easy Print driver first
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="block-title">Sécurisation des Dossiers Perso (NTFS)</h4>
+                  <p class="panel__text">
+                    Mise en œuvre d'une isolation stricte des données utilisateurs sur le serveur de fichiers :
+                  </p>
+                  <ul class="tech-list" style="margin-top:12px">
+                    <li><strong>Désactivation de l'héritage</strong> sur le dossier racine <code>Dossier Perso</code>.</li>
+                    <li><strong>Droits explicites</strong> : Seul l'utilisateur propriétaire et les admins ont les droits de modification.</li>
+                    <li><strong>Denied Access</strong> pour tous les autres utilisateurs du domaine (Audit OK).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- SCHÉMA PERMISSIONS -->
+            <div class="panel__section">
+              <h4 class="block-title">Workflow de provisionnement utilisateur</h4>
+              <div class="code-block" style="background:transparent;border:none;padding:0;margin-top:var(--space-4)">
+                <pre style="font-size:11px;color:var(--color-primary);line-height:2"><code>Admin AD ──▶ Création user ──▶ Affectation GpUser-RemoteApp
+                                    │
+                                    ▼
+GPO ──────▶ Mappage V: (\\logiciel$) + Icones Bureau
+                                    │
+                                    ▼
+RDS Host ──▶ Montage Profil ──▶ Redirection Imprimante ──▶ App OK</code></pre>
+              </div>
+            </div>
           </article>
           <article id="ra-3" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- DÉPLOIEMENT POSTES -->
+            <div class="panel__section">
+              <div class="panel__tag">Support Technique · Windows 10/11 · Troubleshooting</div>
+              <h3 class="panel__title">Phase 3 : Déploiement & Configuration des Postes Clients</h3>
+              <p class="panel__text">
+                Le passage du bureau complet RDS au mode RemoteApp nécessite une synchronisation parfaite entre les serveurs et les terminaux des agences. Cette phase traite de la mise en œuvre locale et de la résolution des cas particuliers de compatibilité.
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Mise en service locale</h4>
+                  <ul class="tech-list">
+                    <li><strong>Synchronisation GPO force</strong><span style="display:block;opacity:.8;margin-top:4px">Exécution de <code>gpupdate /force</code> par l'équipe support sur chaque terminal pour propager les nouveaux mappages réseau.</span></li>
+                    <li><strong>Vérification des raccourcis .RDP</strong><span style="display:block;opacity:.8;margin-top:4px">Contrôle visuel de la remontée des icônes Tempo, Banco et Mikado sur le bureau local de l'utilisateur.</span></li>
+                    <li><strong>Tests de flux VPN IPSEC</strong><span style="display:block;opacity:.8;margin-top:4px">Validation de la communication entre le LAN de l'agence et le LAN du Datacenter pour l'appel des binaires distants.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Audit & Résolution de conflits</h5>
+                  <div class="code-block" style="background:rgba(0,0,0,.03); padding:var(--space-4)">
+                    <p style="font-size:11px; font-weight:700; color:#ef4444; margin-bottom:8px">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px; vertical-align: middle;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                      Incident rencontré :
+                    </p>
+                    <p style="font-size:10px; opacity:0.8">
+                      Certains postes (Windows 10 obsolètes) ne remontaient pas les icônes RemoteApp via GPO.
+                    </p>
+                    <p style="font-size:11px; font-weight:700; color:var(--color-primary); margin-top:12px">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px; vertical-align: middle;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                      Résolution :
+                    </p>
+                    <p style="font-size:10px; opacity:0.8">
+                      Mise à jour sélective du client "Remote Desktop" et application des KB de sécurité Windows Update.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ACCÈS NOMADES VPN -->
+            <div class="panel__section">
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h4 class="block-title">Accès Nomades : VPN SSL</h4>
+                  <p class="panel__text">
+                    Pour les agences disposant d'ordinateurs portables (télétravail, déplacements), un accès <strong>VPN SSL (FortiClient/Sophos)</strong> a été mis en œuvre.
+                  </p>
+                  <ul class="tech-list" style="margin-top:12px">
+                    <li><strong>Authentification AD</strong> : L'utilisateur utilise ses identifiants Windows habituels (Single Sign-On partiel).</li>
+                    <li><strong>Groupe de sécurité dédié</strong> : <code>GpUser-VPNSSL</code> requis pour l'accès au portail.</li>
+                    <li><strong>Tunnel Split</strong> : Seul le trafic métier transite par le VPN, optimisant la vitesse de navigation Internet locale.</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Processus de connexion VPN</h5>
+                  <div class="code-block" style="background:rgba(var(--color-primary-rgb),.05); border-radius:8px; padding:var(--space-4)">
+                    <pre style="font-size:10px; color:var(--color-primary); line-height:1.6"><code># Étapes utilisateur :
+1. Connexion au WAN IP de l'agence
+2. Auth AD (login/pass)
+3. Montage du tunnel virtuel
+4. Accès automatique au lecteur V:
+5. Lancement des RemoteApps (.rdp)</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
           </article>
           <article id="ra-4" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- RÉSULTATS & BILAN -->
+            <div class="panel__section">
+              <div class="panel__tag">Bilan · ROI · Satisfaction Client</div>
+              <h3 class="panel__title">Phase 4 : Impact sur la Production & Bilan Final</h3>
+              <p class="panel__text">
+                L'implémentation de la solution RemoteApp a transformé la perception du SI au sein des agences Temporis. Au-delà des gains purement techniques, c'est la <strong>continuité de service</strong> durant les périodes de stress administratif (clôture des paies) qui constitue la réussite majeure de ce projet.
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Impact sur l'Infrastructure</h4>
+                  <ul class="tech-list">
+                    <li><strong>Stabilisation de la charge CPU</strong><span style="display:block;opacity:.8;margin-top:4px">La charge processeur des serveurs RDS est désormais maintenue sous le seuil critique de 60%, évitant les crashs de sessions.</span></li>
+                    <li><strong>Réduction drastique des latences</strong><span style="display:block;opacity:.8;margin-top:4px">En supprimant le flux vidéo du bureau complet, la latence est redevenue imperceptible pour l'utilisateur final.</span></li>
+                    <li><strong>Optimisation des ressources VM</strong><span style="display:block;opacity:.8;margin-top:4px">Réduction de l'empreinte mémoire par session utilisateur (pas de shell explorer.exe chargé).</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Performance Support (KPI)</h5>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:24px;font-weight:700;color:var(--color-primary)">-70%</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">de tickets Support "Lenteur"</div>
+                    <p style="font-size:10px; opacity:0.6; margin-top:8px">Comparaison J+10 sur 3 mois glissants.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ACCOMPAGNEMENT & CONCLUSION -->
+            <div class="panel__section">
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h4 class="block-title">Accompagnement au changement</h4>
+                  <p class="panel__text">
+                    Pour assurer l'adoption de ce nouvel environnement hybride (Windows local + Apps distantes), nous avons livré :
+                  </p>
+                  <ul class="tech-list" style="margin-top:12px">
+                    <li>Une <strong>procédure d'assistance détaillée</strong> (Guide Utilisateur).</li>
+                    <li>Une sensibilisation aux bonnes pratiques (fermeture des sessions RemoteApp).</li>
+                    <li>Un monitoring proactif via PRTG pour anticiper les futurs besoins d'évolution.</li>
+                  </ul>
+                </div>
+                <div style="border-left: 2px solid rgba(var(--color-primary-rgb),.1); padding-left: var(--space-6)">
+                  <h4 class="block-title">Conclusion</h4>
+                  <p class="panel__text" style="font-style: italic; opacity: 0.9">
+                    "La migration vers RemoteApp a permis de résoudre durablement les problèmes de latence multi-sites sans investissement matériel massif. C'est un succès technologique et économique pour Agoravita et ses franchisés."
+                  </p>
+                  <div style="margin-top: var(--space-4); display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-primary); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 12px;">AZ</div>
+                    <div>
+                        <p style="font-size:11px; font-weight:700; margin:0">Adil Zarqane</p>
+                        <p style="font-size:10px; opacity:0.7; margin:0">Administrateur Systèmes & Réseaux</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -2678,9 +3090,9 @@ subsets:
             style="font-weight: 700; color: var(--color-primary); letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; margin-bottom: var(--space-4);">
             Cycle de vie</div>
           <button class="project-tab active" data-target="ad-0" aria-selected="true" role="tab">
-            <div class="project-tab__num" style="font-size:9px;letter-spacing:.05em">Phase 0</div>
-            <div class="project-tab__name" style="font-weight: 600;">Contexte</div>
-            <div class="project-tab__desc" style="font-size: 11px; opacity: 0.7;">Les processus existants</div>
+            <div class="project-tab__num" style="font-size:9px;letter-spacing:.05em">Vue globale</div>
+            <div class="project-tab__name" style="font-weight: 600;">Présentation</div>
+            <div class="project-tab__desc" style="font-size: 11px; opacity: 0.7;">Workflow &amp; Automatisation</div>
           </button>
           <button class="project-tab" data-target="ad-1" aria-selected="false" role="tab">
             <div class="project-tab__num">Phase 1</div>
@@ -2705,19 +3117,382 @@ subsets:
         </nav>
         <div class="projects__panels">
           <article id="ad-0" class="project-panel active">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+
+            <!-- EN-TÊTE -->
+            <div class="panel__section">
+              <div class="panel__tag">Automation · Low-Code · PowerShell · Infrastructure</div>
+              <h3 class="panel__title">Workflow d'Automatisation AD & M365 — Vue d'ensemble</h3>
+              <p class="panel__text">
+                Projet de transformation digitale mené pour <strong>Geosys</strong>. L'enjeu était de supprimer la latence de provisionnement des utilisateurs (jusqu'à 1 semaine d'attente) en automatisant le cycle de création via un workflow hybride. La solution permet désormais à une secrétaire de créer un compte utilisateur complet (AD + M365 + Licences) en <strong>moins de 24h</strong> sans expertise technique.
+              </p>
+            </div>
+
+            <!-- CHIFFRES CLÉS -->
+            <div class="panel__section">
+              <h4 class="block-title">Impact du Provisioning</h4>
+              <div class="technical-grid" style="margin-top:var(--space-4);gap:var(--space-4)">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)">
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">J+1</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Déploiement vs J+6</div>
+                  </div>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">100%</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Données Standardisées</div>
+                  </div>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">0</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Dépendance externe</div>
+                  </div>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">∞</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Traçabilité du flux</div>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:var(--space-3);font-weight:700">Stack Technique Hybride</h5>
+                  <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
+                    <span class="badge badge-accent">Microsoft Forms</span>
+                    <span class="badge badge-accent">Power Automate</span>
+                    <span class="badge badge-accent">PowerShell 7.x</span>
+                    <span class="badge badge-accent">Active Directory</span>
+                    <span class="badge badge-accent">Azure AD Connect</span>
+                    <span class="badge badge-accent">M365 Licensing</span>
+                    <span class="badge">Excel DB Connector</span>
+                    <span class="badge">Windows Task Scheduler</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ARCHITECTURE MODULAIRE -->
+            <div class="panel__section">
+              <h4 class="block-title">Architecture du Workflow</h4>
+              <div class="code-block" style="background:transparent;border:none;padding:0;margin-top:var(--space-4)">
+                <pre style="font-size:11px;color:var(--color-primary);line-height:2"><code>┌─────────────────────────────────────────────────────────────────┐
+│  STEP 01 — Entrée des données (Standardisation)                 │
+│  Microsoft Forms (Restriction Interne) → Capture RH/Secrétariat │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │ Trigger Cloud (Power Automate)
+┌───────────────────────────▼─────────────────────────────────────┐
+│  STEP 02 — Orchestration & Stockage Tampon                      │
+│  Extraction JSON → Data Sync Excel/CSV → Alerting Admin (Mail)  │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │ Job PowerShell Automatisé
+┌───────────────────────────▼─────────────────────────────────────┐
+│  STEP 03 — Provisioning Local & Cloud                           │
+│  New-ADUser → Affectation OUs/Groupes → Sync Azure AD (Delta)   │
+│  <span style="opacity:.7">Envoi automatique du mot de passe temporaire au Manager</span>       │
+└─────────────────────────────────────────────────────────────────┘</code></pre>
+              </div>
+            </div>
+
+            <!-- PILIERS DU PROJET -->
+            <div class="panel__section">
+              <h4 class="block-title">Les 4 piliers de l'automatisation</h4>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <ul class="tech-list">
+                    <li><strong>Autonomie Métier</strong><span style="display:block;opacity:.8;margin-top:4px">La secrétaire RH devient opératrice de son propre flux sans manipulation technique dans la console AD.</span></li>
+                    <li><strong>Standardisation NTFS/AD</strong><span style="display:block;opacity:.8;margin-top:4px">Suppression des coquilles dans les noms d'utilisateurs et uniformisation des chemins de profil (HomeDirectory).</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <ul class="tech-list">
+                    <li><strong>Conformité & Traçabilité</strong><span style="display:block;opacity:.8;margin-top:4px">Chaque création est logguée dans Forms (Heure, Date, Demandeur) offrant un audit trail complet pour la DSI.</span></li>
+                    <li><strong>Réduction du Time-to-Market</strong><span style="display:block;opacity:.8;margin-top:4px">Intégration immédiate des nouveaux collaborateurs (stagiaires, prestas) augmentant l'efficacité opérationnelle globale.</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- COMPARAISON TIMELINE -->
+            <div class="panel__section">
+                <h4 class="block-title">Audit Timeline (Provisioning Utilisateur)</h4>
+                <div class="code-block" style="background:rgba(var(--color-primary-rgb),.05);border:1px solid rgba(var(--color-primary-rgb),.1); padding: var(--space-4); margin-top: var(--space-4);">
+                    <table style="width:100%; border-collapse: collapse; font-size:11px; font-family:var(--font-mono);">
+                        <thead>
+                            <tr style="color:var(--color-primary); border-bottom:1px solid rgba(var(--color-primary-rgb),.2)">
+                                <th style="padding:8px; text-align:left">Processus</th>
+                                <th style="padding:8px; text-align:center">Acteur</th>
+                                <th style="padding:8px; text-align:right">Délai moyen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="opacity:0.6">
+                                <td style="padding:8px; border-bottom:1px solid rgba(0,0,0,0.05)">Demande manuelle (Mail)</td>
+                                <td style="padding:8px; text-align:center; border-bottom:1px solid rgba(0,0,0,0.05)">Agoravita (Visite)</td>
+                                <td style="padding:8px; text-align:right; border-bottom:1px solid rgba(0,0,0,0.05)">6 jours (J+6)</td>
+                            </tr>
+                            <tr style="background:rgba(var(--color-primary-rgb),.05)">
+                                <td style="padding:8px; border-bottom:1px solid rgba(0,0,0,0.05); font-weight:700">Workflow Automatisé</td>
+                                <td style="padding:8px; text-align:center; border-bottom:1px solid rgba(0,0,0,0.05); font-weight:700; color:var(--color-primary)">Secrétariat (Forms)</td>
+                                <td style="padding:8px; text-align:right; border-bottom:1px solid rgba(0,0,0,0.05); font-weight:700; color:var(--color-primary)">1 jour (J+1)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
           </article>
           <article id="ad-1" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- FORMS & POWER AUTOMATE -->
+            <div class="panel__section">
+              <div class="panel__tag">Cloud Orchestration · SaaS · Data Capture</div>
+              <h3 class="panel__title">Phase 1 : Capture des données & Workflow Cloud</h3>
+              <p class="panel__text">
+                La première étape consiste à standardiser l'entrée des données. En utilisant <strong>Microsoft Forms</strong> sur le tenant 365 de l'entreprise, nous garantissons que seules les personnes autorisées (RH/Secrétariat) peuvent initier une demande, tout en capturant automatiquement l'identité du demandeur pour l'audit.
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Standardisation via Microsoft Forms</h4>
+                  <ul class="tech-list">
+                    <li><strong>Restriction Interne</strong><span style="display:block;opacity:.8;margin-top:4px">Accès limité aux comptes authentifiés de l'organisation pour prévenir toute création non autorisée.</span></li>
+                    <li><strong>Champs obligatoires</strong><span style="display:block;opacity:.8;margin-top:4px">Nom, Prénom, Fonction (OU), Groupes de sécurité, Licence requise et Email du Manager.</span></li>
+                    <li><strong>Traçabilité Native</strong><span style="display:block;opacity:.8;margin-top:4px">Capture de l'heure de début, de fin et de l'adresse email du répondant.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Audit Trail (Forms Log)</h5>
+                  <div class="code-block" style="background:rgba(0,0,0,.03); padding:var(--space-4)">
+                    <pre style="font-size:10px; line-height:1.6"><code># Metadata extraites de chaque réponse
+{
+  "Responder": "sec_lorient@geosys.com",
+  "StartTime": "2023-04-12T09:12:00Z",
+  "EndTime": "2023-04-12T09:14:30Z",
+  "Location": "Tenant GEOSYS"
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- POWER AUTOMATE LOGIC -->
+            <div class="panel__section">
+              <h4 class="block-title">L'Orchestrateur : Power Automate</h4>
+              <p class="panel__text">
+                Un flux <strong>Power Automate</strong> est déclenché en quasi temps-réel à chaque soumission. Il joue le rôle de passerelle entre le Cloud (SaaS) et l'infrastructure locale (On-Premise).
+              </p>
+              
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div style="background:rgba(var(--color-primary-rgb),.05); padding:var(--space-4); border-radius:8px">
+                  <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--color-primary)"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span style="font-weight:700; font-size:12px">Déclencheur (Trigger)</span>
+                  </div>
+                  <p style="font-size:11px; opacity:0.8">Détection d'une nouvelle réponse via le connecteur Microsoft Forms.</p>
+                </div>
+                <div style="background:rgba(var(--color-primary-rgb),.05); padding:var(--space-4); border-radius:8px">
+                  <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--color-primary)"><path d="M4 7V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><rect x="9" y="15" width="6" height="5"/><path d="M2 7h20v10H2z"/></svg>
+                    <span style="font-weight:700; font-size:12px">Transformation (Actions)</span>
+                  </div>
+                  <p style="font-size:11px; opacity:0.8">Récupération des détails de la réponse et insertion atomique dans une base tampon Excel/CSV.</p>
+                </div>
+              </div>
+
+              <div class="code-block" style="margin-top:var(--space-4); background:rgba(0,0,0,.02); border:1px solid rgba(0,0,0,.05); padding: var(--space-4);">
+                <p style="font-size:10px; font-weight:700; margin-bottom:8px">Workflow Logic :</p>
+                <div style="display:flex; flex-direction:column; gap:4px; font-size:11px; font-family:var(--font-mono)">
+                  <span>[Forms] When a new response is submitted</span>
+                  <span>   └── [Forms] Get response details</span>
+                  <span>       └── [Excel] Add a row into a table (DB_Users.xlsx)</span>
+                  <span>           └── [Outlook] Send email notification to IT Admin</span>
+                </div>
+              </div>
+            </div>
           </article>
           <article id="ad-2" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- POWERSHELL ENGINE -->
+            <div class="panel__section">
+              <div class="panel__tag">Scripting · PowerShell · ADDS · Security</div>
+              <h3 class="panel__title">Phase 2 : Le Moteur de Provisioning PowerShell</h3>
+              <p class="panel__text">
+                Le script PowerShell est le cerveau de l'automatisation. Il s'exécute de manière planifiée sur un serveur d'administration pour traiter les nouvelles entrées du fichier Excel tampon. Il assure la création de l'identité numérique tout en respectant les conventions de nommage et les structures d'OUs de l'entreprise.
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Logique de traitement</h4>
+                  <ul class="tech-list">
+                    <li><strong>Génération de l'UPN/SAM</strong><span style="display:block;opacity:.8;margin-top:4px">Normalisation automatique (ex: <code>p.nom@geosys.com</code>) pour éviter les doublons et les caractères spéciaux.</span></li>
+                    <li><strong>Placement dynamique en OU</strong><span style="display:block;opacity:.8;margin-top:4px">Sélection automatique de l'Unité d'Organisation cible selon la fonction renseignée dans le formulaire.</span></li>
+                    <li><strong>Génération de mot de passe</strong><span style="display:block;opacity:.8;margin-top:4px">Création d'un mot de passe temporaire complexe répondant aux exigences de sécurité.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Extrait du Script (Logique AD)</h5>
+                  <div class="code-block" style="background:rgba(var(--color-primary-rgb),.05); border-radius:8px; padding:var(--space-4)">
+                    <pre style="font-size:10px; color:var(--color-primary); line-height:1.6"><code># Création de l'utilisateur AD
+New-ADUser -Name $FullName `
+           -SamAccountName $SAM `
+           -UserPrincipalName $UPN `
+           -Path $TargetOU `
+           -AccountPassword $SecurePass `
+           -Enabled $true `
+           -ChangePasswordAtLogon $true
+
+# Affectation aux groupes métiers
+Add-ADGroupMember -Identity $TargetGroup `
+                  -Members $SAM</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECURITY & DELIVERY -->
+            <div class="panel__section">
+              <h4 class="block-title">Sécurité & Notification Manager</h4>
+              <p class="panel__text">
+                Pour clore le cycle de création sans intervention humaine, le script automatise la transmission sécurisée des accès.
+              </p>
+              
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Notification Automatisée</h5>
+                  <p style="font-size:11px; opacity:0.8">
+                    Une fois l'utilisateur créé, le script envoie un email au <strong>Manager</strong> (dont l'adresse a été capturée par le formulaire) contenant le login et le mot de passe temporaire.
+                  </p>
+                  <div class="code-block" style="background:rgba(0,0,0,0.03); padding:var(--space-4); margin-top:12px; border-radius:8px">
+                    <span style="font-size:10px; font-weight:700">SMTP Alert Payload :</span>
+                    <p style="font-size:10px; font-family:var(--font-mono); margin-top:4px">
+                      To: $ManagerEmail <br>
+                      Subject: Création compte : $FullName <br>
+                      Body: "Compte actif. Password : $TempPass"
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="block-title">Gestion des erreurs & Logs</h4>
+                  <ul class="tech-list" style="margin-top:12px">
+                    <li><strong>Try/Catch</strong> : Interception des erreurs (ex: SAM déjà existant) avec alerte immédiate vers la DSI.</li>
+                    <li><strong>Log de création</strong> : Enregistrement local de chaque succès pour audit ultérieur.</li>
+                    <li><strong>Nettoyage automatique</strong> : Purge des lignes traitées dans le fichier tampon pour éviter les doublons.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </article>
           <article id="ad-3" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- HYBRID IDENTITY -->
+            <div class="panel__section">
+              <div class="panel__tag">Identity Management · Azure AD · M365 · Cloud Sync</div>
+              <h3 class="panel__title">Phase 3 : Synchronisation Hybride & Cloud Licensing</h3>
+              <p class="panel__text">
+                Pour être pleinement opérationnel, l'utilisateur d'aujourd'hui doit disposer de ses outils SaaS (Teams, Outlook, OneDrive). Cette phase assure la liaison entre l'annuaire local et le Cloud Microsoft 365 via une synchronisation delta et une affectation de licence automatisée.
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Synchronisation Azure AD Connect</h4>
+                  <ul class="tech-list">
+                    <li><strong>Cycle de Sync Alpha/Delta</strong><span style="display:block;opacity:.8;margin-top:4px">Déclenchement automatique de la synchronisation vers Azure AD (Entra ID) après la création locale.</span></li>
+                    <li><strong>Matching Principal Name (UPN)</strong><span style="display:block;opacity:.8;margin-top:4px">Vérification de la cohérence entre le login AD local et l'identité Cloud pour garantir le SSO.</span></li>
+                    <li><strong>Objets synchronisés</strong><span style="display:block;opacity:.8;margin-top:4px">Users, Groupes de sécurité et attributs RH critiques (Service, Manager).</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Flux de Synchronisation</h5>
+                  <div class="code-block" style="background:rgba(0,0,0,.03); padding:var(--space-4); text-align:center">
+                    <div style="font-size:10px; font-weight:700">ON-PREMISE AD</div>
+                    <div style="color:var(--color-primary); margin:8px 0">▼</div>
+                    <div style="font-size:9px; border:1px solid var(--color-primary); display:inline-block; padding:4px 8px; border-radius:4px">AZURE AD CONNECT</div>
+                    <div style="color:var(--color-primary); margin:8px 0">▼</div>
+                    <div style="font-size:10px; font-weight:700">ENTRA ID (M365)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- AUTOMATED LICENSING -->
+            <div class="panel__section">
+              <h4 class="block-title">Attribution Automatique des Licences</h4>
+              <p class="panel__text">
+                La licence choisie par la secrétaire dans le formulaire Microsoft Forms est appliquée directement à l'objet Cloud. Cela évite les oublis et garantit que le collaborateur a accès à ses outils dès sa première connexion.
+              </p>
+              
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Logique PowerShell Graph/MSOnline</h5>
+                  <div class="code-block" style="background:rgba(var(--color-primary-rgb),.05); border-radius:8px; padding:var(--space-4)">
+                    <pre style="font-size:10px; color:var(--color-primary); line-height:1.6"><code># Sélection de la licence selon le Forms
+$LicenseSKU = Get-LicenseFromForms($Selection)
+
+# Application dans Entra ID
+Set-MsolUserLicense -UserPrincipalName $UPN `
+                    -AddLicenses $LicenseSKU</code></pre>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="block-title">Vérification de la boîte mail</h4>
+                  <ul class="tech-list" style="margin-top:12px">
+                    <li><strong>Provisioning Exchange Online</strong> : Initialisation de la mailbox une fois la licence E3/Business affectée.</li>
+                    <li><strong>Application des Quotas</strong> : Paramétrage automatique par défaut selon le profil utilisateur.</li>
+                    <li><strong>Alias & SMTP</strong> : Configuration des adresses secondaires éventuelles définies par la charte informatique.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </article>
           <article id="ad-4" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- RESULTS & IMPACT -->
+            <div class="panel__section">
+              <div class="panel__tag">Bilan · Productivité · Gouvernance Data</div>
+              <h3 class="panel__title">Phase 4 : Bilan Opérationnel & Intégration Utilisateur</h3>
+              <p class="panel__text">
+                Le déploiement du workflow d'automatisation a radicalement changé la gestion des arrivées chez <strong>Geosys</strong>. En transférant la saisie des données au plus proche du besoin (Secrétariat/RH), la DSI s'est libérée d'une tâche chronophage tout en améliorant la fiabilité des annuaires.
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Gains de productivité</h4>
+                  <ul class="tech-list">
+                    <li><strong>Onboarding instantané</strong><span style="display:block;opacity:.8;margin-top:4px">Réduction du délai de création de 6 jours à quelques heures. Le nouvel arrivant est opérationnel dès son arrivée.</span></li>
+                    <li><strong>Zéro erreur de saisie</strong><span style="display:block;opacity:.8;margin-top:4px">La standardisation via le formulaire empêche les fautes de frappe dans les noms, prénoms et adresses email.</span></li>
+                    <li><strong>Respect des conventions de nommage</strong><span style="display:block;opacity:.8;margin-top:4px">Application automatique de la charte informatique sur l'ensemble de l'AD.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Audit de Performance</h5>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:24px;font-weight:700;color:var(--color-primary)">-85%</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">de temps de traitement IT</div>
+                    <p style="font-size:10px; opacity:0.6; margin-top:8px">Libération de 4h/mois de temps ingénieur.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- INFRASTRUCTURE INTEGRATION -->
+            <div class="panel__section">
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h4 class="block-title">Intégration OneDrive & Data</h4>
+                  <p class="panel__text">
+                    Grâce à la standardisation des comptes, le provisionnement des ressources de stockage est désormais automatique et cohérent :
+                  </p>
+                  <ul class="tech-list" style="margin-top:12px">
+                    <li>Provisioning automatique de l'espace <strong>OneDrive Enterprise</strong> (1 To).</li>
+                    <li>Mappage automatique du <strong>Dossier Personnel</strong> sur le serveur de fichiers local.</li>
+                    <li>Affectation aux groupes de distribution emails par service.</li>
+                  </ul>
+                </div>
+                <div style="border-left: 2px solid rgba(var(--color-primary-rgb),.2); padding-left: var(--space-6)">
+                  <h4 class="block-title">Conclusion</h4>
+                  <p class="panel__text" style="font-style: italic; opacity: 0.9">
+                    "L'automatisation AD a permis de transformer un processus administratif lourd en un workflow agile et autonome. Geosys dispose désormais d'un système de gestion des identités fiable et scalable."
+                  </p>
+                  <div style="margin-top: var(--space-4); display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-primary); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 12px;">AZ</div>
+                    <div>
+                        <p style="font-size:11px; font-weight:700; margin:0">Adil Zarqane</p>
+                        <p style="font-size:10px; opacity:0.7; margin:0">Administrateur Systèmes & Réseaux</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -2747,9 +3522,9 @@ subsets:
             style="font-weight: 700; color: var(--color-primary); letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; margin-bottom: var(--space-4);">
             Cycle de vie</div>
           <button class="project-tab active" data-target="so-0" aria-selected="true" role="tab">
-            <div class="project-tab__num" style="font-size:9px;letter-spacing:.05em">Phase 0</div>
-            <div class="project-tab__name" style="font-weight: 600;">Contexte</div>
-            <div class="project-tab__desc" style="font-size: 11px; opacity: 0.7;">Centraliser multi-sites</div>
+            <div class="project-tab__num" style="font-size:9px;letter-spacing:.05em">Vue globale</div>
+            <div class="project-tab__name" style="font-weight: 600;">Présentation</div>
+            <div class="project-tab__desc" style="font-size: 11px; opacity: 0.7;">Centralisation Multi-sites</div>
           </button>
           <button class="project-tab" data-target="so-1" aria-selected="false" role="tab">
             <div class="project-tab__num">Phase 1</div>
@@ -2769,16 +3544,261 @@ subsets:
         </nav>
         <div class="projects__panels">
           <article id="so-0" class="project-panel active">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+
+            <!-- EN-TÊTE -->
+            <div class="panel__section">
+              <div class="panel__tag">CyberSecurity · Endpoint Protection · Unified Threat Management</div>
+              <h3 class="panel__title">Supervision Cyber Sophos Central — Vue d'ensemble</h3>
+              <p class="panel__text">
+                Déploiement d'une stratégie de sécurité unifiée pour le groupe <strong>Valoris Développement</strong> (170+ agences Temporis). La mission visait à centraliser la gestion des pare-feux XG et de la protection Endpoint sous une console SaaS unique, permettant une corrélation d'alertes en temps réel et une visibilité globale sur la surface d'attaque.
+              </p>
+            </div>
+
+            <!-- CHIFFRES CLÉS -->
+            <div class="panel__section">
+              <h4 class="block-title">Métrique de la Surface de Protection</h4>
+              <div class="technical-grid" style="margin-top:var(--space-4);gap:var(--space-4)">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)">
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">170+</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Firewalls XG gérés</div>
+                  </div>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">100%</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Administration Cloud</div>
+                  </div>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">EDR</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Intercept X Next-Gen</div>
+                  </div>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">24/7</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Alerting temps réel</div>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:var(--space-3);font-weight:700">Cyber Stack</h5>
+                  <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
+                    <span class="badge badge-accent">Sophos Central (SaaS)</span>
+                    <span class="badge badge-accent">Sophos XG Firewalls</span>
+                    <span class="badge badge-accent">Intercept X (EDR)</span>
+                    <span class="badge badge-accent">Synchronized Security</span>
+                    <span class="badge badge-accent">Wireless Central</span>
+                    <span class="badge">Web Control</span>
+                    <span class="badge">DLP (Data Loss Prevention)</span>
+                    <span class="badge">Heartbeat Auth</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ARCHITECTURE CYBER -->
+            <div class="panel__section">
+              <h4 class="block-title">Topologie de Sécurité Unifiée</h4>
+              <div class="code-block" style="background:transparent;border:none;padding:0;margin-top:var(--space-4)">
+                <pre style="font-size:11px;color:var(--color-primary);line-height:2"><code>┌─────────────────────────────────────────────────────────────────┐
+│  CLOUD — SOPHOS CENTRAL (Dashboard Unique)                      │
+│  Orchestration des Politiques · Alertes · Reporting · MTR       │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │ Push des Policies (HTTPS)
+┌───────────────────────────▼─────────────────────────────────────┐
+│  SITE AGENCE — SOPHOS XG FIREWALL                               │
+│  IPS · Web Filtering · App Control · SD-WAN                     │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │ Synchronized Heartbeat (TCP)
+┌───────────────────────────▼─────────────────────────────────────┐
+│  ENDPOINT — INTERCEPT X / MOBILE                                │
+│  Anti-Ransomware · Deep Learning · Web Protection Off-site      │
+└─────────────────────────────────────────────────────────────────┘</code></pre>
+              </div>
+            </div>
+
+            <!-- PILIERS DU PROJET -->
+            <div class="panel__section">
+              <h4 class="block-title">4 piliers de la supervision cyber</h4>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <ul class="tech-list">
+                    <li><strong>Visibilité Totale</strong><span style="display:block;opacity:.8;margin-top:4px">Vue consolidée du statut des 170 sites. Identification immédiate des équipements non conformes ou sous attaque.</span></li>
+                    <li><strong>Sécurité Synchronisée</strong><span style="display:block;opacity:.8;margin-top:4px">Réponse automatique aux incidents : si un endpoint est infecté, le Firewall l'isole dynamiquement du réseau.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <ul class="tech-list">
+                    <li><strong>Protection Mobilité</strong><span style="display:block;opacity:.8;margin-top:4px">Filtrage web et protection contre les menaces actives même lorsque les collaborateurs sont hors du tunnel VPN.</span></li>
+                    <li><strong>Gestion Unified (UTM)</strong><span style="display:block;opacity:.8;margin-top:4px">Gestion simplifiée des pare-feux, des bornes WiFi et des antivirus depuis la même interface Cloud.</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
           </article>
           <article id="so-1" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- PLATFORME CLOUD -->
+            <div class="panel__section">
+              <div class="panel__tag">Cloud Management · SaaS · Security Dashboard</div>
+              <h3 class="panel__title">Phase 1 : Centralisation via Sophos Central</h3>
+              <p class="panel__text">
+                La mise en place de <strong>Sophos Central</strong> permet de briser les silos de sécurité traditionnels. Au lieu de gérer chaque équipement de manière isolée, nous déployons une console SaaS unifiée qui consolide la protection du réseau, des données et des postes de travail sous un seul plan de contrôle.
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Composants supervisés</h4>
+                  <ul class="tech-list">
+                    <li><strong>Network & WiFi</strong><span style="display:block;opacity:.8;margin-top:4px">Supervision globale des pare-feux XG et des réseaux WiFi invités/internes par agence.</span></li>
+                    <li><strong>Protection des Systèmes</strong><span style="display:block;opacity:.8;margin-top:4px">Gestion centralisée des antivirus Endpoints et des serveurs (Windows/Linux).</span></li>
+                    <li><strong>Protection des Données</strong><span style="display:block;opacity:.8;margin-top:4px">Chiffrement des disques (BitLocker) piloté depuis la console.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Visibilité & Signalisation</h5>
+                  <div class="code-block" style="background:rgba(var(--color-primary-rgb),.05); border-radius:8px; padding:var(--space-4)">
+                    <p style="font-size:11px; font-weight:700; color:var(--color-primary)">Reporting Temps Réel :</p>
+                    <ul style="font-size:10px; margin-top:8px; list-style:none; padding:0; line-height:1.6">
+                      <li><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px; vertical-align:middle; color:var(--color-primary)"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Alertes critiques (Attaques bloquées)</li>
+                      <li><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px; vertical-align:middle; color:var(--color-primary)"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Volume de trafic par utilisateur</li>
+                      <li><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px; vertical-align:middle; color:var(--color-primary)"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Identification des applications à risque</li>
+                      <li><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px; vertical-align:middle; color:var(--color-primary)"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Localisation géographique des menaces</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- DASHBOARD CAPABILITIES -->
+            <div class="panel__section">
+              <h4 class="block-title">Capacités d'Analyse Avancée</h4>
+              <p class="panel__text">
+                L'interface fournit un aperçu complet du statut de sécurité de l'organisation. Elle permet de réagir aux menaces potentielles en quelques clics grâce à la corrélation automatique des événements.
+              </p>
+              
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div style="background:rgba(0,0,0,0.02); padding:var(--space-4); border-radius:8px">
+                  <span style="font-weight:700; font-size:12px; display:block; margin-bottom:4px">Threat Analysis Center</span>
+                  <p style="font-size:11px; opacity:0.8">Outils d'investigation pour remonter à la source d'une infection (Root Cause Analysis).</p>
+                </div>
+                <div style="background:rgba(0,0,0,0.02); padding:var(--space-4); border-radius:8px">
+                  <span style="font-weight:700; font-size:12px; display:block; margin-bottom:4px">Politiques Globales</span>
+                  <p style="font-size:11px; opacity:0.8">Push de configurations uniformes sur les 170 sites en une seule action de validation.</p>
+                </div>
+              </div>
+            </div>
           </article>
           <article id="so-2" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- FIREWALL INTEGRATION -->
+            <div class="panel__section">
+              <div class="panel__tag">Network Security · NGFW · Cloud Registration</div>
+              <h3 class="panel__title">Phase 2 : Intégration des Pare-feux XG</h3>
+              <p class="panel__text">
+                L'un des défis majeurs pour <strong>Valoris Développement</strong> était de configurer les équipements au siège à Toulouse avant de les expédier en agence. Le processus d'intégration via Sophos Central permet de garder la main sur l'unité même lorsqu'elle est physiquement distante.
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Processus de jumelage</h4>
+                  <ul class="tech-list">
+                    <li><strong>Activation des services Central</strong><span style="display:block;opacity:.8;margin-top:4px">Activation du module "Sophos Central Services" directement dans l'OS du pare-feu local.</span></li>
+                    <li><strong>ID par Numéro de Série</strong><span style="display:block;opacity:.8;margin-top:4px">Référencement sérialisé dans le tenant client pour une identification unique de l'agence.</span></li>
+                    <li><strong>Validation de l'Approbation</strong><span style="display:block;opacity:.8;margin-top:4px">Passage du statut "En attente d'approbation" à "Synchronisé" après authentification mutuelle.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Workflow de Déploiement</h5>
+                  <div class="code-block" style="background:rgba(0,0,0,.03); padding:var(--space-4)">
+                    <div style="font-size:10px; font-family:var(--font-mono)">
+                      1. [ADMIN] Saisie Serial Number <br>
+                      2. [FIREWALL] Handshake HTTPS <br>
+                      3. [CENTRAL] Autorisation Management <br>
+                      4. [RESULT] Statut : <span style="color:#22c55e">● Synchronisé</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- GLOBAL XG MONITORING -->
+            <div class="panel__section">
+              <h4 class="block-title">Supervision du Trafic Réseau</h4>
+              <p class="panel__text">
+                Une fois synchronisé, le dashboard Sophos Central offre une vue granulaire sur l'activité réseau de chaque site :
+              </p>
+              
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Indicateurs clés supervisés</h5>
+                  <ul class="tech-list">
+                    <li><strong>Activité IPS</strong> : Détection et blocage automatique des tentatives d'intrusion.</li>
+                    <li><strong>VPN Site-to-Site</strong> : État des tunnels entre l'agence et le Datacenter.</li>
+                    <li><strong>Utilisateurs connectés</strong> : Mapping des IPs AD sur les flux réseau.</li>
+                  </ul>
+                </div>
+                <div>
+                  <div style="background:rgba(var(--color-primary-rgb),.05); border:1px solid rgba(var(--color-primary-rgb),.1); border-radius:8px; padding:var(--space-4)">
+                    <p style="font-size:11px; font-weight:700; color:var(--color-primary); margin-bottom:8px">Exemple d'Alerting :</p>
+                    <p style="font-size:10px; opacity:0.8">
+                      "Alerte : Lien WAN Agence Bordeaux coupé (Failover 4G activé). <br>Statut : Critique."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </article>
           <article id="so-3" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- ENDPOINT PROTECTION -->
+            <div class="panel__section">
+              <div class="panel__tag">Endpoint Security · EDR · Anti-Ransomware</div>
+              <h3 class="panel__title">Phase 3 : Intercept X & Sécurité des Postes de Travail</h3>
+              <p class="panel__text">
+                La protection du périmètre réseau (Firewall) ne suffit plus. Avec la multiplication du télétravail, la sécurité doit s'embarquer directement sur le poste. <strong>Sophos Intercept X</strong> utilise le Deep Learning pour détecter les menaces inconnues (Zero-day) et stopper les ransomwares avant le chiffrement des données.
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Technologie Intercept X</h4>
+                  <ul class="tech-list">
+                    <li><strong>Anti-Ransomware (CryptoGuard)</strong><span style="display:block;opacity:.8;margin-top:4px">Détection des comportements de chiffrement massif et restauration automatique des fichiers touchés.</span></li>
+                    <li><strong>EDR (Endpoint Detection & Response)</strong><span style="display:block;opacity:.8;margin-top:4px">Outils d'investigation pour comprendre la chronologie d'une attaque et isoler les postes compromis.</span></li>
+                    <li><strong>Exploit Prevention</strong><span style="display:block;opacity:.8;margin-top:4px">Blocage des techniques utilisées par les hackers pour exploiter les vulnérabilités logicielles.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Sécurité Synchronisée (Heartbeat)</h5>
+                  <div style="background:rgba(var(--color-primary-rgb),.05); border:2px dashed var(--color-primary); border-radius:8px; padding:var(--space-4)">
+                    <p style="font-size:10px; line-height:1.4">
+                      Le poste communique son "état de santé" au pare-feu. <br>
+                      <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#22c55e; margin-right:4px"></span> <strong>Sain</strong> : Accès total. <br>
+                      <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#ef4444; margin-right:4px"></span> <strong>Infecté</strong> : Le pare-feu coupe immédiatement tout accès au LAN pour éviter la propagation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- WEB PROTECTION -->
+            <div class="panel__section">
+              <h4 class="block-title">Filtrage Web Avancé & Mobilité</h4>
+              <p class="panel__text">
+                L'un des atouts de la gestion via Sophos Central est l'application des règles de filtrage web directement par l'agent Endpoint, indépendamment de la localisation de l'utilisateur.
+              </p>
+              
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Contrôle du contenu</h5>
+                  <ul class="tech-list">
+                    <li><strong>Blocage par catégories</strong> : Sites malveillants, réseaux sociaux, jeux, streaming (selon la charte).</li>
+                    <li><strong>Data Loss Prevention (DLP)</strong> : Contrôle des transferts de fichiers sensibles vers des sites de stockage personnels.</li>
+                    <li><strong>Mise à jour Cloud</strong> : Base de menaces actualisée en temps réel (Sophos Labs).</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="block-title">Bilan de la supervision</h4>
+                  <p style="font-size:11px; opacity:0.8; margin-top:8px">
+                    Cette approche unifiée a permis de réduire le risque d'infection par ransomware et de garantir une conformité de sécurité homogène sur l'ensemble des agences du groupe, tout en simplifiant drastiquement les tâches d'administration quotidiennes.
+                  </p>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -2808,9 +3828,9 @@ subsets:
             style="font-weight: 700; color: var(--color-primary); letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; margin-bottom: var(--space-4);">
             Cycle de vie</div>
           <button class="project-tab active" data-target="ne-0" aria-selected="true" role="tab">
-            <div class="project-tab__num" style="font-size:9px;letter-spacing:.05em">Phase 0</div>
-            <div class="project-tab__name" style="font-weight: 600;">Contexte</div>
-            <div class="project-tab__desc" style="font-size: 11px; opacity: 0.7;">Analyse post-ransomware</div>
+            <div class="project-tab__num" style="font-size:9px;letter-spacing:.05em">Vue globale</div>
+            <div class="project-tab__name" style="font-weight: 600;">Présentation</div>
+            <div class="project-tab__desc" style="font-size: 11px; opacity: 0.7;">Audit Post-Ransomware</div>
           </button>
           <button class="project-tab" data-target="ne-1" aria-selected="false" role="tab">
             <div class="project-tab__num">Phase 1</div>
@@ -2830,16 +3850,263 @@ subsets:
         </nav>
         <div class="projects__panels">
           <article id="ne-0" class="project-panel active">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+
+            <!-- EN-TÊTE -->
+            <div class="panel__section">
+              <div class="panel__tag">CyberSecurity · Penetration Testing · Vulnerability Management · Risk Analysis</div>
+              <h3 class="panel__title">Audit de Vulnérabilités Post-Incident — Vue d'ensemble</h3>
+              <p class="panel__text">
+                Mission d'audit critique réalisée pour <strong>Agoravita</strong> à la suite d'une attaque par ransomware dévastatrice. L'objectif était d'identifier les vecteurs d'entrée potentiels, d'évaluer la robustesse de l'annuaire Active Directory et de soumettre une roadmap de remédiation priorisée pour renforcer la résilience du SI contre de futures exploitations.
+              </p>
+            </div>
+
+            <!-- CHIFFRES CLÉS -->
+            <div class="panel__section">
+              <h4 class="block-title">Métriques de l'Audit</h4>
+              <div class="technical-grid" style="margin-top:var(--space-4);gap:var(--space-4)">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)">
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">Critical</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Priorisation CVSS v3.1</div>
+                  </div>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">AD</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Périmètre Prioritaire</div>
+                  </div>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">0-Day</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Scan des Vulnérabilités</div>
+                  </div>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">100%</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Plan de Remédiation</div>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:var(--space-3);font-weight:700">Security Stack Tools</h5>
+                  <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
+                    <span class="badge badge-accent">Nessus Expert</span>
+                    <span class="badge badge-accent">Nmap (Stealth Scan)</span>
+                    <span class="badge badge-accent">Metasploit Framework</span>
+                    <span class="badge badge-accent">Kali Linux</span>
+                    <span class="badge">Whois / Dig</span>
+                    <span class="badge">CVE Database</span>
+                    <span class="badge">OWASP Framework</span>
+                    <span class="badge">Active Directory Audit</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ARCHITECTURE DE L'AUDIT -->
+            <div class="panel__section">
+              <h4 class="block-title">Workfow & Méthodologie d'Audit</h4>
+              <div class="code-block" style="background:transparent;border:none;padding:0;margin-top:var(--space-4)">
+                <pre style="font-size:11px;color:var(--color-primary);line-height:2"><code>┌─────────────────────────────────────────────────────────────────┐
+│  STEP 01 — Reconnaissance & Énumération                         │
+│  Identification IPs/Domaines · DNS Lookup · Shadow IT detection  │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │ Scanning Actif (Nmap)
+┌───────────────────────────▼─────────────────────────────────────┐
+│  STEP 02 — Mapping des Services & Ports                          │
+│  Fingerprinting OS · Détection des versions de services (Banner) │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │ Analyse des Vulnérabilités (Nessus)
+┌───────────────────────────▼─────────────────────────────────────┐
+│  STEP 03 — Évaluation & Reporting                                │
+│  Matching CVE · Scoring CVSS · Rapport de remédiation priorisé  │
+└─────────────────────────────────────────────────────────────────┘</code></pre>
+              </div>
+            </div>
+
+            <!-- PILIERS DU PROJET -->
+            <div class="panel__section">
+              <h4 class="block-title">4 objectifs stratégiques de la mission</h4>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <ul class="tech-list">
+                    <li><strong>Analyse Post-Ransomware</strong><span style="display:block;opacity:.8;margin-top:4px">Comprendre les faiblesses structurelles ayant permis l'attaque (même sans analyser le malware directement).</span></li>
+                    <li><strong>Hygiène Active Directory</strong><span style="display:block;opacity:.8;margin-top:4px">Audit des configurations AD pour limiter les mouvements latéraux (Privilege Escalation).</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <ul class="tech-list">
+                    <li><strong>Priorisation par le Risque</strong><span style="display:block;opacity:.8;margin-top:4px">Utilisation du score CVSS pour traiter les failles critiques avant les vulnérabilités informatives.</span></li>
+                    <li><strong>Continuité d'Activité</strong><span style="display:block;opacity:.8;margin-top:4px">Mise en place de mesures correctives ne dégradant pas la production mais renforçant le mur défensif.</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
           </article>
           <article id="ne-1" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- METHODOLOGY -->
+            <div class="panel__section">
+              <div class="panel__tag">OSINT · Reconnaissance · Port Scanning · Nmap</div>
+              <h3 class="panel__title">Phase 1 : Reconnaissance & Cartographie du Réseau</h3>
+              <p class="panel__text">
+                Avant toute évaluation technique, une phase de reconnaissance (Passive & Active) est indispensable pour définir la surface d'attaque réelle. Cette étape permet d'identifier les services exposés et les points d'entrée potentiels dans l'infrastructure de l'organisation.
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Collecte d'informations (OSINT)</h4>
+                  <ul class="tech-list">
+                    <li><strong>Énumération de domaine</strong><span style="display:block;opacity:.8;margin-top:4px">Utilisation d'outils DNS (Dig, Whois) pour lister les sous-domaines et les enregistrements MX/TXT.</span></li>
+                    <li><strong>Identification des plages IP</strong><span style="display:block;opacity:.8;margin-top:4px">Cartographie des adresses IP publiques exposées et des services cloud associés.</span></li>
+                    <li><strong>Détection de Shadow IT</strong><span style="display:block;opacity:.8;margin-top:4px">Recherche d'actifs non répertoriés par la DSI mais accessibles depuis l'extérieur.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Scan de Ports (Nmap Stealth)</h5>
+                  <div class="code-block" style="background:rgba(0,0,0,.03); padding:var(--space-4)">
+                    <pre style="font-size:10px; line-height:1.6"><code># Scan TCP furtif (SYN Scan) sur le périmètre
+$ nmap -sS -Pn -A -T4 agoravita.fr
+
+# Résultats attendus :
+# - Services actifs (HTTP, SMTP, RDP)
+# - Versions de logiciels (Banner Grabbing)
+# - Détection de l'OS distant</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ATTACK SURFACE ANALYSIS -->
+            <div class="panel__section">
+              <h4 class="block-title">Analyse de la Surface d'Attaque</h4>
+              <p class="panel__text">
+                Grâce au balayage <strong>Nmap</strong>, nous avons pu identifier les services critiques et leurs versions. Cette cartographie sert de base pour configurer les politiques de scan dans Nessus lors de la phase suivante.
+              </p>
+              
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div style="background:rgba(var(--color-primary-rgb),.05); padding:var(--space-4); border-radius:8px">
+                  <span style="font-weight:700; font-size:12px; display:block; margin-bottom:4px">Points d'entrée identifiés</span>
+                  <p style="font-size:11px; opacity:0.8">Serveurs Web, passerelles VPN, ports d'administration (RDP/SSH) ouverts par erreur.</p>
+                </div>
+                <div style="background:rgba(var(--color-primary-rgb),.05); padding:var(--space-4); border-radius:8px">
+                  <span style="font-weight:700; font-size:12px; display:block; margin-bottom:4px">Déni de Service (DoS)</span>
+                  <p style="font-size:11px; opacity:0.8">Vérification de la robustesse des services face à des scans intensifs sans impact sur la production.</p>
+                </div>
+              </div>
+            </div>
           </article>
           <article id="ne-2" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- VULNERABILITY SCANNING -->
+            <div class="panel__section">
+              <div class="panel__tag">Vulnerability Management · Nessus Expert · CVE · CVE Matching</div>
+              <h3 class="panel__title">Phase 2 : Analyse Active & Détection de Failles</h3>
+              <p class="panel__text">
+                L'utilisation de <strong>Nessus Expert</strong> permet d'automatiser la recherche de vulnérabilités sur un large périmètre. En croisant les données récoltées avec les bases mondiales (CVE, NVD), l'outil identifie précisément les brèches exploitables dans l'Active Directory et les serveurs d'infrastructure.
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Configuration des Scans</h4>
+                  <ul class="tech-list">
+                    <li><strong>Advanced Network Scan</strong><span style="display:block;opacity:.8;margin-top:4px">Scan approfondi avec détection des ports UDP/TCP et enumeration des services RPC.</span></li>
+                    <li><strong>Authentification Credentialed</strong><span style="display:block;opacity:.8;margin-top:4px">Utilisation d'un compte admin dédié pour inspecter l'intérieur du système (registre, KB manquantes).</span></li>
+                    <li><strong>Politique non-destructive</strong><span style="display:block;opacity:.8;margin-top:4px">Réglage des seuils de scan pour éviter tout déni de service sur les serveurs métiers.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Audit Active Directory</h5>
+                  <div class="code-block" style="background:rgba(var(--color-primary-rgb),.05); border-radius:8px; padding:var(--space-4)">
+                    <p style="font-size:11px; font-weight:700; color:var(--color-primary)">Vérifications critiques :</p>
+                    <ul style="font-size:10px; margin-top:8px; list-style:none; padding:0; line-height:1.6">
+                      <li><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px; vertical-align:middle; color:#ef4444"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Protocoles obsolètes (SMBv1, LLMNR)</li>
+                      <li><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px; vertical-align:middle; color:#ef4444"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Comptes avec mots de passe faibles</li>
+                      <li><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px; vertical-align:middle; color:#ef4444"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Permissions excessives sur les OUs</li>
+                      <li><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px; vertical-align:middle; color:#ef4444"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Absence de correctifs (Patch Management)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- VULNERABILITY EVALUATION -->
+            <div class="panel__section">
+              <h4 class="block-title">Identification des CVE</h4>
+              <p class="panel__text">
+                Chaque vulnérabilité détectée est associée à son identifiant <strong>CVE (Common Vulnerabilities and Exposures)</strong>. Cela permet d'obtenir une description précise de la faille et d'envisager les scénarios d'attaque de type Ransomware rencontrés par l'entreprise.
+              </p>
+              
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div style="background:rgba(0,0,0,0.02); padding:var(--space-4); border-radius:8px">
+                  <span style="font-weight:700; font-size:12px; display:block; margin-bottom:4px">Analyse des bannières</span>
+                  <p style="font-size:11px; opacity:0.8">Identification des versions de services vulnérables (ex: Apache 2.4.x, OpenSSH obsolète).</p>
+                </div>
+                <div style="background:rgba(0,0,0,0.02); padding:var(--space-4); border-radius:8px">
+                  <span style="font-weight:700; font-size:12px; display:block; margin-bottom:4px">Corrélation Metasploit</span>
+                  <p style="font-size:11px; opacity:0.8">Vérification théorique de l'exploitabilité via le framework Metasploit pour valider la criticité.</p>
+                </div>
+              </div>
+            </div>
           </article>
           <article id="ne-3" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- AUDIT RESULTS -->
+            <div class="panel__section">
+              <div class="panel__tag">Risk Assessment · CVSS v3.1 · Reporting · Remediation</div>
+              <h3 class="panel__title">Phase 3 : Rapport d'Audit & Roadmap de Remédiation</h3>
+              <p class="panel__text">
+                L'audit technique n'a de valeur que s'il est suivi d'actions concrètes. Le rapport final synthétise les vulnérabilités identifiées et propose un plan d'action hiérarchisé selon le score <strong>CVSS (Common Vulnerability Scoring System)</strong>, permettant à la DSI de focaliser ses ressources sur les risques les plus élevés.
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Classification par criticité</h4>
+                  <ul class="tech-list">
+                    <li><strong style="color:#ef4444">CRITICAL (Score 9.0 - 10.0)</strong><span style="display:block;opacity:.8;margin-top:4px">Failles exploitables à distance sans authentification (ex: PrintNightmare, BlueKeep). Remédiation immédiate.</span></li>
+                    <li><strong style="color:#f97316">HIGH (Score 7.0 - 8.9)</strong><span style="display:block;opacity:.8;margin-top:4px">Vulnérabilités permettant une escalade de privilèges ou un vol de données. Correctifs sous 48h.</span></li>
+                    <li><strong style="color:#eab308">MEDIUM (Score 4.0 - 6.9)</strong><span style="display:block;opacity:.8;margin-top:4px">Défauts de configuration ou bannières informatives trop bavardes. Correction planifiée.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Audit Dashboard (Vue Type)</h5>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="display:flex; justify-content:space-around; align-items:flex-end; height:60px">
+                      <div style="width:20px; height:80%; background:#ef4444; border-radius:4px 4px 0 0" title="Critical"></div>
+                      <div style="width:20px; height:40%; background:#f97316; border-radius:4px 4px 0 0" title="High"></div>
+                      <div style="width:20px; height:60%; background:#eab308; border-radius:4px 4px 0 0" title="Medium"></div>
+                      <div style="width:20px; height:30%; background:#3b82f6; border-radius:4px 4px 0 0" title="Low"></div>
+                    </div>
+                    <div style="font-size:10px; margin-top:12px; opacity:0.7">Distribution des vulnérabilités</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MITIGATION STRATEGY -->
+            <div class="panel__section">
+              <h4 class="block-title">Roadmap de Remédiation</h4>
+              <p class="panel__text">
+                Suite à l'audit, plusieurs mesures de durcissement (Hardening) ont été préconisées pour fermer les points d'entrée identifiés :
+              </p>
+              
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Mesures Correctives</h5>
+                  <ul class="tech-list" style="margin-top:12px">
+                    <li><strong>Patch Management</strong> : Déploiement forcé via WSUS des KB de sécurité manquantes identifiées par Nessus.</li>
+                    <li><strong>Network Hardening</strong> : Désactivation des protocoles non sécurisés (NetBIOS, SMBv1) via GPO.</li>
+                    <li><strong>Password Policy</strong> : Mise en œuvre d'une politique de mots de passe conforme aux recommandations ANSSI.</li>
+                  </ul>
+                </div>
+                <div style="border-left: 2px solid rgba(var(--color-primary-rgb),.2); padding-left: var(--space-6)">
+                  <h4 class="block-title">Conclusion de l'audit</h4>
+                  <p class="panel__text" style="font-style: italic; opacity: 0.9">
+                    "Cet audit a permis de transformer un incident critique en une opportunité de renforcement. Agoravita dispose désormais d'une infrastructure assainie et d'une maîtrise accrue de sa surface d'attaque."
+                  </p>
+                  <div style="margin-top: var(--space-4); display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-primary); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 12px;">AZ</div>
+                    <div>
+                        <p style="font-size:11px; font-weight:700; margin:0">Adil Zarqane</p>
+                        <p style="font-size:10px; opacity:0.7; margin:0">Administrateur Systèmes & Réseaux</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -2869,9 +4136,9 @@ subsets:
             style="font-weight: 700; color: var(--color-primary); letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; margin-bottom: var(--space-4);">
             Cycle de vie</div>
           <button class="project-tab active" data-target="ve-0" aria-selected="true" role="tab">
-            <div class="project-tab__num" style="font-size:9px;letter-spacing:.05em">Phase 0</div>
-            <div class="project-tab__name" style="font-weight: 600;">Contexte</div>
-            <div class="project-tab__desc" style="font-size: 11px; opacity: 0.7;">Analyse &amp; Règle 3-2-1</div>
+            <div class="project-tab__num" style="font-size:9px;letter-spacing:.05em">Vue globale</div>
+            <div class="project-tab__name" style="font-weight: 600;">Stratégie ISATIS</div>
+            <div class="project-tab__desc" style="font-size: 11px; opacity: 0.7;">Règle 3-2-1 &amp; R2</div>
           </button>
           <button class="project-tab" data-target="ve-1" aria-selected="false" role="tab">
             <div class="project-tab__num">Phase 1</div>
@@ -2896,19 +4163,312 @@ subsets:
         </nav>
         <div class="projects__panels">
           <article id="ve-0" class="project-panel active">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+
+            <!-- EN-TÊTE -->
+            <div class="panel__section">
+              <div class="panel__tag">Disaster Recovery · Business Continuity · S3 Storage · 3-2-1 Rule</div>
+              <h3 class="panel__title">Gestion du Plan de Sauvegarde Hybride — Maison de Retraite ISATIS</h3>
+              <p class="panel__text">
+                Mise en place d'une infrastructure de sauvegarde résiliente pour la <strong>maison de retraite ISATIS</strong>. L'objectif était de garantir l'intégrité des données critiques (bases de données résidents, archives médicales) en appliquant la règle d'or du <strong>3-2-1</strong> : 3 copies des données, sur 2 supports différents, avec 1 copie externalisée hors site.
+              </p>
+            </div>
+
+            <!-- CHIFFRES CLÉS -->
+            <div class="panel__section">
+              <h4 class="block-title">Indicateurs de Résilience</h4>
+              <div class="technical-grid" style="margin-top:var(--space-4);gap:var(--space-4)">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)">
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">3-2-1</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Compliance Full</div>
+                  </div>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">2 NAS</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Géographiquement isolés</div>
+                  </div>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">R2</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Externalisation Immuable</div>
+                  </div>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:28px;font-weight:700;color:var(--color-primary)">99.9%</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">Fiabilité Restauration</div>
+                  </div>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:var(--space-3);font-weight:700">Backup Stack</h5>
+                  <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)">
+                    <span class="badge badge-accent">Veeam Backup & Replication</span>
+                    <span class="badge badge-accent">Synology / QNAP NAS</span>
+                    <span class="badge badge-accent">Cloudflare R2 (S3)</span>
+                    <span class="badge badge-accent">SQL Server / MariaDB</span>
+                    <span class="badge">Hyper-V Replication</span>
+                    <span class="badge">Immutable Backup</span>
+                    <span class="badge">AES-256 Encryption</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ARCHITECTURE DE SAUVEGARDE -->
+            <div class="panel__section">
+              <h4 class="block-title">Topologie de la Stratégie 3-2-1</h4>
+              <div class="code-block" style="background:transparent;border:none;padding:0;margin-top:var(--space-4)">
+                <pre style="font-size:11px;color:var(--color-primary);line-height:2"><code>┌─────────────────────────────────────────────────────────────┐
+│  PRODUCTION — Serveurs de Bases de Données (ISATIS)         │
+│  Snapshot quotidiens et Transaction Logs toutes les heures  │
+└──────────────┬──────────────────────────────┬───────────────┘
+               │ Backup Copy                  │ Cloud Sync
+┌──────────────▼──────────────┐       ┌──────▼──────────────┐
+│  NAS 01 (Bâtiment A)        │       │  CLOUDFLARE R2 (S3) │
+│  Rétention rapide (7j)      │       │  Archive Mensuelle  │
+└──────────────┬──────────────┘       │  Immuabilité Active │
+               │ Replication Local    └─────────────────────┘
+┌──────────────▼──────────────┐
+│  NAS 02 (Bâtiment B)        │
+│  Replique DR (Anti-Incendie)│
+└─────────────────────────────┘</code></pre>
+              </div>
+            </div>
+
+            <!-- PILIERS DU PROJET -->
+            <div class="panel__section">
+              <h4 class="block-title">4 piliers de la résilience ISATIS</h4>
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <ul class="tech-list">
+                    <li><strong>Redondance Géographique</strong><span style="display:block;opacity:.8;margin-top:4px">Répartition physique des sauvegardes dans deux zones distinctes de l'établissement pour parer aux sinistres locaux (incendie, vol).</span></li>
+                    <li><strong>Immuabilité Cloud</strong><span style="display:block;opacity:.8;margin-top:4px">Stockage sur Cloudflare R2 avec verrouillage des objets (Object Lock) pour empêcher tout chiffrement par un ransomware.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <ul class="tech-list">
+                    <li><strong>RPO / RTO Optimisés</strong><span style="display:block;opacity:.8;margin-top:4px">Capacité de redémarrage (Instant VM Recovery) sous 15 minutes en cas de crash du serveur principal.</span></li>
+                    <li><strong>Sécurité des données</strong><span style="display:block;opacity:.8;margin-top:4px">Chiffrement AES-256 de bout en bout, de la source jusqu'au repository cloud, assurant la conformité RGPD.</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
           </article>
           <article id="ve-1" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- VEEAM ORCHESTRATION -->
+            <div class="panel__section">
+              <div class="panel__tag">Veeam B&R · Orchestration · Database Backup · SQL/MariaDB</div>
+              <h3 class="panel__title">Phase 1 : Architecture de l'Orchestrateur Veeam</h3>
+              <p class="panel__text">
+                Le serveur <strong>Veeam Backup & Replication</strong> agit comme le chef d'orchestre de la stratégie de sauvegarde. Il est configuré pour communiquer directement avec les instances de bases de données de l'établissement ISATIS afin de garantir des sauvegardes "Application-Aware" (consistance des données en mémoire).
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Pilotage des Jobs</h4>
+                  <ul class="tech-list">
+                    <li><strong>Sauvegardes Application-Aware</strong><span style="display:block;opacity:.8;margin-top:4px">Utilisation de VSS (Volume Shadow Copy) pour geler les écritures BDD le temps du snapshot, garantissant une restauration sans corruption.</span></li>
+                    <li><strong>Chaine de sauvegarde Forward Incremental</strong><span style="display:block;opacity:.8;margin-top:4px">Une sauvegarde complète par semaine et des incrémentales quotidiennes pour optimiser l'espace de stockage local.</span></li>
+                    <li><strong>Sauvegarde des Logs de Transaction</strong><span style="display:block;opacity:.8;margin-top:4px">Fréquence haute (toutes les 15-60 min) pour minimiser la perte de données (Low RPO).</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Flux d'Orchestration</h5>
+                  <div class="code-block" style="background:rgba(var(--color-primary-rgb),.05); border-radius:8px; padding:var(--space-4)">
+                    <p style="font-size:11px; font-weight:700; color:var(--color-primary)">Veeam Engine :</p>
+                    <ul style="font-size:10px; margin-top:8px; list-style:none; padding:0; line-height:1.6">
+                      <li><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px; vertical-align:middle; color:var(--color-primary)"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Connecteur SQL / MariaDB</li>
+                      <li><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px; vertical-align:middle; color:var(--color-primary)"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>Déduplication à la source</li>
+                      <li><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px; vertical-align:middle; color:var(--color-primary)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Chiffrement granulaire (AES)</li>
+                      <li><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px; vertical-align:middle; color:var(--color-primary)"><rect x="6" y="2" width="12" height="20" rx="2"/><circle cx="12" cy="7" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="17" r="2"/></svg>Contrôle de bande passante</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PERFORMANCE & OPTIMIZATION -->
+            <div class="panel__section">
+              <h4 class="block-title">Optimisation du stockage</h4>
+              <p class="panel__text">
+                Veeam utilise des algorithmes de compression et de déduplication intégrés pour réduire le volume de données transféré vers les NAS, préservant ainsi les performances du réseau local d'ISATIS.
+              </p>
+              
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div style="background:rgba(0,0,0,0.02); padding:var(--space-4); border-radius:8px">
+                  <span style="font-weight:700; font-size:12px; display:block; margin-bottom:4px">CBT (Changed Block Tracking)</span>
+                  <p style="font-size:11px; opacity:0.8">Seuls les blocs modifiés depuis la dernière sauvegarde sont transférés, accélérant drastiquement les jobs quotidiens.</p>
+                </div>
+                <div style="background:rgba(0,0,0,0.02); padding:var(--space-4); border-radius:8px">
+                  <span style="font-weight:700; font-size:12px; display:block; margin-bottom:4px">Veeam Explorer</span>
+                  <p style="font-size:11px; opacity:0.8">Outils de restauration granulaire permettant de récupérer une seule table SQL ou un seul fichier sans restaurer toute la VM.</p>
+                </div>
+              </div>
+            </div>
           </article>
           <article id="ve-2" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- LOCAL STORAGE REDUNDANCY -->
+            <div class="panel__section">
+              <div class="panel__tag">NAS Repository · Geo-Redundancy · RAID · SMB/iSCSI</div>
+              <h3 class="panel__title">Phase 2 : Dépôts Locaux & Redondance Géographique</h3>
+              <p class="panel__text">
+                La sécurité des sauvegardes repose sur leur dispersion physique. Pour ISATIS, deux <strong>NAS haute performance</strong> ont été déployés dans deux bâtiments distincts, reliés par la colonne vertébrale fibre du site, afin de prévenir tout risque lié à un sinistre localisé (incendie, dégât des eaux).
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">NAS 01 : Repository Primaire</h4>
+                  <ul class="tech-list">
+                    <li><strong>Bâtiment A (Centre Technique)</strong><span style="display:block;opacity:.8;margin-top:4px">Cible principale des jobs de sauvegarde. Stockage des Full hebdomadaires et des incrémentales quotidiennes.</span></li>
+                    <li><strong>Rétention Rapide (14j)</strong><span style="display:block;opacity:.8;margin-top:4px">Conservation sur disque pour une restauration quasi-instantanée en cas d'erreur utilisateur ou de crash applicatif.</span></li>
+                    <li><strong>RAID 5 / Btrfs</strong><span style="display:block;opacity:.8;margin-top:4px">Protection contre la panne d'un disque physique et vérification de l'intégrité des fichiers (Self-healing).</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="block-title">NAS 02 : Réplique de Secours</h4>
+                  <ul class="tech-list">
+                    <li><strong>Bâtiment B (Aile Administrative)</strong><span style="display:block;opacity:.8;margin-top:4px">Stockage secondaire recevant une copie mirroir du repository primaire via un job de "Backup Copy".</span></li>
+                    <li><strong>Isolation Réseau</strong><span style="display:block;opacity:.8;margin-top:4px">VLAN dédié aux flux de sauvegarde pour éviter toute interception ou saturation du réseau utilisateurs.</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECURITY & DURABILITY -->
+            <div class="panel__section">
+              <h4 class="block-title">Mécanismes de protection des données</h4>
+              <p class="panel__text">
+                Les NAS sont configurés pour résister non seulement aux pannes matérielles, mais aussi aux tentatives de compromission logique.
+              </p>
+              
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div style="background:rgba(var(--color-primary-rgb),.05); padding:var(--space-4); border-radius:8px">
+                  <span style="font-weight:700; font-size:12px; display:block; margin-bottom:4px">Credentials Isolés</span>
+                  <p style="font-size:11px; opacity:0.8">Les partages de sauvegarde ne sont accessibles que par le compte de service Veeam, aucun accès "utilisateur" direct n'est autorisé.</p>
+                </div>
+                <div style="background:rgba(var(--color-primary-rgb),.05); padding:var(--space-4); border-radius:8px">
+                  <span style="font-weight:700; font-size:12px; display:block; margin-bottom:4px">Monitoring SNMP</span>
+                  <p style="font-size:11px; opacity:0.8">Remontée d'alertes en cas de pic de température, de disque défectueux ou de tentative de connexion suspecte.</p>
+                </div>
+              </div>
+            </div>
           </article>
           <article id="ve-3" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- CLOUD EXTERNALIZATION -->
+            <div class="panel__section">
+              <div class="panel__tag">Object Storage · S3 Compatibility · Cloudflare R2 · Disaster Recovery</div>
+              <h3 class="panel__title">Phase 3 : Externalisation Cloud & Immuabilité</h3>
+              <p class="panel__text">
+                En complément de la redondance locale, une copie externalisée est indispensable pour parer aux catastrophes majeures. Pour ISATIS, nous avons opté pour <strong>Cloudflare R2</strong>, une plateforme de stockage objet compatible S3 offrant une résilience mondiale et une tarification optimisée sans frais de sortie de données (Egress).
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Technologie Cloudflare R2</h4>
+                  <ul class="tech-list">
+                    <li><strong>Stockage S3-Compatible</strong><span style="display:block;opacity:.8;margin-top:4px">Intégration transparente dans Veeam comme un "External Repository" via les clés d'accès API.</span></li>
+                    <li><strong>Pas de frais d'Egress</strong><span style="display:block;opacity:.8;margin-top:4px">Contrairement aux géants du Cloud, le téléchargement des données lors d'une restauration est gratuit, facilitant les tests de PRA.</span></li>
+                    <li><strong>Haute Disponibilité</strong><span style="display:block;opacity:.8;margin-top:4px">Données répliquées sur plusieurs infrastructures Cloudflare pour une durabilité maximale.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Sécurité : L'Immuabilité (Object Lock)</h5>
+                  <div style="background:rgba(var(--color-primary-rgb),.05); border:1px solid rgba(var(--color-primary-rgb),.2); border-radius:8px; padding:var(--space-4)">
+                    <p style="font-size:11px; font-weight:700; color:var(--color-primary); margin-bottom:8px">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px; vertical-align: middle;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                      Cloud Object Lock :
+                    </p>
+                    <p style="font-size:10px; line-height:1.4; opacity:0.8">
+                      Une fois écrite dans le bucket R2, la sauvegarde est rendue <strong>immuable</strong> pendant 30 jours. Aucune suppression n'est possible, même avec des identifiants compromis, protégeant ISATIS contre les ransomwares destructeurs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- HYBRID ARCHITECTURE LOGIC -->
+            <div class="panel__section">
+              <h4 class="block-title">Logique de Transfert (Capacity Tier)</h4>
+              <p class="panel__text">
+                Veeam gère intelligemment le cycle de vie des données. Les sauvegardes récentes restent sur les NAS (Performance Tier) pour la rapidité, tandis que les archives anciennes sont automatiquement déchargées vers le Cloud.
+              </p>
+              
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Sobriété & Efficacité</h5>
+                  <ul class="tech-list">
+                    <li><strong>Déduplication Cloud</strong> : Seuls les blocs uniques non présents dans le Cloud sont transférés.</li>
+                    <li><strong>Chiffrement Source</strong> : Les données sont chiffrées par Veeam <em>avant</em> de quitter le serveur ISATIS.</li>
+                    <li><strong>Rétention GFS</strong> : Conservation de 12 sauvegardes mensuelles dans le Cloud pour l'historique légal.</li>
+                  </ul>
+                </div>
+                <div>
+                  <div class="code-block" style="background:rgba(0,0,0,0.03); padding:var(--space-4); border-radius:8px">
+                    <pre style="font-size:10px; color:var(--color-primary); line-height:1.6"><code># Cloud Repo Config
+Name: ISATIS-CLOUDFLARE-R2
+Bucket: backup-immut-isatis
+Region: Global
+Retention: GFS (Grandfather-Father-Son)
+Immutability: Enabled (30 days)</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
           </article>
           <article id="ve-4" class="project-panel">
-            <p style="color:var(--color-text-muted)">Contenu en cours de rédaction...</p>
+            <!-- RESTORATION TESTS -->
+            <div class="panel__section">
+              <div class="panel__tag">SureBackup · RTO · Disaster Recovery Testing · Integrity</div>
+              <h3 class="panel__title">Phase 4 : Validation & Tests de Restauration (PRA)</h3>
+              <p class="panel__text">
+                La fiabilité d'un plan de sauvegarde se mesure à sa capacité de restauration sous contrainte. Chez <strong>ISATIS</strong>, nous avons instauré un protocole de tests réguliers pour garantir que les données médicales et administratives sont récupérables en un temps record.
+              </p>
+
+              <div class="technical-grid" style="margin-top:var(--space-6)">
+                <div>
+                  <h4 class="block-title">Verification SureBackup</h4>
+                  <ul class="tech-list">
+                    <li><strong>Audit automatique d'intégrité</strong><span style="display:block;opacity:.8;margin-top:4px">Veeam démarre automatiquement la sauvegarde dans un bac à sable isolé pour vérifier le boot et la cohérence de la BDD.</span></li>
+                    <li><strong>Validation des services SQL</strong><span style="display:block;opacity:.8;margin-top:4px">Exécution de scripts de test pour confirmer que les instances SQL Server/MariaDB sont fonctionnelles post-restauration.</span></li>
+                    <li><strong>Rapports de conformité</strong><span style="display:block;opacity:.8;margin-top:4px">Génération hebdomadaire de certificats de réussite pour attester de la validité du PRA.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 style="color:var(--color-primary);font-size:12px;margin-bottom:12px;font-weight:700">Indicateurs de reprise (PRA)</h5>
+                  <div style="background:rgba(var(--color-primary-rgb),.08);border:1px solid rgba(var(--color-primary-rgb),.2);border-radius:8px;padding:var(--space-4);text-align:center">
+                    <div style="font-size:24px;font-weight:700;color:var(--color-primary)">&lt; 15 min</div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">RTO (Temps de redémarrage)</div>
+                    <p style="font-size:10px; opacity:0.6; margin-top:8px">Grace à l'Instant VM Recovery.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CONCLUSION & FUTURE PROOF -->
+            <div class="panel__section">
+              <div class="technical-grid" style="margin-top:var(--space-4)">
+                <div>
+                  <h4 class="block-title">Restauration Granulaire</h4>
+                  <p class="panel__text">
+                    La solution permet de répondre à tous les types d'incidents, du plus mineur au plus critique :
+                  </p>
+                  <ul class="tech-list" style="margin-top:12px">
+                    <li><strong>Item-level Recovery</strong> : Restauration d'un seul document résident supprimé par erreur.</li>
+                    <li><strong>Full Site Recovery</strong> : Reconstruction totale de l'infrastructure à partir du Cloudcloudflare R2 en cas de sinistre majeur.</li>
+                  </ul>
+                </div>
+                <div style="border-left: 2px solid rgba(var(--color-primary-rgb),.2); padding-left: var(--space-6)">
+                  <h4 class="block-title">Bilan Final</h4>
+                  <p class="panel__text" style="font-style: italic; opacity: 0.9">
+                    "La mise en œuvre de cette stratégie 3-2-1 assure à ISATIS une sérénité totale face aux risques cyber et physiques. Les données sont doublement sécurisées en local et triplement via le Cloud immuable."
+                  </p>
+                  <div style="margin-top: var(--space-4); display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-primary); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 12px;">AZ</div>
+                    <div>
+                        <p style="font-size:11px; font-weight:700; margin:0">Adil Zarqane</p>
+                        <p style="font-size:10px; opacity:0.7; margin:0">Administrateur Systèmes & Réseaux</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
       </div>
