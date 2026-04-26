@@ -6,6 +6,15 @@
 export function initAnimations() {
   const counters = document.querySelectorAll('[data-count]');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const marquee = document.querySelector('[data-tech-marquee]');
+  const track = marquee ? marquee.querySelector('.hero__tech-track') : null;
+
+  if (marquee && track && marquee.dataset.enhanced !== 'true' && !prefersReducedMotion) {
+    const clone = track.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    marquee.appendChild(clone);
+    marquee.dataset.enhanced = 'true';
+  }
 
   if (prefersReducedMotion) {
     counters.forEach(function (el) {
