@@ -8,13 +8,13 @@
  * au moment de l'exécution, pas besoin de DOMContentLoaded.
  */
 
-import { loadPartials }   from './modules/loader.js';
-import { initTheme }      from './modules/theme.js';
-import { initNavbar }     from './modules/navbar.js';
-import { initTypewriter } from './modules/typewriter.js';
-import { initAnimations } from './modules/animations.js';
-import { initProjects }   from './modules/projects.js';
-import { initModal }      from './modules/modal.js';
+import { loadPartials }   from './modules/loader.js?v=20260426b';
+import { initTheme }      from './modules/theme.js?v=20260426b';
+import { initNavbar }     from './modules/navbar.js?v=20260426b';
+import { initTypewriter } from './modules/typewriter.js?v=20260426b';
+import { initAnimations } from './modules/animations.js?v=20260426b';
+import { initProjects }   from './modules/projects.js?v=20260426d';
+import { initModal }      from './modules/modal.js?v=20260426b';
 
 /* ── Charger les partials puis initialiser tous les modules ── */
 loadPartials(function onReady() {

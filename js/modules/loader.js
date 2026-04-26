@@ -15,12 +15,26 @@ async function loadPartial(url, id) {
   const target = document.getElementById(id);
   if (!target) return;
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, { cache: 'no-store' });
     if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
     target.innerHTML = await res.text();
   } catch (err) {
     console.error('[loader] Impossible de charger', url, err);
+    target.innerHTML = '<div class="container"><p class="loader-error">Une section du portfolio n’a pas pu se charger.</p></div>';
   }
+}
+
+function optimizeImages() {
+  const heroPhoto = document.querySelector('.hero__photo img');
+  if (heroPhoto) {
+    heroPhoto.loading = 'eager';
+    heroPhoto.decoding = 'async';
+  }
+
+  document.querySelectorAll('#partial-projects img').forEach(function (img) {
+    if (!img.hasAttribute('loading')) img.loading = 'lazy';
+    if (!img.hasAttribute('decoding')) img.decoding = 'async';
+  });
 }
 
 /**
@@ -34,9 +48,10 @@ export async function loadPartials(onReady) {
     loadPartial('partials/projects.html',     'partial-projects'),
     loadPartial('partials/contact.html',      'partial-contact'),
   ]);
+  optimizeImages();
   // Initialiser Mermaid après injection (les .mermaid sont maintenant dans le DOM)
   if (typeof window.mermaid !== 'undefined') {
-    window.mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' });
+    window.mermaid.initialize({ startOnLoad: false, theme: 'neutral', securityLevel: 'loose' });
     window.mermaid.run();
   }
 

@@ -5,6 +5,16 @@
  */
 export function initAnimations() {
   const counters = document.querySelectorAll('[data-count]');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReducedMotion) {
+    counters.forEach(function (el) {
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      el.textContent = target + suffix;
+    });
+    return;
+  }
 
   const counterObs = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {

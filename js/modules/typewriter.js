@@ -5,6 +5,7 @@
 export function initTypewriter() {
   const tw    = document.getElementById('typewriter');
   if (!tw) return;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const words = [
     'Admin Sys & Réseaux',
@@ -13,6 +14,11 @@ export function initTypewriter() {
     'Spécialiste Kubernetes',
     'Expert IaC'
   ];
+
+  if (prefersReducedMotion) {
+    tw.textContent = words[1];
+    return;
+  }
 
   let wordIndex = 0;
   let charIndex = 0;

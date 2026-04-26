@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300..700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260426e">
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <!-- Thème clair uniquement -->
 </head>
@@ -36,30 +36,30 @@
         <a href="#accueil">Accueil</a>
         <a href="#a-propos">À Propos</a>
         <a href="#competences">Compétences</a>
-        <a href="#projets" class="nav-highlight">Projets</a>
+        <a href="#projets">Projets</a>
         <a href="#contact">Contact</a>
       </nav>
       <div class="navbar__actions">
-        <a href="assets/CV.pdf" download class="btn btn-outline" aria-label="Télécharger le CV">
+        <a href="assets/CV.pdf" download class="btn btn-primary navbar__cv" aria-label="Télécharger mon CV">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
             <polyline points="7 10 12 15 17 10" />
             <line x1="12" y1="15" x2="12" y2="3" />
           </svg>
-          Télécharger CV
+          Télécharger mon CV
         </a>
-        <button class="navbar__hamburger btn-ghost" id="hamburger" aria-label="Menu mobile" aria-expanded="false">
+        <button class="navbar__hamburger btn-ghost" id="hamburger" aria-label="Menu mobile" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+  <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile" aria-hidden="true" hidden>
     <a href="#accueil">Accueil</a>
     <a href="#a-propos">À Propos</a>
     <a href="#competences">Compétences</a>
-    <a href="#projets" class="nav-highlight">Projets</a>
+    <a href="#projets">Projets</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -106,13 +106,13 @@
   </footer>
 
   <!-- Lightbox Modal -->
-  <div id="image-modal" class="modal" aria-hidden="true">
-    <span class="modal-close">&times;</span>
+  <div id="image-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-caption" hidden>
+    <button type="button" class="modal-close" aria-label="Fermer l'aperçu d'image">&times;</button>
     <img class="modal-content" id="modal-img" alt="Zoom schéma">
     <div id="modal-caption"></div>
   </div>
 
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/main.js?v=20260426e"></script>
 </body>
 
 </html>

@@ -21,14 +21,15 @@ export function initNavbar() {
 
     hamburger.classList.toggle('open', open);
     hamburger.setAttribute('aria-expanded', String(open));
+    mobileNav.setAttribute('aria-hidden', String(!open));
 
     if (open) {
-      mobileNav.style.display = 'flex';
+      mobileNav.hidden = false;
       requestAnimationFrame(function () { mobileNav.classList.add('open'); });
       document.body.style.overflow = 'hidden';
     } else {
       mobileNav.classList.remove('open');
-      setTimeout(function () { mobileNav.style.display = 'none'; }, 350);
+      setTimeout(function () { mobileNav.hidden = true; }, 350);
       document.body.style.overflow = '';
     }
   }
@@ -41,6 +42,14 @@ export function initNavbar() {
       link.addEventListener('click', function () { toggleMenu(false); });
     });
   }
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && menuOpen) toggleMenu(false);
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768 && menuOpen) toggleMenu(false);
+  });
 
   /* ── Lien actif à l'IntersectionObserver ── */
   const sections  = document.querySelectorAll('section[id]');

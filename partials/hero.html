@@ -12,15 +12,15 @@
 
     <div class="hero__photo" aria-label="Photo de profil">
       <div style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden;">
-        <img src="assets/photo.png" alt="Photo de profil"
+        <img src="assets/photo.png" alt="Photo de profil" fetchpriority="high" decoding="async"
           style="width:100%;height:100%;object-fit:cover;object-position:center top;transform:scale(1.4) translate(-7px, -6px);">
       </div>
     </div>
 
     <p class="hero__label">// Bonjour, je suis</p>
     <h1 class="hero__name" id="hero-heading">ADIL ZARQANE</h1>
-    <p class="hero__title" aria-live="polite">
-      <span id="typewriter"></span><span class="cursor" aria-hidden="true">|</span>
+    <p class="hero__title" aria-label="Ingénieur DevOps">
+      <span id="typewriter" aria-hidden="true"></span><span class="cursor" aria-hidden="true">|</span>
     </p>
     <p class="hero__subtitle">
       De l'administration des serveurs et réseaux à la fiabilisation des systèmes informatiques,

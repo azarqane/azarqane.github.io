@@ -106,6 +106,15 @@
   box-shadow: var(--shadow-glow);
 }
 
+.navbar__cv {
+  box-shadow: var(--shadow-md);
+}
+
+.navbar__cv:hover,
+.navbar__cv:focus-visible {
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
 .btn-outline {
   background: transparent;
   color: var(--color-primary);
@@ -147,7 +156,7 @@
 
 /* ── Mobile nav plein écran ── */
 .mobile-nav {
-  display: none;
+  display: flex;
   position: fixed;
   inset: 0;
   z-index: 99;
@@ -159,6 +168,7 @@
   opacity: 0;
   transition: opacity var(--transition-slow);
 }
+.mobile-nav[hidden] { display: none !important; }
 .mobile-nav.open { opacity: 1; }
 .mobile-nav a {
   font-size: var(--text-xl);
@@ -176,5 +186,4 @@
   .navbar__nav,
   .navbar__actions .btn-outline { display: none; }
   .navbar__hamburger { display: flex; }
-  .mobile-nav { display: flex; }
 }
